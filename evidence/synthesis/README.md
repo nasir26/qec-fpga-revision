@@ -24,6 +24,12 @@ not touch the device, only the tool's static timing/resource estimator).
   the `m_axi` port stripped back out (`steane_axilite_only_variant_source.cpp`, kept alongside the
   report for reproducibility), to isolate the interface's own cost. Result: 0 BRAM18K, 0 DSP,
   242 FF, 699 LUT, 2-cycle latency (6.66 ns), II=1, 2.420 ns critical path.
+- `rep3_original_hls_2026-08-19/` — the **unmodified** `docs/legacy/implementation/rep3_qec_kernel.cpp`.
+  Result: 0 BRAM18K, 0 DSP, 198 FF, 367 LUT, 2.053 ns critical path, **0-cycle latency** (fully
+  combinational). Contradicts the manuscript's Table 2 row (≈40 FF, ≈60 LUT6, <1.0 ns) by roughly
+  5-6x on FF/LUT and more than 2x on critical path — the same pattern seen for Shor (C-010): the
+  claimed pipeline-stage figures do not match what the committed source actually synthesises to.
+  See ledger C-019/C-030.
 
 **The headline finding from this batch:** comparing the m_axi and AXI-Lite-only variants of the
 same logic in both kernels isolates what the BAR4-workaround interface actually costs. For Shor:

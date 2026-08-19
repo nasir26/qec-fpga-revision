@@ -1,0 +1,167 @@
+
+
+================================================================
+== Vitis HLS Report for 'rep3_qec_kernel'
+================================================================
+* Date:           Wed Aug 19 14:11:08 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        rep3_qec_kernel_original_proj
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: virtexuplusHBM
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.053 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       39|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        0|     -|      182|      310|    0|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       18|    -|
+|Register             |        -|     -|       16|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|      198|      367|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3008|   869120|   434560|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9024|  2607360|  1303680|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------+---------------------+---------+----+-----+-----+-----+
+    |        Instance        |        Module       | BRAM_18K| DSP|  FF | LUT | URAM|
+    +------------------------+---------------------+---------+----+-----+-----+-----+
+    |control_s_axi_U         |control_s_axi        |        0|   0|  182|  296|    0|
+    |sparsemux_7_2_3_1_1_U1  |sparsemux_7_2_3_1_1  |        0|   0|    0|   14|    0|
+    +------------------------+---------------------+---------+----+-----+-----+-----+
+    |Total                   |                     |        0|   0|  182|  310|    0|
+    +------------------------+---------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+----+---+----+------------+------------+
+    |        Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+----+---+----+------------+------------+
+    |add_ln143_1_fu_252_p2       |         +|   0|  0|   2|           2|           2|
+    |add_ln143_fu_246_p2         |         +|   0|  0|   2|           2|           2|
+    |error_detected_fu_266_p2    |      icmp|   0|  0|   9|           2|           1|
+    |ap_block_state1             |        or|   0|  0|   2|           1|           1|
+    |corrected_fu_200_p2         |       xor|   0|  0|   3|           3|           3|
+    |rcv_fu_112_p2               |       xor|   0|  0|   3|           3|           3|
+    |recovery_success_fu_282_p2  |       xor|   0|  0|   2|           1|           2|
+    |s0_fu_138_p2                |       xor|   0|  0|   2|           1|           1|
+    |s1_fu_152_p2                |       xor|   0|  0|   2|           1|           1|
+    |xor_ln112_1_fu_118_p2       |       xor|   0|  0|   2|           2|           2|
+    |xor_ln122_fu_132_p2         |       xor|   0|  0|   2|           1|           1|
+    |xor_ln135_2_fu_206_p2       |       xor|   0|  0|   2|           2|           2|
+    |xor_ln135_3_fu_212_p2       |       xor|   0|  0|   2|           1|           1|
+    |xor_ln135_fu_186_p2         |       xor|   0|  0|   2|           1|           1|
+    |xor_ln146_fu_276_p2         |       xor|   0|  0|   2|           1|           1|
+    +----------------------------+----------+----+---+----+------------+------------+
+    |Total                       |          |   0|  0|  39|          24|          24|
+    +----------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_done    |   9|          2|    1|          2|
+    |ap_return  |   9|          2|   11|         22|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |  18|          4|   12|         24|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+----+----+-----+-----------+
+    |      Name      | FF | LUT| Bits| Const Bits|
+    +----------------+----+----+-----+-----------+
+    |ap_CS_fsm       |   1|   0|    1|          0|
+    |ap_done_reg     |   1|   0|    1|          0|
+    |ap_return_preg  |  11|   0|   32|         21|
+    |ap_rst_n_inv    |   1|   0|    1|          0|
+    |ap_rst_reg_1    |   1|   0|    1|          0|
+    |ap_rst_reg_2    |   1|   0|    1|          0|
+    +----------------+----+----+-----+-----------+
+    |Total           |  16|   0|   37|         21|
+    +----------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+---------------+-----------------+--------------+
+|       RTL Ports       | Dir | Bits|    Protocol   |  Source Object  |    C Type    |
++-----------------------+-----+-----+---------------+-----------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|          s_axi|          control|        scalar|
+|s_axi_control_AWREADY  |  out|    1|          s_axi|          control|        scalar|
+|s_axi_control_AWADDR   |   in|    6|          s_axi|          control|        scalar|
+|s_axi_control_WVALID   |   in|    1|          s_axi|          control|        scalar|
+|s_axi_control_WREADY   |  out|    1|          s_axi|          control|        scalar|
+|s_axi_control_WDATA    |   in|   32|          s_axi|          control|        scalar|
+|s_axi_control_WSTRB    |   in|    4|          s_axi|          control|        scalar|
+|s_axi_control_ARVALID  |   in|    1|          s_axi|          control|        scalar|
+|s_axi_control_ARREADY  |  out|    1|          s_axi|          control|        scalar|
+|s_axi_control_ARADDR   |   in|    6|          s_axi|          control|        scalar|
+|s_axi_control_RVALID   |  out|    1|          s_axi|          control|        scalar|
+|s_axi_control_RREADY   |   in|    1|          s_axi|          control|        scalar|
+|s_axi_control_RDATA    |  out|   32|          s_axi|          control|        scalar|
+|s_axi_control_RRESP    |  out|    2|          s_axi|          control|        scalar|
+|s_axi_control_BVALID   |  out|    1|          s_axi|          control|        scalar|
+|s_axi_control_BREADY   |   in|    1|          s_axi|          control|        scalar|
+|s_axi_control_BRESP    |  out|    2|          s_axi|          control|        scalar|
+|ap_clk                 |   in|    1|  ap_ctrl_chain|  rep3_qec_kernel|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_chain|  rep3_qec_kernel|  return value|
+|interrupt              |  out|    1|  ap_ctrl_chain|  rep3_qec_kernel|  return value|
++-----------------------+-----+-----+---------------+-----------------+--------------+
+
