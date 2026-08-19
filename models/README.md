@@ -37,8 +37,26 @@ circuit-level noise model, with confidence intervals.
     the decoders "differ" in how they handle weight-2 syndromes. On this evidence they do not
     differ; they agree, on the wrong correction. Worth a ledger row and a manuscript fix once a
     hardware or full-mirror rerun confirms it against Y and Z errors too.
-- `mirrors/shor_mirror.py`: not yet written. `host/python/shor_qec_host.py` already contains an
-  embedded software decoder (the "Path S" fallback) that produced the 27/27 result in
-  `evidence/runs/selftest.log`; extracting that into a standalone mirror module, rather than
-  writing one from scratch, is the next step so E01's exhaustive 3^9 sweep has something to run
-  against independent of the host driver's XRT plumbing.
+- `mirrors/shor_mirror.py`: bit-exact mirror of `rtl/shor913/src/shor_qec_kernel.cpp`. Its
+  256-entry LUT is parsed directly out of the `.cpp` source (`extract_lut_from_cpp()`), not
+  hand-transcribed, so it can't silently drift from what HLS actually synthesises.
+  `tests/test_shor_mirror.py` does three things:
+  1. Reproduces the manuscript's claimed 27/27 self-test: **27/27 PASS**.
+  2. Cross-checks against the *independently written* `sw_decode()` embedded in
+     `docs/legacy/implementation/shor_qec_host.py` (that file builds its own 256-entry LUT from
+     scratch via `_build_lut()`, unrelated code path to this mirror) over all 512×512=262,144
+     `(x_err, z_err)` combinations: **262,144/262,144 identical, bit-for-bit**. This is the first
+     real evidence for ledger row C-006 ("software mirror validated against the HLS
+     golden-reference output") — previously `UNSUPPORTED` because no such comparison existed
+     anywhere in either archive. Still software-vs-software, not software-vs-hardware; C-006 stays
+     open for a true hardware comparison once E01 runs.
+  3. Exhaustive enumeration over all 4^9=262,144 combinations (every qubit independently I/X/Y/Z),
+     stratified by error weight — more complete than the brief's requested 3^9=19,683 patterns
+     (whose exact enumeration convention is unstated). Weight 0-1: 100% correctable (28/28,
+     consistent with the 27/27 self-test plus the trivial no-error case). Weight ≥2: 23-34%
+     "correctable" by coincidental syndrome collision, decaying roughly as expected for a
+     degenerate 8-bit-syndrome LUT — this is the code operating outside its guaranteed distance,
+     not a defect.
+  Both mirrors together (Shor and Steane) give this campaign, for the first time, software
+  correctness evidence that traces to the actual kernel sources rather than to an assertion in
+  the manuscript.
