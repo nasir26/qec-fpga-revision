@@ -1,0 +1,3 @@
+shor_qec_kernel.xclbin (43 MB) and shor_qec_kernel.xo were omitted from this
+scaffold to keep it small. Copy them back from the original archive
+(qec_fpga_files-20260819T064734Z-1-001.zip) before running any hardware test.

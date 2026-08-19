@@ -1,0 +1,39 @@
+# Vitis / Vivado build products
+*.xclbin
+*.xo
+*.jou
+*.str
+.Xil/
+_x/
+_vimage/
+build_dir*/
+package.*/
+*.ltx
+vitis_analyzer*/
+*.wdb
+*.wcfg
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# C++
+build/
+*.o
+*.so
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Never ignore evidence or processed data
+!evidence/**
+!experiments/**/processed/**

@@ -1,0 +1,331 @@
+Fri Apr 10 14:42:12 2026: Running xcd server. This server was built by gradle.
+Fri Apr 10 14:42:12 2026: Server was asked to start on port: '34501'
+Fri Apr 10 14:42:12 2026: Server is using token UUID: 'b01a1e04-41cd-46ff-b285-aa29f19e324f'
+Fri Apr 10 14:42:12 2026: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Apr 10 14:42:12 2026: Attempting to start server on port '34501'
+Fri Apr 10 14:42:12 2026: XCD main fifo: created main fifo '/tmp/xcdmainb01a1e04-41cd-46ff-b285-aa29f19e324f', fd read = 13
+Fri Apr 10 14:42:12 2026: Running Dispatch Server
+Fri Apr 10 14:42:12 2026: Version 2.2.0
+Fri Apr 10 14:42:14 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:42:14 2026: Starting Socket connection
+Fri Apr 10 14:42:14 2026: EXCHANGE_TOKEN received, server token: b01a1e04-41cd-46ff-b285-aa29f19e324f, passed token: b01a1e04-41cd-46ff-b285-aa29f19e324f
+Fri Apr 10 14:42:14 2026: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Apr 10 14:42:14 2026: SESSION_MGR: creating session with session uuid: 'e8f66a97-db82-49b5-b043-5e608978c273' and name 'v++_compile_shor_qec_kernel'
+Fri Apr 10 14:42:14 2026: KERNEL_SVC: creating session with uuid: 'e8f66a97-db82-49b5-b043-5e608978c273' and name 'v++_compile_shor_qec_kernel'
+Fri Apr 10 14:42:14 2026: GUIDANCE_SMGR: creating guidance session with uuid: 'e8f66a97-db82-49b5-b043-5e608978c273' and name 'v++_compile_shor_qec_kernel'
+Fri Apr 10 14:42:14 2026: SYSTEM_DIAGRAM: creating session with uuid: 'e8f66a97-db82-49b5-b043-5e608978c273' and name 'v++_compile_shor_qec_kernel'
+Fri Apr 10 14:42:34 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:42:34 2026: Starting Socket connection
+Fri Apr 10 14:42:58 2026: SESSION_MGR: closing session for UUID 'e8f66a97-db82-49b5-b043-5e608978c273' with name 'v++_compile_shor_qec_kernel'
+Fri Apr 10 14:42:58 2026: KERNEL_SVC: closing session for UUID 'e8f66a97-db82-49b5-b043-5e608978c273' with name 'v++_compile_shor_qec_kernel'
+Fri Apr 10 14:42:58 2026: GUIDANCE_SMGR: closing session for UUID 'e8f66a97-db82-49b5-b043-5e608978c273' with name 'v++_compile_shor_qec_kernel'
+Fri Apr 10 14:42:58 2026: SYSTEM_DIAGRAM: closing session for UUID 'e8f66a97-db82-49b5-b043-5e608978c273' with name 'v++_compile_shor_qec_kernel'
+Fri Apr 10 14:42:58 2026: STOP_SERVER received, server token: b01a1e04-41cd-46ff-b285-aa29f19e324f, passed token: b01a1e04-41cd-46ff-b285-aa29f19e324f
+Fri Apr 10 14:42:58 2026: Socket received request to stop server.
+Fri Apr 10 14:42:58 2026: Dispatch Server: do_await_stop
+Fri Apr 10 14:42:58 2026: Dispatch Server: stopping mainFifo_
+Fri Apr 10 14:42:58 2026: XCD main fifo: Stopping
+Fri Apr 10 14:42:58 2026: XCD main fifo: do_read error code: Operation canceled
+Fri Apr 10 14:42:58 2026: XCD main fifo: bytes_transferred: 0
+Fri Apr 10 14:42:58 2026: SERVER: destructor for server bound to port 34501
+Fri Apr 10 14:42:58 2026: XCD main fifo: Good unlink of /tmp/xcdmainb01a1e04-41cd-46ff-b285-aa29f19e324f
+Fri Apr 10 14:42:58 2026: Server exiting with status 0.
+Fri Apr 10 14:42:58 2026: Closing log file.
+Fri Apr 10 14:43:01 2026: Running xcd server. This server was built by gradle.
+Fri Apr 10 14:43:01 2026: Server was asked to start on port: '35611'
+Fri Apr 10 14:43:01 2026: Server is using token UUID: 'fb38f629-df54-48c0-ade8-6ef33e0107ab'
+Fri Apr 10 14:43:01 2026: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Apr 10 14:43:01 2026: Attempting to start server on port '35611'
+Fri Apr 10 14:43:01 2026: XCD main fifo: created main fifo '/tmp/xcdmainfb38f629-df54-48c0-ade8-6ef33e0107ab', fd read = 13
+Fri Apr 10 14:43:01 2026: Running Dispatch Server
+Fri Apr 10 14:43:01 2026: Version 2.2.0
+Fri Apr 10 14:43:03 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:43:03 2026: Starting Socket connection
+Fri Apr 10 14:43:03 2026: EXCHANGE_TOKEN received, server token: fb38f629-df54-48c0-ade8-6ef33e0107ab, passed token: fb38f629-df54-48c0-ade8-6ef33e0107ab
+Fri Apr 10 14:43:03 2026: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Apr 10 14:43:03 2026: SESSION_MGR: creating session with session uuid: 'f8cc5cca-c951-40c2-9e27-7cb74c99ec15' and name 'v++_link_shor_qec_kernel'
+Fri Apr 10 14:43:03 2026: KERNEL_SVC: creating session with uuid: 'f8cc5cca-c951-40c2-9e27-7cb74c99ec15' and name 'v++_link_shor_qec_kernel'
+Fri Apr 10 14:43:03 2026: GUIDANCE_SMGR: creating guidance session with uuid: 'f8cc5cca-c951-40c2-9e27-7cb74c99ec15' and name 'v++_link_shor_qec_kernel'
+Fri Apr 10 14:43:03 2026: SYSTEM_DIAGRAM: creating session with uuid: 'f8cc5cca-c951-40c2-9e27-7cb74c99ec15' and name 'v++_link_shor_qec_kernel'
+Fri Apr 10 14:43:32 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:43:32 2026: Starting Socket connection
+Fri Apr 10 14:43:43 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:43:43 2026: Starting Socket connection
+Fri Apr 10 14:46:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:46:22 2026: Starting Socket connection
+Fri Apr 10 14:46:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:46:22 2026: Starting Socket connection
+Fri Apr 10 14:46:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:46:22 2026: Starting Socket connection
+Fri Apr 10 14:46:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:46:22 2026: Starting Socket connection
+Fri Apr 10 14:46:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:46:22 2026: Starting Socket connection
+Fri Apr 10 14:46:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:46:22 2026: Starting Socket connection
+Fri Apr 10 14:46:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:46:22 2026: Starting Socket connection
+Fri Apr 10 14:46:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:46:22 2026: Starting Socket connection
+Fri Apr 10 14:47:31 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:31 2026: Starting Socket connection
+Fri Apr 10 14:47:31 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:31 2026: Starting Socket connection
+Fri Apr 10 14:47:31 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:31 2026: Starting Socket connection
+Fri Apr 10 14:47:31 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:31 2026: Starting Socket connection
+Fri Apr 10 14:47:38 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:38 2026: Starting Socket connection
+Fri Apr 10 14:47:38 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:38 2026: Starting Socket connection
+Fri Apr 10 14:47:38 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:38 2026: Starting Socket connection
+Fri Apr 10 14:47:39 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:39 2026: Starting Socket connection
+Fri Apr 10 14:47:55 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:47:55 2026: Starting Socket connection
+Fri Apr 10 14:48:02 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:48:02 2026: Starting Socket connection
+Fri Apr 10 14:48:02 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:48:02 2026: Starting Socket connection
+Fri Apr 10 14:48:40 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:48:40 2026: Starting Socket connection
+Fri Apr 10 14:48:41 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:48:41 2026: Starting Socket connection
+Fri Apr 10 14:48:48 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:48:48 2026: Starting Socket connection
+Fri Apr 10 14:48:48 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:48:48 2026: Starting Socket connection
+Fri Apr 10 14:49:03 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:49:03 2026: Starting Socket connection
+Fri Apr 10 14:49:11 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:49:11 2026: Starting Socket connection
+Fri Apr 10 14:49:12 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:49:12 2026: Starting Socket connection
+Fri Apr 10 14:49:49 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:49:49 2026: Starting Socket connection
+Fri Apr 10 14:49:51 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:49:51 2026: Starting Socket connection
+Fri Apr 10 14:49:57 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:49:57 2026: Starting Socket connection
+Fri Apr 10 14:49:58 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:49:58 2026: Starting Socket connection
+Fri Apr 10 14:50:09 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:50:09 2026: Starting Socket connection
+Fri Apr 10 14:50:11 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:50:11 2026: Starting Socket connection
+Fri Apr 10 14:50:20 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:50:20 2026: Starting Socket connection
+Fri Apr 10 14:50:21 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:50:21 2026: Starting Socket connection
+Fri Apr 10 14:50:59 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:50:59 2026: Starting Socket connection
+Fri Apr 10 14:51:02 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:51:02 2026: Starting Socket connection
+Fri Apr 10 14:51:06 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:51:06 2026: Starting Socket connection
+Fri Apr 10 14:51:07 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:51:07 2026: Starting Socket connection
+Fri Apr 10 14:51:19 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:51:19 2026: Starting Socket connection
+Fri Apr 10 14:51:28 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:51:28 2026: Starting Socket connection
+Fri Apr 10 14:51:31 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:51:31 2026: Starting Socket connection
+Fri Apr 10 14:51:39 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:51:39 2026: Starting Socket connection
+Fri Apr 10 14:52:03 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:03 2026: Starting Socket connection
+Fri Apr 10 14:52:10 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:10 2026: Starting Socket connection
+Fri Apr 10 14:52:11 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:11 2026: Starting Socket connection
+Fri Apr 10 14:52:16 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:16 2026: Starting Socket connection
+Fri Apr 10 14:52:21 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:21 2026: Starting Socket connection
+Fri Apr 10 14:52:35 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:35 2026: Starting Socket connection
+Fri Apr 10 14:52:40 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:40 2026: Starting Socket connection
+Fri Apr 10 14:52:40 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:40 2026: Starting Socket connection
+Fri Apr 10 14:52:45 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:45 2026: Starting Socket connection
+Fri Apr 10 14:52:50 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:52:50 2026: Starting Socket connection
+Fri Apr 10 14:53:09 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:53:09 2026: Starting Socket connection
+Fri Apr 10 14:53:12 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:53:12 2026: Starting Socket connection
+Fri Apr 10 14:53:14 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:53:14 2026: Starting Socket connection
+Fri Apr 10 14:53:21 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:53:21 2026: Starting Socket connection
+Fri Apr 10 14:53:33 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:53:33 2026: Starting Socket connection
+Fri Apr 10 14:53:38 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:53:38 2026: Starting Socket connection
+Fri Apr 10 14:53:43 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:53:43 2026: Starting Socket connection
+Fri Apr 10 14:53:46 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:53:46 2026: Starting Socket connection
+Fri Apr 10 14:54:07 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:07 2026: Starting Socket connection
+Fri Apr 10 14:54:10 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:10 2026: Starting Socket connection
+Fri Apr 10 14:54:17 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:17 2026: Starting Socket connection
+Fri Apr 10 14:54:23 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:23 2026: Starting Socket connection
+Fri Apr 10 14:54:31 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:31 2026: Starting Socket connection
+Fri Apr 10 14:54:31 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:31 2026: Starting Socket connection
+Fri Apr 10 14:54:34 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:34 2026: Starting Socket connection
+Fri Apr 10 14:54:37 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:37 2026: Starting Socket connection
+Fri Apr 10 14:54:48 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:48 2026: Starting Socket connection
+Fri Apr 10 14:54:50 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:50 2026: Starting Socket connection
+Fri Apr 10 14:54:55 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:55 2026: Starting Socket connection
+Fri Apr 10 14:54:58 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:54:58 2026: Starting Socket connection
+Fri Apr 10 14:55:01 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:01 2026: Starting Socket connection
+Fri Apr 10 14:55:12 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:12 2026: Starting Socket connection
+Fri Apr 10 14:55:14 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:14 2026: Starting Socket connection
+Fri Apr 10 14:55:19 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:19 2026: Starting Socket connection
+Fri Apr 10 14:55:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:22 2026: Starting Socket connection
+Fri Apr 10 14:55:25 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:25 2026: Starting Socket connection
+Fri Apr 10 14:55:26 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:26 2026: Starting Socket connection
+Fri Apr 10 14:55:34 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:34 2026: Starting Socket connection
+Fri Apr 10 14:55:35 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:35 2026: Starting Socket connection
+Fri Apr 10 14:55:39 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:39 2026: Starting Socket connection
+Fri Apr 10 14:55:44 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:44 2026: Starting Socket connection
+Fri Apr 10 14:55:58 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:55:58 2026: Starting Socket connection
+Fri Apr 10 14:56:00 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:00 2026: Starting Socket connection
+Fri Apr 10 14:56:02 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:02 2026: Starting Socket connection
+Fri Apr 10 14:56:08 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:08 2026: Starting Socket connection
+Fri Apr 10 14:56:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:22 2026: Starting Socket connection
+Fri Apr 10 14:56:24 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:24 2026: Starting Socket connection
+Fri Apr 10 14:56:26 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:26 2026: Starting Socket connection
+Fri Apr 10 14:56:26 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:26 2026: Starting Socket connection
+Fri Apr 10 14:56:30 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:30 2026: Starting Socket connection
+Fri Apr 10 14:56:32 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:32 2026: Starting Socket connection
+Fri Apr 10 14:56:34 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:34 2026: Starting Socket connection
+Fri Apr 10 14:56:46 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:46 2026: Starting Socket connection
+Fri Apr 10 14:56:49 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:49 2026: Starting Socket connection
+Fri Apr 10 14:56:50 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:50 2026: Starting Socket connection
+Fri Apr 10 14:56:50 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:50 2026: Starting Socket connection
+Fri Apr 10 14:56:56 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:56 2026: Starting Socket connection
+Fri Apr 10 14:56:58 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:56:58 2026: Starting Socket connection
+Fri Apr 10 14:57:10 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:10 2026: Starting Socket connection
+Fri Apr 10 14:57:13 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:13 2026: Starting Socket connection
+Fri Apr 10 14:57:14 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:14 2026: Starting Socket connection
+Fri Apr 10 14:57:14 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:14 2026: Starting Socket connection
+Fri Apr 10 14:57:20 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:20 2026: Starting Socket connection
+Fri Apr 10 14:57:21 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:21 2026: Starting Socket connection
+Fri Apr 10 14:57:34 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:34 2026: Starting Socket connection
+Fri Apr 10 14:57:35 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:35 2026: Starting Socket connection
+Fri Apr 10 14:57:37 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:37 2026: Starting Socket connection
+Fri Apr 10 14:57:38 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:38 2026: Starting Socket connection
+Fri Apr 10 14:57:38 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:38 2026: Starting Socket connection
+Fri Apr 10 14:57:44 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:44 2026: Starting Socket connection
+Fri Apr 10 14:57:45 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:45 2026: Starting Socket connection
+Fri Apr 10 14:57:46 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:57:46 2026: Starting Socket connection
+Fri Apr 10 14:58:37 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:58:37 2026: Starting Socket connection
+Fri Apr 10 14:58:46 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:58:46 2026: Starting Socket connection
+Fri Apr 10 14:58:47 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:58:47 2026: Starting Socket connection
+Fri Apr 10 14:58:49 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:58:49 2026: Starting Socket connection
+Fri Apr 10 14:58:49 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:58:49 2026: Starting Socket connection
+Fri Apr 10 14:58:53 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:58:53 2026: Starting Socket connection
+Fri Apr 10 14:58:56 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:58:56 2026: Starting Socket connection
+Fri Apr 10 14:59:01 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:59:01 2026: Starting Socket connection
+Fri Apr 10 14:59:38 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:59:38 2026: Starting Socket connection
+Fri Apr 10 14:59:54 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:59:54 2026: Starting Socket connection
+Fri Apr 10 14:59:55 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:59:55 2026: Starting Socket connection
+Fri Apr 10 14:59:56 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:59:56 2026: Starting Socket connection
+Fri Apr 10 14:59:57 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:59:57 2026: Starting Socket connection
+Fri Apr 10 14:59:58 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 14:59:58 2026: Starting Socket connection
+Fri Apr 10 15:00:13 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 15:00:13 2026: Starting Socket connection
+Fri Apr 10 15:00:13 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 15:00:13 2026: Starting Socket connection
+Fri Apr 10 15:00:19 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 15:00:19 2026: Starting Socket connection
+Fri Apr 10 15:00:20 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 15:00:20 2026: Starting Socket connection
+Fri Apr 10 15:00:22 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 15:00:22 2026: Starting Socket connection
+Fri Apr 10 15:01:21 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 15:01:21 2026: Starting Socket connection
+Fri Apr 10 15:02:31 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 15:02:31 2026: Starting Socket connection
+Fri Apr 10 15:03:55 2026: Dispatch Server: Accepted socket connection from client
+Fri Apr 10 15:03:55 2026: Starting Socket connection
+Fri Apr 10 16:15:06 2026: SESSION_MGR: closing session for UUID 'f8cc5cca-c951-40c2-9e27-7cb74c99ec15' with name 'v++_link_shor_qec_kernel'
+Fri Apr 10 16:15:06 2026: KERNEL_SVC: closing session for UUID 'f8cc5cca-c951-40c2-9e27-7cb74c99ec15' with name 'v++_link_shor_qec_kernel'
+Fri Apr 10 16:15:06 2026: GUIDANCE_SMGR: closing session for UUID 'f8cc5cca-c951-40c2-9e27-7cb74c99ec15' with name 'v++_link_shor_qec_kernel'
+Fri Apr 10 16:15:06 2026: SYSTEM_DIAGRAM: closing session for UUID 'f8cc5cca-c951-40c2-9e27-7cb74c99ec15' with name 'v++_link_shor_qec_kernel'
+Fri Apr 10 16:15:06 2026: STOP_SERVER received, server token: fb38f629-df54-48c0-ade8-6ef33e0107ab, passed token: fb38f629-df54-48c0-ade8-6ef33e0107ab
+Fri Apr 10 16:15:06 2026: DISPATCH_HANDLER: 2 connections are active. Stop request denied.

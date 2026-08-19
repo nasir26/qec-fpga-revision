@@ -1,0 +1,242 @@
+<ENTRY>
+{
+ "thisFile": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Apr 10 14:42:14 2026",
+ "timestampMillis": "1775812334246",
+ "buildStep": {
+  "cmdId": "431fbb20-70c1-40b9-b179-171c8af157e2",
+  "name": "v++",
+  "logFile": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/shor_qec_kernel/shor_qec_kernel.steps.log",
+  "commandLine": "/home/abhishek/tools/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -c -t hw --platform /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm --save-temps --log_dir ./vxx_logs --report_dir ./vxx_reports --profile.data all:all:all -k shor_qec_kernel -o shor_qec_kernel.xo shor_qec_kernel.cpp ",
+  "args": [
+   "-c",
+   "-t",
+   "hw",
+   "--platform",
+   "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+   "--save-temps",
+   "--log_dir",
+   "./vxx_logs",
+   "--report_dir",
+   "./vxx_reports",
+   "--profile.data",
+   "all:all:all",
+   "-k",
+   "shor_qec_kernel",
+   "-o",
+   "shor_qec_kernel.xo",
+   "shor_qec_kernel.cpp"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:42:14 2026",
+ "timestampMillis": "1775812334246",
+ "status": {
+  "cmdId": "431fbb20-70c1-40b9-b179-171c8af157e2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Apr 10 14:42:17 2026",
+ "timestampMillis": "1775812337862",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "shor_qec_kernel",
+     "file": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 14:42:17 2026",
+ "timestampMillis": "1775812337868",
+ "buildStep": {
+  "cmdId": "7a46342d-13bf-4318-a8d3-d4a23cef3c20",
+  "name": "vitis_hls",
+  "logFile": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/shor_qec_kernel/shor_qec_kernel/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/shor_qec_kernel/shor_qec_kernel/shor_qec_kernel.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/shor_qec_kernel/shor_qec_kernel/shor_qec_kernel.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:42:17 2026",
+ "timestampMillis": "1775812337869",
+ "status": {
+  "cmdId": "7a46342d-13bf-4318-a8d3-d4a23cef3c20",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378762",
+ "status": {
+  "cmdId": "7a46342d-13bf-4318-a8d3-d4a23cef3c20",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378775",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/shor_qec_kernel/shor_qec_kernel/shor_qec_kernel/solution/.autopilot/db/shor_qec_kernel.design.xml",
+  "name": "shor_qec_kernel",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_REPORT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378776",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/shor_qec_kernel/shor_qec_kernel/shor_qec_kernel/solution/.autopilot/db/.message_syn.xml",
+  "name": "shor_qec_kernel",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_DRC_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378777",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/shor_qec_kernel/hls_reports/shor_qec_kernel_csynth.rpt",
+  "name": "shor_qec_kernel",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_HLS_CSYNTH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378777",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/shor_qec_kernel/shor_qec_kernel/shor_qec_kernel/solution/syn/report/shor_qec_kernel_csynth.xml",
+  "name": "shor_qec_kernel",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_CSYNTH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378779",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/shor_qec_kernel/system_estimate_shor_qec_kernel.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378802",
+ "status": {
+  "cmdId": "431fbb20-70c1-40b9-b179-171c8af157e2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378882",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/shor_qec_kernel/v++_compile_shor_qec_kernel_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:42:58 2026",
+ "timestampMillis": "1775812378883",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/v++_compile_shor_qec_kernel_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

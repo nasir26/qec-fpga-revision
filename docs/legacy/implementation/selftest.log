@@ -1,0 +1,61 @@
+05:37:10  INFO   =================================================================
+05:37:10  INFO     Shor 9-qubit QEC   |   Alveo U55C   |   C-DAC NQM Qniverse
+05:37:10  INFO   =================================================================
+05:37:10  INFO   opening XRT device 0
+05:37:10  INFO   loading xclbin : shor_qec_kernel.xclbin
+05:37:10  INFO   kernel ready  : shor_qec_kernel
+05:37:10  INFO   ── self-test: all 27 single-qubit Pauli errors ──
+05:37:10  INFO   detecting decode path for XRT 2.16.204 …
+05:37:10  INFO     path A: xrt.bo output buffer at arg index 1 …
+05:37:10  INFO       path A failed: vector::_M_range_check: __n (which is 1) >= this->size() (which is 0)
+05:37:10  INFO     path B: BAR4 mmap @ CU_BASE=0x800000 + 0x18 …
+05:37:10  INFO       /sys/bus/pci/devices/0000:01:00.1/resource4: PermissionError
+05:37:10  INFO       Fix: sudo usermod -aG render abhishek  (then re-login)
+05:37:10  INFO       /sys/bus/pci/devices/0000:21:00.1/resource4: PermissionError
+05:37:10  INFO       Fix: sudo usermod -aG render abhishek  (then re-login)
+05:37:10  INFO       /sys/bus/pci/devices/0000:41:00.1/resource4: PermissionError
+05:37:10  INFO       Fix: sudo usermod -aG render abhishek  (then re-login)
+05:37:10  INFO       /sys/bus/pci/devices/0000:81:00.1/resource4: PermissionError
+05:37:10  INFO       Fix: sudo usermod -aG render abhishek  (then re-login)
+05:37:10  WARNING    path C: software decoder active — xclbin NOT exercised
+05:37:10  WARNING    To use real hardware, run ONE of:
+05:37:10  WARNING      sudo usermod -aG render abhishek  (then re-login)
+05:37:10  WARNING      OR: sudo python3 shor_qec_host.py ...
+05:37:10  INFO   active decode path: sw
+05:37:10  INFO     X      q0  synd=0x01  x_corr=000000001  z_corr=000000000  PASS
+05:37:10  INFO     Y      q0  synd=0x41  x_corr=000000001  z_corr=000000001  PASS
+05:37:10  INFO     Z      q0  synd=0x40  x_corr=000000000  z_corr=000000001  PASS
+05:37:10  INFO     X      q1  synd=0x03  x_corr=000000010  z_corr=000000000  PASS
+05:37:10  INFO     Y      q1  synd=0x43  x_corr=000000010  z_corr=000000010  PASS
+05:37:10  INFO     Z      q1  synd=0x40  x_corr=000000000  z_corr=000000001  PASS
+05:37:10  INFO     X      q2  synd=0x02  x_corr=000000100  z_corr=000000000  PASS
+05:37:10  INFO     Y      q2  synd=0x42  x_corr=000000100  z_corr=000000100  PASS
+05:37:10  INFO     Z      q2  synd=0x40  x_corr=000000000  z_corr=000000001  PASS
+05:37:10  INFO     X      q3  synd=0x04  x_corr=000001000  z_corr=000000000  PASS
+05:37:10  INFO     Y      q3  synd=0xC4  x_corr=000001000  z_corr=000001000  PASS
+05:37:10  INFO     Z      q3  synd=0xC0  x_corr=000000000  z_corr=000001000  PASS
+05:37:10  INFO     X      q4  synd=0x0C  x_corr=000010000  z_corr=000000000  PASS
+05:37:10  INFO     Y      q4  synd=0xCC  x_corr=000010000  z_corr=000010000  PASS
+05:37:10  INFO     Z      q4  synd=0xC0  x_corr=000000000  z_corr=000001000  PASS
+05:37:10  INFO     X      q5  synd=0x08  x_corr=000100000  z_corr=000000000  PASS
+05:37:10  INFO     Y      q5  synd=0xC8  x_corr=000100000  z_corr=000100000  PASS
+05:37:10  INFO     Z      q5  synd=0xC0  x_corr=000000000  z_corr=000001000  PASS
+05:37:10  INFO     X      q6  synd=0x10  x_corr=001000000  z_corr=000000000  PASS
+05:37:10  INFO     Y      q6  synd=0x90  x_corr=001000000  z_corr=001000000  PASS
+05:37:10  INFO     Z      q6  synd=0x80  x_corr=000000000  z_corr=001000000  PASS
+05:37:10  INFO     X      q7  synd=0x30  x_corr=010000000  z_corr=000000000  PASS
+05:37:10  INFO     Y      q7  synd=0xB0  x_corr=010000000  z_corr=010000000  PASS
+05:37:10  INFO     Z      q7  synd=0x80  x_corr=000000000  z_corr=001000000  PASS
+05:37:10  INFO     X      q8  synd=0x20  x_corr=100000000  z_corr=000000000  PASS
+05:37:10  INFO     Y      q8  synd=0xA0  x_corr=100000000  z_corr=100000000  PASS
+05:37:10  INFO     Z      q8  synd=0x80  x_corr=000000000  z_corr=001000000  PASS
+05:37:10  INFO   self-test: 27/27
+05:37:10  WARNING  NOTE: self-test ran against SOFTWARE decoder, not the xclbin.
+05:37:10  WARNING  To verify real hardware: sudo usermod -aG render abhishek
+05:37:10  INFO   ── Monte Carlo sweep: single_pauli, 10000 shots/point ──
+05:37:10  INFO   p=0.0010  p_L=0.00000   (0/10000)   52.0 ms   192128 shots/s
+05:37:10  INFO   p=0.0050  p_L=0.00000   (0/10000)   52.2 ms   191702 shots/s
+05:37:11  INFO   p=0.0100  p_L=0.00000   (0/10000)   52.1 ms   191830 shots/s
+05:37:11  INFO   p=0.0500  p_L=0.00000   (0/10000)   54.2 ms   184386 shots/s
+05:37:11  INFO   plot saved: shor_qec_fpga_curve.png
+05:37:11  INFO   done

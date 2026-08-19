@@ -1,0 +1,7 @@
+3dbe7233f3cc8ad424f93750f49cfe9f9d57c43e6bef3db4a811f7fd30fd0c01  ./synthesis/build.log
+ae416a1c7aa0d6c16ab7e3834978cdc1222569467a881eb0a9c7e1087447c559  ./synthesis/shor_qec_kernel.xclbin.info
+44e1cdc32ed87bdcdfca16891349f20f92311f4b26587dc5bbd91fdcb486eb1f  ./synthesis/xcd.log
+8fd940b2f0643ef3941e14f7d2f82969413f77ddb1ddd85080be179ccbff37a9  ./synthesis/shor_qec_kernel.xclbin.link_summary
+78147ca2831861e33e24b56fa8fce9c730399fed244141d3dd4bdee547300b78  ./synthesis/selftest.log
+68ff9a614e23c53601cd38cae428f7f5f604a0700601ec9c77b134101725683f  ./synthesis/shor_qec_kernel.xo.compile_summary
+78147ca2831861e33e24b56fa8fce9c730399fed244141d3dd4bdee547300b78  ./runs/selftest.log

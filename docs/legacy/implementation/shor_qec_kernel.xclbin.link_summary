@@ -1,0 +1,2373 @@
+<ENTRY>
+{
+ "thisFile": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Apr 10 14:43:03 2026",
+ "timestampMillis": "1775812383222",
+ "buildStep": {
+  "cmdId": "0ee4735f-1815-4bc5-971b-345999a02a45",
+  "name": "v++",
+  "logFile": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/link.steps.log",
+  "commandLine": "/home/abhishek/tools/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -l -t hw --platform /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm --save-temps --log_dir ./vxx_logs --report_dir ./vxx_reports --profile.data all:all:all --config shor_link.cfg -o shor_qec_kernel.xclbin shor_qec_kernel.xo ",
+  "args": [
+   "-l",
+   "-t",
+   "hw",
+   "--platform",
+   "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+   "--save-temps",
+   "--log_dir",
+   "./vxx_logs",
+   "--report_dir",
+   "./vxx_reports",
+   "--profile.data",
+   "all:all:all",
+   "--config",
+   "shor_link.cfg",
+   "-o",
+   "shor_qec_kernel.xclbin",
+   "shor_qec_kernel.xo"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_link.cfg",
+    "content": "# ============================================================================\n#  shor_link.cfg  —  v++ link config for shor_qec_kernel\n#  ---------------------------------------------------------------------------\n#  The Shor QEC kernel is AXI-Lite only: no HBM pseudo-channels, no\n#  pointer arguments, nothing to map to a memory bank. That is why this\n#  file is intentionally minimal and does NOT look like v05_link.cfg\n#  (which has 17 `sp=` lines for its 16 HBM banks + gate buffer).\n#\n#  We just declare:\n#    - one compute unit of shor_qec_kernel\n#    - the clock\n#    - a nominal SLR assignment to keep it co-located with (or adjacent\n#      to) v05's quantum_simulator_kernel when they eventually share an\n#      xclbin; for a standalone build any SLR is fine.\n# ============================================================================\n\n[connectivity]\nnk=shor_qec_kernel:1:shor_qec_kernel_1\n\n# Place the CU on SLR0 by default. Change to SLR1 or SLR2 if you later\n# combine this with v05's kernel and want to leave its SLR uncluttered.\nslr=shor_qec_kernel_1:SLR0\n\n[clock]\nfreqHz=300000000:shor_qec_kernel_1.ap_clk\n\n[vivado]\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\n"
+   }
+  ],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:03 2026",
+ "timestampMillis": "1775812383222",
+ "status": {
+  "cmdId": "0ee4735f-1815-4bc5-971b-345999a02a45",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Apr 10 14:43:06 2026",
+ "timestampMillis": "1775812386809",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "shor_qec_kernel",
+    "file": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "shor_qec_kernel",
+     "file": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xo/shor_qec_kernel/shor_qec_kernel/cpu_sources/shor_qec_kernel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "shor_qec_kernel_1"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 14:43:06 2026",
+ "timestampMillis": "1775812386929",
+ "buildStep": {
+  "cmdId": "41fe17f3-0dba-46d3-901f-d1ccf8ad34b7",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo -keep -memory-for-trace HBM[0] --config /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm --target hw --output_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int --temp_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo",
+   "-keep",
+   "-memory-for-trace",
+   "HBM[0]",
+   "--config",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int",
+   "--temp_dir",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/syslinkConfig.ini",
+    "content": "nk=shor_qec_kernel:1:shor_qec_kernel_1\nslr=shor_qec_kernel_1:SLR0\n\nclock.freqHz=300000000:shor_qec_kernel_1.ap_clk\n\n"
+   }
+  ],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:06 2026",
+ "timestampMillis": "1775812386930",
+ "status": {
+  "cmdId": "41fe17f3-0dba-46d3-901f-d1ccf8ad34b7",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:25 2026",
+ "timestampMillis": "1775812405646",
+ "status": {
+  "cmdId": "41fe17f3-0dba-46d3-901f-d1ccf8ad34b7",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 14:43:25 2026",
+ "timestampMillis": "1775812405650",
+ "buildStep": {
+  "cmdId": "3638bd13-b8e4-4544-a093-15736417ee49",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/sdsl.dat -rtd /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/cf2sw.rtd -nofilter /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/cf2sw_full.rtd -xclbin /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.xml -o /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/sdsl.dat",
+   "-rtd",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:25 2026",
+ "timestampMillis": "1775812405651",
+ "status": {
+  "cmdId": "3638bd13-b8e4-4544-a093-15736417ee49",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:30 2026",
+ "timestampMillis": "1775812410949",
+ "status": {
+  "cmdId": "3638bd13-b8e4-4544-a093-15736417ee49",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 14:43:30 2026",
+ "timestampMillis": "1775812410952",
+ "buildStep": {
+  "cmdId": "bbb9a944-70ad-45dc-892d-ca0042560a97",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:30 2026",
+ "timestampMillis": "1775812410953",
+ "status": {
+  "cmdId": "bbb9a944-70ad-45dc-892d-ca0042560a97",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:43:31 2026",
+ "timestampMillis": "1775812411197",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:31 2026",
+ "timestampMillis": "1775812411198",
+ "status": {
+  "cmdId": "bbb9a944-70ad-45dc-892d-ca0042560a97",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 14:43:31 2026",
+ "timestampMillis": "1775812411200",
+ "buildStep": {
+  "cmdId": "7d7d0b46-678b-487c-9668-de6654a45070",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm -s --remote_ip_cache /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/.ipcache --trace_memory HBM[0] --output_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int --log_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/link --report_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link --config /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/vplConfig.ini -k /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link --no-info --iprepo /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xo/ip_repo/xilinx_com_hls_shor_qec_kernel_1_0 --messageDb /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link/vpl.pb /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+   "-s",
+   "--remote_ip_cache",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/.ipcache",
+   "--trace_memory",
+   "HBM[0]",
+   "--output_dir",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int",
+   "--log_dir",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/link",
+   "--report_dir",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link",
+   "--config",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/vplConfig.ini",
+   "-k",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link",
+   "--no-info",
+   "--iprepo",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xo/ip_repo/xilinx_com_hls_shor_qec_kernel_1_0",
+   "--messageDb",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link/vpl.pb",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=compiler.vppCurrentWorkingDir=/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files\nmisc=BinaryName=shor_qec_kernel\n\n[connectivity]\nnk=shor_qec_kernel:1:shor_qec_kernel_1\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\n\n"
+   }
+  ],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:31 2026",
+ "timestampMillis": "1775812411200",
+ "status": {
+  "cmdId": "7d7d0b46-678b-487c-9668-de6654a45070",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Apr 10 14:43:32 2026",
+ "timestampMillis": "1775812412887",
+ "buildStep": {
+  "cmdId": "e5078007-216a-49c0-9d3a-0df981c58bec",
+  "name": "vpl",
+  "logFile": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/link.steps.log",
+  "commandLine": "/home/abhishek/tools/Vitis/2023.2/bin/unwrapped/lnx64.o/vpl -t hw -f /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm -s --remote_ip_cache /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/.ipcache --trace_memory HBM[0] --output_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int --log_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/link --report_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link --config /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/vplConfig.ini -k /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link --no-info --iprepo /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xo/ip_repo/xilinx_com_hls_shor_qec_kernel_1_0 --messageDb /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link/vpl.pb /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:32 2026",
+ "timestampMillis": "1775812412887",
+ "status": {
+  "cmdId": "e5078007-216a-49c0-9d3a-0df981c58bec",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Fri Apr 10 14:43:37 2026",
+ "timestampMillis": "1775812417262",
+ "vivadoProject": {
+  "openDir": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 14:43:37 2026",
+ "timestampMillis": "1775812417263",
+ "buildStep": {
+  "cmdId": "4eba9adf-4672-4ab0-be86-e3e2ec376f53",
+  "name": "vivado",
+  "logFile": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:43:37 2026",
+ "timestampMillis": "1775812417263",
+ "status": {
+  "cmdId": "4eba9adf-4672-4ab0-be86-e3e2ec376f53",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:45:17 2026",
+ "timestampMillis": "1775812517376",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/automation_summary_pre_synthesis.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Apr 10 15:03:48 2026",
+ "timestampMillis": "1775813628706",
+ "buildStep": {
+  "cmdId": "88ac9b63-7c9a-4315-9e35-4437c236e43f",
+  "name": "vivado.impl",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/vivado/vpl"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 15:03:48 2026",
+ "timestampMillis": "1775813628707",
+ "status": {
+  "cmdId": "88ac9b63-7c9a-4315-9e35-4437c236e43f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Apr 10 15:03:48 2026",
+ "timestampMillis": "1775813628708",
+ "buildStep": {
+  "cmdId": "dc69db86-22e5-4796-9278-05d98050cbf7",
+  "name": "vivado.impl.impl_1",
+  "logFile": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/vivado/vpl/prj/prj.runs/impl_1/runme.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/vivado/vpl/prj/prj.runs/impl_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 15:03:48 2026",
+ "timestampMillis": "1775813628709",
+ "status": {
+  "cmdId": "dc69db86-22e5-4796-9278-05d98050cbf7",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:01:48 2026",
+ "timestampMillis": "1775817108803",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/vivado/vpl/prj/prj.runs/impl_1/system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:03:09 2026",
+ "timestampMillis": "1775817189686",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/kernel_service.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:03:09 2026",
+ "timestampMillis": "1775817189687",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/kernel_service.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:04:57 2026",
+ "timestampMillis": "1775817297880",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/vivado/vpl/prj/prj.runs/impl_1/dr_timing_summary.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_FAIL",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900922",
+ "status": {
+  "cmdId": "4eba9adf-4672-4ab0-be86-e3e2ec376f53",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900969",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_full_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900970",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900971",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900971",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900972",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_slr_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900973",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_full_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900973",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900974",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_full_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900974",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900975",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_full_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900975",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_slr_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900976",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900976",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900977",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900977",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:00 2026",
+ "timestampMillis": "1775817900978",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901030",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_regslice_control_userpf_1_synth_1_ulp_regslice_control_userpf_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901031",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_regslice_control_userpf_2_synth_1_ulp_regslice_control_userpf_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901031",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_ii_level0_wire_0_synth_1_ulp_ii_level0_wire_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901032",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_ulp_cmp_0_synth_1_ulp_ulp_cmp_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901033",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_hmss_0_0_synth_1_ulp_hmss_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901033",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_axi_vip_data_0_synth_1_ulp_axi_vip_data_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901034",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_ulp_ucs_0_synth_1_ulp_ulp_ucs_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901034",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_ctrl_slr0_0_synth_1_ulp_proc_sys_reset_ctrl_slr0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901035",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_ctrl_slr1_0_synth_1_ulp_proc_sys_reset_ctrl_slr1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901035",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_ctrl_slr2_0_synth_1_ulp_proc_sys_reset_ctrl_slr2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901036",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_kernel_slr0_0_synth_1_ulp_proc_sys_reset_kernel_slr0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901036",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_kernel_slr1_0_synth_1_ulp_proc_sys_reset_kernel_slr1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901037",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_kernel_slr2_0_synth_1_ulp_proc_sys_reset_kernel_slr2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901038",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_kernel2_slr0_0_synth_1_ulp_proc_sys_reset_kernel2_slr0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901038",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_kernel2_slr1_0_synth_1_ulp_proc_sys_reset_kernel2_slr1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901039",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_kernel2_slr2_0_synth_1_ulp_proc_sys_reset_kernel2_slr2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901040",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_freerun_slr0_0_synth_1_ulp_proc_sys_reset_freerun_slr0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901040",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_freerun_slr1_0_synth_1_ulp_proc_sys_reset_freerun_slr1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901041",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_proc_sys_reset_freerun_slr2_0_synth_1_ulp_proc_sys_reset_freerun_slr2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901042",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_axi_gpio_null_0_synth_1_ulp_axi_gpio_null_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901042",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_axi_vip_ctrl_userpf_0_synth_1_ulp_axi_vip_ctrl_userpf_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901043",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_regslice_control_userpf_0_synth_1_ulp_regslice_control_userpf_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901043",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_clk_wiz_0_synth_1_ulp_clk_wiz_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901044",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_rst_clk_wiz_300M_0_synth_1_ulp_rst_clk_wiz_300M_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901045",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_097b_build_info_0_synth_1_bd_097b_build_info_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901045",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_7cf0_axi_jtag_0_synth_1_bd_7cf0_axi_jtag_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901046",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_097b_user_debug_bridge_0_synth_1_bd_097b_user_debug_bridge_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901046",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_7cf0_bs_switch_1_0_synth_1_bd_7cf0_bs_switch_1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901047",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_7cf0_bsip_0_synth_1_bd_7cf0_bsip_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901047",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_58f6_lut_buffer_0_synth_1_bd_58f6_lut_buffer_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901048",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_58f6_xsdbm_0_synth_1_bd_58f6_xsdbm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901048",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_097b_user_debug_hub_0_synth_1_bd_097b_user_debug_hub_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901049",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_xbar_1_synth_1_bd_22c0_xbar_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901049",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_shor_qec_kernel_1_0_synth_1_ulp_shor_qec_kernel_1_0_utilization_synth.rpt",
+  "name": "shor_qec_kernel",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901050",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_fanout_aresetn_hbm_0_synth_1_bd_22c0_fanout_aresetn_hbm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901050",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_psreset_hbm_0_synth_1_bd_22c0_psreset_hbm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901051",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_fanout_aresetn_kernel_01_slr2_4_0_synth_1_bd_22c0_fanout_aresetn_kernel_01_slr2_4_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901051",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_frequency_counter_aclk_kernel_00_0_synth_1_bd_22c0_frequency_counter_aclk_kernel_00_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901052",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_aclk_kernel_00_cont_adapt_0_synth_1_bd_22c0_aclk_kernel_00_cont_adapt_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901053",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_clkwiz_hbm_0_synth_1_bd_22c0_clkwiz_hbm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901053",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_frequency_counter_aclk_hbm_0_synth_1_bd_22c0_frequency_counter_aclk_hbm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901054",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_psreset_kernel_00_0_synth_1_bd_22c0_psreset_kernel_00_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901054",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_psreset_aclk_freerun_0_synth_1_bd_22c0_psreset_aclk_freerun_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901055",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_clock_throttling_aclk_kernel_01_0_synth_1_bd_22c0_clock_throttling_aclk_kernel_01_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901055",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_frequency_counter_aclk_0_synth_1_bd_22c0_frequency_counter_aclk_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901056",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_fanout_aresetn_kernel_00_slr0_1_0_synth_1_bd_22c0_fanout_aresetn_kernel_00_slr0_1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901057",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_clkwiz_aclk_kernel_00_0_synth_1_bd_22c0_clkwiz_aclk_kernel_00_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901057",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_clock_throttling_avg_0_synth_1_bd_22c0_clock_throttling_avg_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901058",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_gapping_demand_toggle_0_synth_1_bd_22c0_gapping_demand_toggle_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901059",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_gapping_demand_update_0_synth_1_bd_22c0_gapping_demand_update_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901059",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_clock_throttling_aclk_kernel_00_0_synth_1_bd_22c0_clock_throttling_aclk_kernel_00_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901060",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_fanout_aresetn_ctrl_slr0_2_0_synth_1_bd_22c0_fanout_aresetn_ctrl_slr0_2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901060",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_build_info_0_synth_1_bd_22c0_build_info_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901061",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_psreset_kernel_01_0_synth_1_bd_22c0_psreset_kernel_01_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901061",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_gpio_gapping_demand_0_synth_1_bd_22c0_gpio_gapping_demand_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901063",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_fanout_aresetn_pcie_slr0_3_0_synth_1_bd_22c0_fanout_aresetn_pcie_slr0_3_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901063",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_clock_shutdown_latch_0_synth_1_bd_22c0_clock_shutdown_latch_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901064",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_clk_hbm_adapt_0_synth_1_bd_22c0_clk_hbm_adapt_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901064",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_clkwiz_aclk_kernel_01_0_synth_1_bd_22c0_clkwiz_aclk_kernel_01_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901067",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_xbar_0_synth_1_bd_22c0_xbar_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901067",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_gpio_ucs_control_status_0_synth_1_bd_22c0_gpio_ucs_control_status_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901068",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_aclk_kernel_01_adapt_0_synth_1_bd_22c0_aclk_kernel_01_adapt_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901068",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_xbar_2_synth_1_ulp_xbar_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901069",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_xbar_3_synth_1_ulp_xbar_3_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901069",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_s00_regslice_18_synth_1_ulp_s00_regslice_18_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901070",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_85ad_init_reduce_0_synth_1_bd_85ad_init_reduce_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901070",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_22c0_auto_cc_0_synth_1_bd_22c0_auto_cc_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901071",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_85ad_hbm_inst_0_synth_1_bd_85ad_hbm_inst_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901072",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_auto_cc_1_synth_1_ulp_auto_cc_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901072",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_m00_regslice_0_synth_1_ulp_m00_regslice_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901073",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_m01_regslice_0_synth_1_ulp_m01_regslice_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901074",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_auto_cc_2_synth_1_ulp_auto_cc_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901074",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/ulp_s00_regslice_19_synth_1_ulp_s00_regslice_19_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901075",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_85ad_slice0_12_0_synth_1_bd_85ad_slice0_12_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901075",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_85ad_vip_S00_0_synth_1_bd_85ad_vip_S00_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901076",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_85ad_interconnect0_12_0_synth_1_bd_85ad_interconnect0_12_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901077",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_85ad_util_vector_logic_0_synth_1_bd_85ad_util_vector_logic_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901077",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_85ad_axi_apb_bridge_inst_0_synth_1_bd_85ad_axi_apb_bridge_inst_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901078",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/syn/bd_85ad_hbm_reset_sync_SLR2_0_synth_1_bd_85ad_hbm_reset_sync_SLR2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901079",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": "dc69db86-22e5-4796-9278-05d98050cbf7"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901105",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "dc69db86-22e5-4796-9278-05d98050cbf7"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901124",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "dc69db86-22e5-4796-9278-05d98050cbf7"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901125",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "dc69db86-22e5-4796-9278-05d98050cbf7"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901141",
+ "status": {
+  "cmdId": "e5078007-216a-49c0-9d3a-0df981c58bec",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901174",
+ "status": {
+  "cmdId": "7d7d0b46-678b-487c-9668-de6654a45070",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901177",
+ "buildStep": {
+  "cmdId": "b01d34c3-aff6-4c0c-a8fb-494a736904b2",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901178",
+ "status": {
+  "cmdId": "b01d34c3-aff6-4c0c-a8fb-494a736904b2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901181",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901185",
+ "buildStep": {
+  "cmdId": "08d9f56b-0aa7-42bf-91e8-5ba519b3b096",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -force-enable-memory HBM[0] -a /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/address_map.xml -sdsl /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/sdsl.dat -xclbin /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.xml -rtd /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.rtd -o /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.xml",
+  "args": [
+   "-force-enable-memory",
+   "HBM[0]",
+   "-a",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/address_map.xml",
+   "-sdsl",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.rtd",
+   "-o",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:01 2026",
+ "timestampMillis": "1775817901185",
+ "status": {
+  "cmdId": "08d9f56b-0aa7-42bf-91e8-5ba519b3b096",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905477",
+ "status": {
+  "cmdId": "08d9f56b-0aa7-42bf-91e8-5ba519b3b096",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905478",
+ "buildStep": {
+  "cmdId": "90fd4c95-1aff-4c71-bdef-fc8f41f0318f",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.rtd",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905479",
+ "status": {
+  "cmdId": "90fd4c95-1aff-4c71-bdef-fc8f41f0318f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905484",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905484",
+ "status": {
+  "cmdId": "90fd4c95-1aff-4c71-bdef-fc8f41f0318f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905485",
+ "buildStep": {
+  "cmdId": "62413914-377e-4399-aa60-2c64c4d466bf",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeAutomationSummary",
+  "args": [
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/automation_summary.txt"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905485",
+ "status": {
+  "cmdId": "62413914-377e-4399-aa60-2c64c4d466bf",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905487",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/automation_summary.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905488",
+ "status": {
+  "cmdId": "62413914-377e-4399-aa60-2c64c4d466bf",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905489",
+ "status": {
+  "cmdId": "b01d34c3-aff6-4c0c-a8fb-494a736904b2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905492",
+ "buildStep": {
+  "cmdId": "63f929d3-0f2a-4214-851b-14e964d9eac5",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section BITSTREAM:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.rtd --append-section :JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_xml.rtd --add-section BUILD_METADATA:JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.xml --add-section SYSTEM_METADATA:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u55c_gen3x16_xdma_3_202210_1 --output /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin",
+  "args": [
+   "--add-section",
+   "BITSTREAM:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/partial.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:true",
+   "--add-section",
+   ":JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.rtd",
+   "--append-section",
+   ":JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--key-value",
+   "SYS:PlatformVBNV:xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "--output",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905492",
+ "status": {
+  "cmdId": "63f929d3-0f2a-4214-851b-14e964d9eac5",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905731",
+ "status": {
+  "cmdId": "63f929d3-0f2a-4214-851b-14e964d9eac5",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905734",
+ "buildStep": {
+  "cmdId": "3e40ba09-df1f-45ee-8010-8b3c95f6c1e3",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin.info --input /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin.info",
+   "--input",
+   "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:05 2026",
+ "timestampMillis": "1775817905735",
+ "status": {
+  "cmdId": "3e40ba09-df1f-45ee-8010-8b3c95f6c1e3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906234",
+ "status": {
+  "cmdId": "3e40ba09-df1f-45ee-8010-8b3c95f6c1e3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906237",
+ "buildStep": {
+  "cmdId": "47004264-b7f9-44c7-9e41-efb4d95a4e9a",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906238",
+ "status": {
+  "cmdId": "47004264-b7f9-44c7-9e41-efb4d95a4e9a",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906238",
+ "status": {
+  "cmdId": "47004264-b7f9-44c7-9e41-efb4d95a4e9a",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906246",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/system_estimate_shor_qec_kernel.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906259",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906259",
+ "status": {
+  "cmdId": "0ee4735f-1815-4bc5-971b-345999a02a45",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906340",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/v++_link_shor_qec_kernel_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 16:15:06 2026",
+ "timestampMillis": "1775817906340",
+ "report": {
+  "path": "/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/v++_link_shor_qec_kernel_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -1,0 +1,385 @@
+Autocomplete not enabled for XRT tools
+XILINX_XRT        : /opt/xilinx/xrt
+PATH              : /opt/xilinx/xrt/bin:/home/abhishek/tools/Vitis_HLS/2023.2/bin:/home/abhishek/tools/Model_Composer/2023.2/bin:/home/abhishek/tools/Vitis/2023.2/bin:/home/abhishek/tools/Vitis/2023.2/gnu/microblaze/lin/bin:/home/abhishek/tools/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/abhishek/tools/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/home/abhishek/tools/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/home/abhishek/tools/Vitis/2023.2/gnu/aarch64/lin/aarch64-linux/bin:/home/abhishek/tools/Vitis/2023.2/gnu/aarch64/lin/aarch64-none/bin:/home/abhishek/tools/Vitis/2023.2/gnu/armr5/lin/gcc-arm-none-eabi/bin:/home/abhishek/tools/Vitis/2023.2/tps/lnx64/cmake-3.3.2/bin:/home/abhishek/tools/Vitis/2023.2/aietools/bin:/home/abhishek/tools/Vitis/2023.2/gnu/riscv/lin/riscv64-unknown-elf/bin:/home/abhishek/tools/Vivado/2023.2/bin:/home/abhishek/tools/DocNav:/opt/xilinx/xrt/bin:/home/abhishek/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/abhishek/.local/bin
+LD_LIBRARY_PATH   : /opt/xilinx/xrt/lib:/opt/xilinx/xrt/lib:/opt/xilinx/xrt/lib/:/opt/xilinx/xrt/lib/:/opt/xilinx/xrt/lib:/opt/xilinx/xrt/lib/:/opt/xilinx/xrt/lib/:/opt/xilinx/xrt/lib:/opt/xilinx/xrm/lib:/opt/xilinx/xrt/lib:/opt/xilinx/xrm/lib:/opt/xilinx/xrt/lib
+PYTHONPATH        : /opt/xilinx/xrt/python
+── target   : hw
+── platform : /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
+
+============================================================
+  Compiling shor_qec_kernel.cpp → shor_qec_kernel.xo
+============================================================
+Option Map File Used: '/home/abhishek/tools/Vitis/2023.2/data/vitis/vpp/optMap.xml'
+INFO: [v++ 82-4274] Default memory will be used for trace offload
+
+****** v++ v2023.2 (64-bit)
+  **** SW Build 4026344 on 2023-10-11-15:42:10
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/shor_qec_kernel
+	Log files: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/shor_qec_kernel
+Running Dispatch Server on port: 34501
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo.compile_summary, at Fri Apr 10 14:42:14 2026
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/shor_qec_kernel/v++_compile_shor_qec_kernel_guidance.html', at Fri Apr 10 14:42:14 2026
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2023.2
+INFO: [v++ 60-585] Compiling for hardware target
+INFO: [v++ 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
+INFO: [v++ 60-242] Creating kernel: 'shor_qec_kernel'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: shor_qec_kernel Log file: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/shor_qec_kernel/shor_qec_kernel/vitis_hls.log :
+INFO: [v++ 204-61] Pipelining function 'shor_qec_kernel'.
+INFO: [v++ 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'shor_qec_kernel'
+INFO: [v++ 200-789] **** Estimated Fmax: 431.41 MHz
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/shor_qec_kernel/system_estimate_shor_qec_kernel.xtxt
+INFO: [v++ 60-586] Created shor_qec_kernel.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 47s
+INFO: [v++ 60-1653] Closing dispatch client.
+
+============================================================
+  Linking shor_qec_kernel.xclbin  (config: shor_link.cfg)
+============================================================
+WARNING: [v++ 60-1603] The supplied option 'clock.freqHz' is deprecated. The supplied option is replaced by an alternative feature controlled by option 'freqhz'. 
+Option Map File Used: '/home/abhishek/tools/Vitis/2023.2/data/vitis/vpp/optMap.xml'
+INFO: [v++ 82-4274] Default memory will be used for trace offload
+
+****** v++ v2023.2 (64-bit)
+  **** SW Build 4026344 on 2023-10-11-15:42:10
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link
+	Log files: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/link
+Running Dispatch Server on port: 35611
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin.link_summary, at Fri Apr 10 14:43:03 2026
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/v++_link_shor_qec_kernel_guidance.html', at Fri Apr 10 14:43:03 2026
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2023.2
+INFO: [v++ 82-4274] Default memory will be used for trace offload
+INFO: [v++ 60-629] Linking for hardware target
+INFO: [v++ 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
+INFO: [v++ 60-1332] Run 'run_link' status: Not started
+INFO: [v++ 60-1443] [14:43:06] Run run_link: Step system_link: Started
+INFO: [v++ 60-1453] Command Line: system_link --xo /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo -keep -memory-for-trace HBM[0] --config /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm --target hw --output_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int --temp_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link
+INFO: [v++ 60-1454] Run Directory: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link
+INFO: [SYSTEM_LINK 82-70] Extracting xo v3 file /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xo
+INFO: [SYSTEM_LINK 82-53] Creating IP database /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-38] [14:43:08] build_xd_ip_db started: /home/abhishek/tools/Vitis/2023.2/bin/build_xd_ip_db -ip_search 0  -sds-pf /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/hw.hpfm -clkid 0 -ip /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/iprepo/xilinx_com_hls_shor_qec_kernel_1_0,shor_qec_kernel -o /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-37] [14:43:12] build_xd_ip_db finished successfully
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 458.449 ; gain = 0.000 ; free physical = 459975 ; free virtual = 957422
+INFO: [SYSTEM_LINK 82-51] Create system connectivity graph
+INFO: [SYSTEM_LINK 82-102] Applying explicit connections to the system connectivity graph: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [SYSTEM_LINK 82-38] [14:43:12] cfgen started: /home/abhishek/tools/Vitis/2023.2/bin/cfgen  -nk shor_qec_kernel:1:shor_qec_kernel_1 -slr shor_qec_kernel_1:SLR0 -clock.freqHz 300000000:shor_qec_kernel_1.ap_clk -dpa_mem_offload true -dmclkid 0 -r /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [CFGEN 83-0] Kernel Specs: 
+INFO: [CFGEN 83-0]   kernel: shor_qec_kernel, num: 1  {shor_qec_kernel_1}
+INFO: [CFGEN 83-0] SLR Specs: 
+INFO: [CFGEN 83-0]   instance: shor_qec_kernel_1, SLR: SLR0
+INFO: [SYSTEM_LINK 82-37] [14:43:21] cfgen finished successfully
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 458.449 ; gain = 0.000 ; free physical = 459973 ; free virtual = 957419
+INFO: [SYSTEM_LINK 82-52] Create top-level block diagram
+INFO: [SYSTEM_LINK 82-38] [14:43:21] cf2bd started: /home/abhishek/tools/Vitis/2023.2/bin/cf2bd  --linux --trace_buffer 1024 --input_file /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/cfgraph/cfgen_cfgraph.xml --ip_db /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/_sysl/.cdb/xd_ip_db.xml --cf_name dr --working_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/_sysl/.xsd --temp_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link --output_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int --target_bd ulp.bd
+INFO: [CF2BD 82-31] Launching cf2xd: cf2xd -linux -trace-buffer 1024 -i /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/cfgraph/cfgen_cfgraph.xml -r /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o dr.xml
+INFO: [CF2BD 82-28] cf2xd finished successfully
+INFO: [CF2BD 82-31] Launching cf_xsd: cf_xsd -disable-address-gen -bd ulp.bd -dn dr -dp /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/sys_link/_sysl/.xsd
+INFO: [CF2BD 82-28] cf_xsd finished successfully
+INFO: [SYSTEM_LINK 82-37] [14:43:25] cf2bd finished successfully
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 458.449 ; gain = 0.000 ; free physical = 459961 ; free virtual = 957412
+INFO: [v++ 60-1441] [14:43:25] Run run_link: Step system_link: Completed
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 467.309 ; gain = 0.000 ; free physical = 460024 ; free virtual = 957474
+INFO: [v++ 60-1443] [14:43:25] Run run_link: Step cf2sw: Started
+INFO: [v++ 60-1453] Command Line: cf2sw -sdsl /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/sdsl.dat -rtd /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/cf2sw.rtd -nofilter /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/cf2sw_full.rtd -xclbin /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.xml -o /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.1.xml
+INFO: [v++ 60-1454] Run Directory: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link
+INFO: [v++ 60-1441] [14:43:30] Run run_link: Step cf2sw: Completed
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 467.309 ; gain = 0.000 ; free physical = 460025 ; free virtual = 957478
+INFO: [v++ 60-1443] [14:43:30] Run run_link: Step rtd2_system_diagram: Started
+INFO: [v++ 60-1453] Command Line: rtd2SystemDiagram
+INFO: [v++ 60-1454] Run Directory: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link
+INFO: [v++ 60-1441] [14:43:31] Run run_link: Step rtd2_system_diagram: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.25 . Memory (MB): peak = 467.309 ; gain = 0.000 ; free physical = 460005 ; free virtual = 957457
+INFO: [v++ 60-1443] [14:43:31] Run run_link: Step vpl: Started
+INFO: [v++ 60-1453] Command Line: vpl -t hw -f /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm -s --remote_ip_cache /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/.ipcache --trace_memory HBM[0] --output_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int --log_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/link --report_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link --config /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/vplConfig.ini -k /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link --no-info --iprepo /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xo/ip_repo/xilinx_com_hls_shor_qec_kernel_1_0 --messageDb /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link/vpl.pb /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/dr.bd.tcl
+INFO: [v++ 60-1454] Run Directory: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link
+
+****** vpl v2023.2 (64-bit)
+  **** SW Build 4026344 on 2023-10-11-15:42:10
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+INFO: [VPL 60-839] Read in kernel information from file '/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/kernel_info.dat'.
+INFO: [VPL 74-78] Compiler Version string: 2023.2
+INFO: [VPL 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
+WARNING: [VPL 60-2447] Invalid --profile.data option value: 'all:all:all'. Interface not found: 'all'.
+INFO: [VPL 60-1032] Extracting hardware platform to /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/vivado/vpl/.local/hw_platform
+[14:43:43] Run vpl: Step create_project: Started
+Creating Vivado project.
+[14:43:51] Run vpl: Step create_project: Completed
+[14:43:51] Run vpl: Step create_bd: Started
+[14:44:19] Run vpl: Step create_bd: Completed
+[14:44:19] Run vpl: Step update_bd: Started
+[14:44:19] Run vpl: Step update_bd: Completed
+[14:44:19] Run vpl: Step generate_target: Started
+[14:45:17] Run vpl: Step generate_target: Completed
+[14:45:17] Run vpl: Step config_hw_runs: Started
+[14:46:10] Run vpl: Step config_hw_runs: Completed
+[14:46:10] Run vpl: Step synth: Started
+[14:46:41] Block-level synthesis in progress, 0 of 134 jobs complete, 8 jobs running.
+[14:47:11] Block-level synthesis in progress, 0 of 134 jobs complete, 8 jobs running.
+[14:47:41] Block-level synthesis in progress, 9 of 134 jobs complete, 7 jobs running.
+[14:48:11] Block-level synthesis in progress, 11 of 134 jobs complete, 8 jobs running.
+[14:48:41] Block-level synthesis in progress, 15 of 134 jobs complete, 6 jobs running.
+[14:49:11] Block-level synthesis in progress, 18 of 134 jobs complete, 7 jobs running.
+[14:49:42] Block-level synthesis in progress, 22 of 134 jobs complete, 4 jobs running.
+[14:50:12] Block-level synthesis in progress, 26 of 134 jobs complete, 6 jobs running.
+[14:50:42] Block-level synthesis in progress, 26 of 134 jobs complete, 8 jobs running.
+[14:51:12] Block-level synthesis in progress, 31 of 134 jobs complete, 7 jobs running.
+[14:51:42] Block-level synthesis in progress, 34 of 134 jobs complete, 8 jobs running.
+[14:52:12] Block-level synthesis in progress, 39 of 134 jobs complete, 6 jobs running.
+[14:52:43] Block-level synthesis in progress, 44 of 134 jobs complete, 6 jobs running.
+[14:53:13] Block-level synthesis in progress, 48 of 134 jobs complete, 6 jobs running.
+[14:53:43] Block-level synthesis in progress, 52 of 134 jobs complete, 6 jobs running.
+[14:54:13] Block-level synthesis in progress, 56 of 134 jobs complete, 6 jobs running.
+[14:54:44] Block-level synthesis in progress, 64 of 134 jobs complete, 4 jobs running.
+[14:55:14] Block-level synthesis in progress, 71 of 134 jobs complete, 3 jobs running.
+[14:55:44] Block-level synthesis in progress, 76 of 134 jobs complete, 7 jobs running.
+[14:56:14] Block-level synthesis in progress, 84 of 134 jobs complete, 3 jobs running.
+[14:56:45] Block-level synthesis in progress, 92 of 134 jobs complete, 2 jobs running.
+[14:57:15] Block-level synthesis in progress, 98 of 134 jobs complete, 6 jobs running.
+[14:57:45] Block-level synthesis in progress, 106 of 134 jobs complete, 6 jobs running.
+[14:58:15] Block-level synthesis in progress, 106 of 134 jobs complete, 8 jobs running.
+[14:58:46] Block-level synthesis in progress, 113 of 134 jobs complete, 2 jobs running.
+[14:59:16] Block-level synthesis in progress, 114 of 134 jobs complete, 8 jobs running.
+[14:59:46] Block-level synthesis in progress, 120 of 134 jobs complete, 3 jobs running.
+[15:00:17] Block-level synthesis in progress, 125 of 134 jobs complete, 5 jobs running.
+[15:00:47] Block-level synthesis in progress, 128 of 134 jobs complete, 5 jobs running.
+[15:01:17] Block-level synthesis in progress, 133 of 134 jobs complete, 0 jobs running.
+[15:01:48] Block-level synthesis in progress, 133 of 134 jobs complete, 1 job running.
+[15:02:18] Block-level synthesis in progress, 134 of 134 jobs complete, 0 jobs running.
+[15:02:48] Top-level synthesis in progress.
+[15:03:19] Top-level synthesis in progress.
+[15:03:48] Run vpl: Step synth: Completed
+[15:03:48] Run vpl: Step impl: Started
+[15:11:54] Finished 2nd of 6 tasks (FPGA linking synthesized kernels to platform). Elapsed time: 00h 28m 21s 
+
+[15:11:54] Starting logic optimization..
+[15:11:54] Phase 1 Initialization
+[15:11:54] Phase 1.1 Core Generation And Design Setup
+[15:12:25] Phase 1.2 Setup Constraints And Sort Netlist
+[15:12:55] Phase 2 Timer Update And Timing Data Collection
+[15:12:55] Phase 2.1 Timer Update
+[15:12:55] Phase 2.2 Timing Data Collection
+[15:13:25] Phase 3 Retarget
+[15:13:25] Phase 4 Constant propagation
+[15:13:56] Phase 5 Sweep
+[15:14:26] Phase 6 BUFG optimization
+[15:14:56] Phase 7 Shift Register Optimization
+[15:14:56] Phase 8 Post Processing Netlist
+[15:15:27] Phase 9 Finalization
+[15:15:27] Phase 9.1 Finalizing Design Cores and Updating Shapes
+[15:15:27] Phase 9.2 Verifying Netlist Connectivity
+[15:16:27] Finished 3rd of 6 tasks (FPGA logic optimization). Elapsed time: 00h 04m 33s 
+
+[15:16:27] Starting logic placement..
+[15:16:58] Phase 1 Placer Initialization
+[15:16:58] Phase 1.1 Placer Initialization Netlist Sorting
+[15:20:00] Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+[15:20:30] Phase 1.3 Build Placer Netlist Model
+[15:22:32] Phase 1.4 Constrain Clocks/Macros
+[15:22:32] Phase 2 Global Placement
+[15:22:32] Phase 2.1 Floorplanning
+[15:23:02] Phase 2.1.1 Partition Driven Placement
+[15:23:02] Phase 2.1.1.1 PBP: Partition Driven Placement
+[15:23:32] Phase 2.1.1.2 PBP: Clock Region Placement
+[15:24:03] Phase 2.1.1.3 PBP: Compute Congestion
+[15:24:33] Phase 2.1.1.4 PBP: UpdateTiming
+[15:24:33] Phase 2.1.1.5 PBP: Add part constraints
+[15:25:04] Phase 2.2 Physical Synthesis After Floorplan
+[15:25:34] Phase 2.3 Update Timing before SLR Path Opt
+[15:25:34] Phase 2.4 Post-Processing in Floorplanning
+[15:25:34] Phase 2.5 Global Placement Core
+[15:34:11] Phase 2.5.1 UpdateTiming Before Physical Synthesis
+[15:34:11] Phase 2.5.2 Physical Synthesis In Placer
+[15:36:12] Phase 3 Detail Placement
+[15:36:12] Phase 3.1 Commit Multi Column Macros
+[15:36:43] Phase 3.2 Commit Most Macros & LUTRAMs
+[15:37:43] Phase 3.3 Small Shape DP
+[15:37:43] Phase 3.3.1 Small Shape Clustering
+[15:37:43] Phase 3.3.2 Slice Area Swap
+[15:37:43] Phase 3.3.2.1 Slice Area Swap Initial
+[15:38:44] Phase 3.4 Place Remaining
+[15:39:15] Phase 3.5 Re-assign LUT pins
+[15:39:15] Phase 3.6 Pipeline Register Optimization
+[15:39:15] Phase 3.7 Fast Optimization
+[15:40:15] Phase 4 Post Placement Optimization and Clean-Up
+[15:40:15] Phase 4.1 Post Commit Optimization
+[15:41:16] Phase 4.1.1 Post Placement Optimization
+[15:41:16] Phase 4.1.1.1 BUFG Insertion
+[15:41:16] Phase 1 Physical Synthesis Initialization
+[15:41:47] Phase 4.1.1.2 BUFG Replication
+[15:41:47] Phase 4.1.1.3 Post Placement Timing Optimization
+[15:43:48] Phase 4.1.1.4 Replication
+[15:44:49] Phase 4.2 Post Placement Cleanup
+[15:44:49] Phase 4.3 Placer Reporting
+[15:44:49] Phase 4.3.1 Print Estimated Congestion
+[15:45:19] Phase 4.4 Final Placement Cleanup
+[15:47:51] Finished 4th of 6 tasks (FPGA logic placement). Elapsed time: 00h 31m 24s 
+
+[15:47:51] Starting logic routing..
+[15:48:22] Phase 1 Build RT Design
+[15:49:23] Phase 2 Router Initialization
+[15:49:23] Phase 2.1 Fix Topology Constraints
+[15:49:23] Phase 2.2 Pre Route Cleanup
+[15:49:23] Phase 2.3 Global Clock Net Routing
+[15:49:53] Phase 2.4 Update Timing
+[15:50:54] Phase 2.5 Update Timing for Bus Skew
+[15:50:54] Phase 2.5.1 Update Timing
+[15:51:24] Phase 3 Initial Routing
+[15:51:24] Phase 3.1 Global Routing
+[15:51:24] Phase 3.2 Initial Net Routing
+[15:51:55] Phase 4 Rip-up And Reroute
+[15:51:55] Phase 4.1 Global Iteration 0
+[15:54:57] Phase 4.2 Global Iteration 1
+[15:55:58] Phase 5 Delay and Skew Optimization
+[15:55:58] Phase 5.1 Delay CleanUp
+[15:55:58] Phase 5.1.1 Update Timing
+[15:56:28] Phase 5.1.2 Update Timing
+[15:56:28] Phase 5.2 Clock Skew Optimization
+[15:56:59] Phase 6 Post Hold Fix
+[15:56:59] Phase 6.1 Hold Fix Iter
+[15:56:59] Phase 6.1.1 Update Timing
+[15:56:59] Phase 6.2 Non Free Resource Hold Fix Iter
+[15:56:59] Phase 7 Leaf Clock Prog Delay Opt
+[15:57:29] Phase 7.1 Optimize Skews
+[15:57:29] Phase 7.1.1 Leaf ClockOpt Init
+[15:57:59] Phase 7.2 Post SkewOpt Delay Cleanup
+[15:57:59] Phase 7.2.1 Delay CleanUp
+[15:57:59] Phase 7.2.1.1 Update Timing
+[15:58:30] Phase 7.2.1.2 Update Timing
+[15:58:30] Phase 7.3 Post SkewOpt Hold Fix
+[15:58:30] Phase 7.3.1 Hold Fix Iter
+[15:58:30] Phase 7.3.1.1 Update Timing
+[16:00:01] Phase 8 Route finalize
+[16:00:01] Phase 9 Verifying routed nets
+[16:00:01] Phase 10 Depositing Routes
+[16:00:01] Phase 11 Resolve XTalk
+[16:00:31] Phase 12 Post Router Timing
+[16:01:02] Finished 5th of 6 tasks (FPGA routing). Elapsed time: 00h 13m 10s 
+
+[16:01:02] Starting bitstream generation..
+[16:01:02] Phase 13 Post-Route Event Processing
+[16:09:08] Creating bitmap...
+[16:13:42] Writing bitstream ./level0_i_ulp_my_rm_partial.bit...
+[16:13:42] Finished 6th of 6 tasks (FPGA bitstream generation). Elapsed time: 00h 12m 40s 
+Check VPL, containing 12 checks, has run: 0 errors, 1 advisory violation
+ADVISORY: [AUTO-FREQ-SCALING-08] For clock hbm_aclk, the auto scaled frequency 464.0 MHz exceeds the original specified frequency. The compiler will select the original specified frequency of 450.0 MHz.
+[16:14:59] Run vpl: Step impl: Completed
+[16:15:00] Run vpl: FINISHED. Run Status: impl Complete!
+INFO: [v++ 60-1441] [16:15:01] Run run_link: Step vpl: Completed
+Time (s): cpu = 00:00:55 ; elapsed = 01:31:30 . Memory (MB): peak = 467.309 ; gain = 0.000 ; free physical = 461917 ; free virtual = 960270
+INFO: [v++ 60-1443] [16:15:01] Run run_link: Step rtdgen: Started
+INFO: [v++ 60-1453] Command Line: rtdgen
+INFO: [v++ 60-1454] Run Directory: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link
+INFO: [v++ 60-991] clock name 'ulp_ucs/aclk_kernel_01' (clock ID '1') is being mapped to clock name 'KERNEL_CLK' in the xclbin
+INFO: [v++ 60-991] clock name 'ulp_ucs/aclk_kernel_00' (clock ID '0') is being mapped to clock name 'DATA_CLK' in the xclbin
+INFO: [v++ 60-991] clock name 'hbm_aclk' (clock ID '') is being mapped to clock name 'hbm_aclk' in the xclbin
+INFO: [v++ 60-1230] The compiler selected the following frequencies for the runtime controllable kernel clock(s) and scalable system clock(s): System (SYSTEM) clock: hbm_aclk = 450, Kernel (KERNEL) clock: ulp_ucs/aclk_kernel_01 = 500, Kernel (DATA) clock: ulp_ucs/aclk_kernel_00 = 300
+INFO: [v++ 60-1453] Command Line: cf2sw -force-enable-memory HBM[0] -a /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/address_map.xml -sdsl /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/sdsl.dat -xclbin /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/xclbin_orig.xml -rtd /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.rtd -o /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.xml
+INFO: [v++ 60-1652] Cf2sw returned exit code: 0
+INFO: [v++ 60-1441] [16:15:05] Run run_link: Step rtdgen: Completed
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 467.309 ; gain = 0.000 ; free physical = 461906 ; free virtual = 960265
+INFO: [v++ 60-1443] [16:15:05] Run run_link: Step xclbinutil: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --add-section BITSTREAM:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.rtd --append-section :JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_xml.rtd --add-section BUILD_METADATA:JSON:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.xml --add-section SYSTEM_METADATA:RAW:/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u55c_gen3x16_xdma_3_202210_1 --output /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin
+INFO: [v++ 60-1454] Run Directory: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link
+XRT Build Version: 2.16.204 (2023.2)
+       Build Date: 2023-10-11 23:46:00
+          Hash ID: fa4c0045003fed0acea4593788dce5ef6d0b66ee
+Creating a default 'in-memory' xclbin image.
+
+Section: 'BITSTREAM'(0) was successfully added.
+Size   : 43317182 bytes
+Format : RAW
+File   : '/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/partial.bit'
+
+Section: 'MEM_TOPOLOGY'(6) was successfully added.
+Format : JSON
+File   : 'mem_topology'
+
+Section: 'IP_LAYOUT'(8) was successfully added.
+Format : JSON
+File   : 'ip_layout'
+WARNING: Skipping CONNECTIVITY section for count size is zero.
+WARNING: Section 'CONNECTIVITY' content is empty.  No data in the given JSON file.
+
+Section: 'CONNECTIVITY'(7) was empty.  No action taken.
+Format : JSON
+File   : 'connectivity'
+
+Section: 'CLOCK_FREQ_TOPOLOGY'(11) was successfully added.
+Size   : 410 bytes
+Format : JSON
+File   : '/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_xml.rtd'
+
+Section: 'BUILD_METADATA'(14) was successfully added.
+Size   : 1942 bytes
+Format : JSON
+File   : '/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel_build.rtd'
+
+Section: 'EMBEDDED_METADATA'(2) was successfully added.
+Size   : 2481 bytes
+Format : RAW
+File   : '/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/shor_qec_kernel.xml'
+
+Section: 'SYSTEM_METADATA'(22) was successfully added.
+Size   : 20385 bytes
+Format : RAW
+File   : '/home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/int/systemDiagramModelSlrBaseAddress.json'
+
+Section: 'PARTITION_METADATA'(20) was successfully appended to.
+Format : JSON
+File   : 'partition_metadata'
+
+Section: 'IP_LAYOUT'(8) was successfully appended to.
+Format : JSON
+File   : 'ip_layout'
+Successfully wrote (43368046 bytes) to the output file: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin
+Leaving xclbinutil.
+INFO: [v++ 60-1441] [16:15:05] Run run_link: Step xclbinutil: Completed
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.24 . Memory (MB): peak = 467.309 ; gain = 0.000 ; free physical = 461861 ; free virtual = 960262
+INFO: [v++ 60-1443] [16:15:05] Run run_link: Step xclbinutilinfo: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --quiet --force --info /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin.info --input /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin
+INFO: [v++ 60-1454] Run Directory: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link
+INFO: [v++ 60-1441] [16:15:06] Run run_link: Step xclbinutilinfo: Completed
+Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.51 . Memory (MB): peak = 467.309 ; gain = 0.000 ; free physical = 461861 ; free virtual = 960262
+INFO: [v++ 60-1443] [16:15:06] Run run_link: Step generate_sc_driver: Started
+INFO: [v++ 60-1453] Command Line: 
+INFO: [v++ 60-1454] Run Directory: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/_x/link/run_link
+INFO: [v++ 60-1441] [16:15:06] Run run_link: Step generate_sc_driver: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 467.309 ; gain = 0.000 ; free physical = 461861 ; free virtual = 960262
+INFO: [v++ 60-2331] SLR0 was specfied for compute unit shor_qec_kernel_1, and verified as such in implementation.
+Check POST-VPL, containing 1 checks, has run: 0 errors
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/system_estimate_shor_qec_kernel.xtxt
+INFO: [v++ 60-586] Created /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.ltx
+INFO: [v++ 60-586] Created shor_qec_kernel.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/v++_link_shor_qec_kernel_guidance.html
+	Timing Report: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt
+	Vivado Log: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/link/vivado.log
+	Steps Log File: /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/vxx_logs/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/abhishek/fpga/lib/python3.8/site-packages/qiskit_aer/backends/qec_fpga_files/shor_qec_kernel.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 1h 32m 5s
+INFO: [v++ 60-1653] Closing dispatch client.
+✓ shor_qec_kernel.xclbin
+
+=== build complete ===
+-rw-rw-r-- 1 abhishek abhishek 42M Apr 10 16:15 ./shor_qec_kernel.xclbin

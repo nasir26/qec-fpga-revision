@@ -1,0 +1,14 @@
+# E03_batched_throughput_scan configuration. Every parameter that affects the result belongs here.
+experiment: E03_batched_throughput_scan
+status: not_run
+seed: 0xC0DE
+kernel:
+  name:            # rep3_qec_kernel | shor_qec_kernel | steane_qec_kernel
+  xclbin:          # path, with sha256
+host_path:         # cpp_xrt | cpp_opencl | python_pyxrt   (only cpp_* may produce timing claims)
+device_bdf:
+repetitions:
+warmup_iterations:
+outputs:
+  raw: raw/
+  processed: processed/
