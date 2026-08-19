@@ -56,15 +56,27 @@ confirmation this install is licensed for the builds this campaign needs (a lice
 independently checked in this pass).
 **From:** author, to confirm licensing and approve using this install for the campaign.
 
-## B-003: Missing Steane three-mode kernel source (OPEN)
+## B-003: Missing Steane three-mode kernel source (PARTIALLY ADDRESSED — reconstruction written, unverified against hardware)
 **Blocks:** verification of ledger rows C-061 and C-062; any Steane hardware result.
 **Evidence:** the only Steane kernel in the archive, `steane_decoder_kernel.cpp` (50 lines, read
 in full), implements a single batched LUT-only decoder over three `m_axi` HBM ports with no mode
 field, no MWPM logic, and no UF logic. It is architecturally unrelated to the AXI-Lite monolithic
 three-mode kernel Sections 6.3 and 9 describe.
-**Needed:** the original `steane_qec_kernel.cpp` implementing LUT, MWPM, and UF modes selectable
-by a 2-bit AXI-Lite mode field, or authorisation to rebuild it from the manuscript description.
-**From:** author.
+
+**UPDATE (2026-08-19):** rather than wait on the original source, I wrote
+`rtl/steane713/src/steane_qec_kernel.cpp` from the manuscript's own algorithm description
+(Section 6.3, Algorithm 3, L179-186) and verified its logic against a new Python mirror
+(`models/mirrors/steane_mirror.py`, `models/tests/test_steane_mirror.py`): 63/63 self-test PASS.
+Building the mirror caught a real bug in the manuscript's own UF description (ledger C-140) and
+surfaced a Hamming-code aliasing property that contradicts the manuscript's weight-2 claim
+(C-141) — both fixed/noted in the reconstruction, neither yet reconciled in `main.tex` itself.
+**This closes the "no source exists" problem but does not close the blocker**: the kernel has
+not been through HLS C-simulation, synthesis, or hardware, so it cannot yet produce any
+`HLS-ESTIMATE`, `POST-ROUTE`, or `MEASURED-HW` row. If the author has the *original* source, it
+should still be preferred over this reconstruction and diffed against it.
+**Needed:** either the original `steane_qec_kernel.cpp`, or authorisation to proceed with this
+reconstruction through HLS co-simulation and synthesis (B-002/B-005 territory next).
+**From:** author, to confirm which path to take.
 
 ## B-005: No Steane or Rep-3 kernel was ever taken through v++ synthesis, as far as the archive shows (OPEN, priority zero)
 **Blocks:** Tables 2 and 3 (Steane and Rep-3 rows), C-030 through C-035, and every latency figure

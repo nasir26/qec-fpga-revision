@@ -158,19 +158,38 @@ once, at the top of the table caption, and every row below must be recomputed ag
 | C-132 | XRT installed here is version 2.15.225 (2023.1), branch 2023.1. The manuscript (L342) and `selftest.log` both reference XRT 2.16.204 (2023.2). | `xbutil examine` header | Version mismatch between this host and the one described in the manuscript; the delivered `shor_qec_kernel.xclbin` was built against the `xilinx_u55c_gen3x16_xdma_3_202210_1` platform (`xclbin.info`), while this host's live shell is `xilinx_u55c_gen3x16_xdma_base_3` — compatibility must be checked before attempting to load it, not assumed. |
 | C-133 | Vitis 2023.2 and the exact platform `xilinx_u55c_gen3x16_xdma_3_202210_1` used to build the original xclbin are both installed locally (`/opt/xilinx/platforms/`, `/tools/Xilinx/Vitis/2023.2`). | filesystem inspection | B-002 (tool availability) is largely already satisfied on this host; only wall-clock build time and a rebuild decision remain open. |
 
+## L. Reconstruction work (Phase 2/3, in progress — see docs/BLOCKERS.md B-003, B-005)
+
+These rows are software-only findings from building and self-testing a reconstruction of the
+missing Steane three-mode kernel. They are new defects/findings discovered during this campaign,
+not present in the original manuscript's claim set, and are logged here so they survive into the
+manuscript rewrite and are not silently fixed and forgotten.
+
+| ID | Finding | Evidence | Verdict | Note |
+|---|---|---|---|---|
+| C-140 | main.tex L183's literal description of the UF decoder ("qubit q counts how many of its adjacent check nodes are active; if the count is odd, qubit q is included") does not correctly decode single-qubit Pauli errors on the Steane Tanner graph. | `models/tests/test_steane_mirror.py`, first run: 9/63 self-test failures, all in UF mode, all with the same signature (4 of 7 qubits spuriously flagged for a weight-1 input) | **CONTRADICTED (manuscript text is internally wrong)** | Resolved using main.tex L308's own follow-up sentence ("collapses to the same XOR-reduce for one growth round"), implemented as column-vs-syndrome equality. Fixed version passes 63/63. The manuscript prose at L183 needs correction regardless of whose kernel eventually ships — this is not an artifact-missing problem, it is a description-is-wrong problem. |
+| C-141 | For every pair of Steane data qubits (i,j), `H_COL[i] XOR H_COL[j]` equals some third column `H_COL[k]` exactly (a property of this specific [7,4,3] Hamming code). Consequence: every weight-2 X-only error is syndrome-indistinguishable from a weight-1 error on qubit k, and LUT, MWPM, and UF all alias to the same (wrong) single-qubit correction for it. | `models/tests/test_steane_mirror.py::run_weight2_census`: 21/21 qubit pairs give identical correction across all three modes | **CONTRADICTS main.tex L479, L506** | Those lines claim the three decoders "differ" in how they handle weight-2 syndromes. On this reconstruction's evidence they do not differ, they agree — on an incorrect correction. This is a defensible, testable claim to carry into the rewrite (Sec 9.1/10.1), but should be re-confirmed against a from-source kernel or HLS co-simulation before it's asserted as a hardware fact, and Y/Z weight-2 cases haven't been checked yet either. |
+| C-142 | `rtl/shor913/src/shor_qec_kernel.cpp` modified to add a one-element `m_axi` output-buffer argument (`result_out`), implementing the manuscript's own Section 11 fix for the BAR4/ap_return readback failure (C-008, C-009). `rtl/steane713/src/steane_qec_kernel.cpp` written from scratch (B-003) with the same output-buffer convention, implementing the LUT/MWPM/UF architecture main.tex Sections 6.3/9.1 describe. | `rtl/shor913/src/shor_qec_kernel.cpp`, `rtl/steane713/src/steane_qec_kernel.cpp` | **NOT YET SYNTHESISED OR HARDWARE-TESTED** | Logic-level only: verified against `models/mirrors/steane_mirror.py` (C-140/C-141) for Steane; the Shor decode logic is unchanged from the original so should reproduce the original 27/27 truth table, but this has not been re-run through HLS C-simulation. No `*_csynth.rpt`, no `.xo`, no `.xclbin` exists for either revised kernel yet. Do not cite these as hardware or even HLS-estimate results until a real build exists. |
+
 ---
 
-## Verdict tally (86 rows, A-K)
+## Verdict tally (89 rows, A-L)
 
-- `CONTRADICTED`: 17
+- `CONTRADICTED`: 19
 - `UNSUPPORTED`: 22
 - `NEEDS-RERUN` / `NEEDS-VERIFY` / `NEEDS-VERIFY-EXTERNAL` / `NEEDS-CITATION` / `NEEDS-CLARIFY` / `NEEDS-RECOMPUTE` / `NEEDS-SEARCH`: 21
 - `SUPPORTED` (as arithmetic, as a labelled projection, or independently corroborated): 17
 - `DELETE`: 2
 - `BLOCKED`: 1
+- `NOT YET SYNTHESISED OR HARDWARE-TESTED` (Phase 2/3 reconstruction work, section L): 1
 - ground truth / ADR / not-a-manuscript-claim rows: 6
 
 Roughly three in four rows do not currently support the manuscript claim they were extracted
 from. The failure mode is not "wrong numbers" so much as "numbers whose only real backing is a
 single Shor-kernel run against the software decoder" being used to support claims about three
 kernels, two of which (Steane, Rep-3) were never synthesised at all as far as this archive shows.
+
+Section L is new work product from this campaign, not from the original archive: a reconstructed
+Steane kernel (docs/BLOCKERS.md B-003) whose logic has been software-verified against a Python
+mirror and which surfaced two genuine defects in the manuscript's own prose (C-140, C-141) along
+the way. Neither reconstructed kernel has been synthesised or run on hardware yet.

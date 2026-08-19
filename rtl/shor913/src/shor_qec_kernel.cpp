@@ -5,17 +5,31 @@
 //  Purpose    : real-time single-shot QEC decoder for the [[9,1,3]] Shor code.
 //               Corrects any single-qubit Pauli error (X, Y, or Z).
 //
-//  Interface  : AXI-Lite only — no HBM, no gate buffer, no statevector.
-//               This kernel is a pure classical error-correction circuit
-//               operating in the stabilizer / binary-symplectic domain.
+//  Interface  : AXI-Lite control (err_in, ap_return) plus one m_axi output
+//               port (result_out), a single 32-bit word. No HBM
+//               pseudo-channel and no streaming/pointer input argument.
 //
-//  Latency    : 5 cycles (~17 ns @ 300 MHz), II = 1.
-//               Equivalent steady-state throughput: 300 M corrections / sec
-//               per compute unit.
+//               CHANGE (Phase 3 E01 unblock, docs/BLOCKERS.md B-001): the
+//               original kernel returned its result only through ap_return.
+//               selftest.log shows that register unreadable on the capture
+//               host without either a BAR4 mmap (blocked by PermissionError)
+//               or an xrt::bo buffer path (fails outright against a scalar
+//               ap_return — no AXI4 master port to attach a buffer to; see
+//               ledger C-008). Section 11 of the manuscript names this exact
+//               fix: add a one-element m_axi output argument, readable via a
+//               normal XRT buffer object with no BAR4/privilege dependency.
+//               result_out[0] and ap_return always carry the same value.
 //
-//  Resource   : ~1 BRAM18 (decoder LUT), ~200 LUT6, ~100 FF, 0 DSP.
-//               Negligible compared to v05 — easily co-hosted as a second
-//               compute unit inside the v05 .xclbin.
+//  Latency    : 5 cycles (~17 ns @ 300 MHz) for the compute pipeline, II = 1,
+//               per the original HLS estimate. Not re-verified for this
+//               interface: the m_axi write adds a write-side burst the
+//               original interface did not have. Regenerate *_csynth.rpt
+//               before citing a latency number for this version (ledger
+//               C-010).
+//
+//  Resource   : ~1 BRAM18 (decoder LUT), ~200 LUT6, ~100 FF, 0 DSP, plus one
+//               small m_axi write-master for result_out. Not re-verified
+//               post-change (ledger C-031); still expected to be negligible.
 //
 //  Author     : Nasir Ali — C-DAC / NQM Qniverse
 //
@@ -138,23 +152,34 @@ static ap_uint<N_STAB> compute_syndrome(ap_uint<N_DATA> x_err,
 //             on the host by drawing one of {I,X,Y,Z} per qubit and
 //             packing the result into these 18 bits.
 //
-//  Output (AXI-Lite return):
-//    result — packed 32-bit result, layout:
+//  Outputs:
+//    result_out[0] — m_axi word, and
+//    ap_return     — AXI-Lite return register,
+//               both carrying the same packed 32-bit result, layout:
 //               bits [ 8: 0]  x_correction applied
 //               bits [17: 9]  z_correction applied
 //               bits [25:18]  syndrome
 //               bits [26]     X_logical_error flag   (1 = failure)
 //               bits [27]     Z_logical_error flag   (1 = failure)
 //               bits [31:28]  reserved
+//
+//             Read result_out via a standard xrt::bo buffer object. Reading
+//             ap_return still works wherever it already worked (HLS
+//             co-simulation, hosts with BAR4 access) but is no longer the
+//             only path — see the CHANGE note above.
 // ---------------------------------------------------------------------------
-extern "C" unsigned int shor_qec_kernel(unsigned int err_in)
+extern "C" unsigned int shor_qec_kernel(unsigned int err_in, unsigned int* result_out)
 {
     // === Interface pragmas =================================================
-    // Single scalar + return — the whole kernel is AXI-Lite only. Same
-    // control-bundle convention your v05 kernel uses for num_qubits,
-    // num_gates, etc., but with zero HBM ports.
+    // err_in and the ap_return register stay on AXI-Lite, as before.
+    // result_out is the one addition: a single-element m_axi port so the
+    // result can be read back through a normal XRT buffer object instead of
+    // depending on ap_return's non-standard readback path (see CHANGE note
+    // above and docs/BLOCKERS.md B-001).
 #pragma HLS INTERFACE s_axilite port=err_in bundle=control
 #pragma HLS INTERFACE s_axilite port=return bundle=control
+#pragma HLS INTERFACE m_axi port=result_out offset=slave bundle=gmem depth=1
+#pragma HLS INTERFACE s_axilite port=result_out bundle=control
 
     // === Pipeline pragma ===================================================
     // II=1: one new error vector in, one correction out, every clock cycle.
@@ -234,5 +259,6 @@ extern "C" unsigned int shor_qec_kernel(unsigned int err_in)
     result.range(26, 26) = x_logical_err;
     result.range(27, 27) = z_logical_err;
 
+    result_out[0] = (unsigned int) result;
     return (unsigned int) result;
 }
