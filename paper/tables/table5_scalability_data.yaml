@@ -1,0 +1,77 @@
+# Source data for Table 5 (LUT scalability), addressing R1-Maj-6.
+#
+# Convention, stated once here and to be stated once in the rebuilt table's
+# caption: m = n - k, the number of independent stabilizer generators, for
+# EVERY row, no exceptions (docs/CLAIMS_LEDGER.md section E).
+#
+# architecture: "combined" means one LUT indexed by the full m-bit syndrome,
+#   entry width 2n bits (x_corr and z_corr packed together) -- this is how
+#   the Shor kernel actually works (rtl/shor913/src/shor_qec_kernel.cpp).
+# architecture: "css-split" means two independent LUTs, one per CSS half
+#   (m_X and m_Z, each indexed by an (n-k)/2-bit half-syndrome for a
+#   self-dual code), entry width n bits each (one-hot correction) -- this is
+#   how the reconstructed Steane kernel actually works
+#   (rtl/steane713/src/steane_qec_kernel.cpp). m_X and m_Z are reported
+#   separately per R1-Maj-6's explicit request; m = m_X + m_Z is also given
+#   for comparison against the n-k definition, and for a CSS code with a
+#   self-dual H this is exactly n-k as required.
+#
+# variant, for the surface code rows: "rotated" or "unrotated" -- R1-Maj-6 /
+# ledger C-043 flagged that the original table did not say which.
+
+codes:
+  - name: "Rep-3"
+    label: "[[3,1,2]]"
+    n: 3
+    k: 1
+    architecture: combined
+    decoder_type: LUTRAM
+
+  - name: "Steane"
+    label: "[[7,1,3]]"
+    n: 7
+    k: 1
+    architecture: css-split
+    m_x: 3
+    m_z: 3
+    decoder_type: LUTRAM
+
+  - name: "Shor"
+    label: "[[9,1,3]]"
+    n: 9
+    k: 1
+    architecture: combined
+    decoder_type: "BRAM LUT"
+
+  - name: "Surface"
+    label: "d=3"
+    n: 9
+    k: 1
+    architecture: combined
+    decoder_type: "BRAM LUT"
+    variant: rotated
+
+  - name: "Surface"
+    label: "d=3"
+    n: 17
+    k: 1
+    architecture: combined
+    decoder_type: "BRAM LUT"
+    variant: unrotated
+
+  - name: "Surface"
+    label: "d=5"
+    n: 25
+    k: 1
+    architecture: combined
+    decoder_type: "not LUT"
+    variant: rotated
+    note: "projection only, no d=5 artifact exists yet (see Phase 4 / ADR-004)"
+
+  - name: "BB"
+    label: "[[72,12,6]]"
+    n: 72
+    k: 12
+    architecture: combined
+    decoder_type: "BP / MWPM"
+    note: "projection only, m corrected from the original submission's m=72 (=n) to m=n-k=60"

@@ -1,164 +1,233 @@
+% =============================================================================
+%  references.bib -- rebuilt bibliography for the QEC FPGA decoder paper.
+%
+%  Source: the 19 \bibitem entries in docs/legacy/manuscript/main.tex
+%  (L579-638), converted to BibTeX and corrected per docs/CLAIMS_LEDGER.md
+%  section H (C-070 through C-078). docs/legacy/manuscript/sn-bibliography.bib
+%  and the version this file replaced were the Springer Nature template's
+%  own placeholder examples (Campbell/Gear, Slifka/Whitton, etc.) -- entirely
+%  unrelated to this paper -- and are not used here.
+%
+%  Status column, one line per entry:
+%    VERIFIED-FIXED   : checked against the public record this pass, entry
+%                        below has confirmed corrections applied.
+%    VERIFIED-OK       : checked against the public record this pass, no
+%                        corrections needed.
+%    UNVERIFIED        : not independently checked this pass; no internal
+%                        red flag found in main.tex's rendering of it, but
+%                        that is not the same as verified. Confirm before
+%                        resubmission (docs/CLAIMS_LEDGER.md C-078).
+%    SUSPECT/UNRESOLVED : does not match any real publication found under
+%                        this author/venue/volume/page combination. Do not
+%                        cite until replaced with a verified source.
+%
+%  DOIs are filled in only where independently confirmed this pass (search
+%  results, 2026-08-19). Do not add a DOI you have not verified -- an
+%  invented DOI is worse than a missing one.
+% =============================================================================
 
-%% Journal article
-@article{bib1,
-  author		= "Campbell, S. L. and Gear, C. W.",
-  title			= "The index of general nonlinear {D}{A}{E}{S}",
-  journal		= "Numer. {M}ath.",
-  volume		= "72",
-  number		= "2",
-  pages			= "173--196",
-  year			= "1995"
+% --- VERIFIED-FIXED: ledger C-070 (R3-4). Original entry duplicated
+% "Martinis"/"Fowler" as two people each and dropped Mariantoni and Cleland.
+@article{fowler2012surface,
+  author  = {Fowler, Austin G. and Mariantoni, Matteo and Martinis, John M. and Cleland, Andrew N.},
+  title   = {Surface codes: Towards practical large-scale quantum computation},
+  journal = {Physical Review A},
+  volume  = {86},
+  number  = {3},
+  pages   = {032324},
+  year    = {2012},
+  doi     = {10.1103/PhysRevA.86.032324}
 }
 
-%% Journal article with DOI
-@article{bib2,
-  author		= "Slifka, M. K. and Whitton, J. L.",
-  title			= "Clinical implications of dysregulated cytokine production",
-  journal		= "J. {M}ol. {M}ed.",
-  volume		= "78",
-  pages			= "74--80",
-  year			= "2000",
-  doi			= "10.1007/s001090000086"
+% --- VERIFIED-FIXED: ledger C-072. Original entry claimed "Proc. 29th IEEE
+% HPCA, 2023" and a fifth author "A. Javadi-Abhari" who is not on the real
+% paper. Real venue is IEEE QCE 2023, pp. 916-927; real authors are exactly
+% these four.
+@inproceedings{liyanage2023scalable,
+  author    = {Liyanage, Namitha and Wu, Yue and Deters, Alexander and Zhong, Lin},
+  title     = {Scalable quantum error correction for surface codes using {FPGA}},
+  booktitle = {2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
+  volume    = {01},
+  pages     = {916--927},
+  year      = {2023},
+  doi       = {10.1109/QCE57702.2023.00107}
 }
 
-%% Journal article
-@article{bib3,
-  author		= "Hamburger, C.",
-  title			= "Quasimonotonicity, regularity and duality for nonlinear systems of 
-					partial differential equations",
-  journal		= "Ann. Mat. Pura. Appl.",
-  volume		= "169",
-  number		= "2",
-  pages			= "321--354",
-  year			= "1995"
+% --- SUSPECT/UNRESOLVED: ledger C-072. Original entry gives this EXACT
+% same title as liyanage2023scalable above, with a different author list
+% and "npj Quantum Information, vol. 8, p. 39, 2022". Two independent web
+% searches (2026-08-19) for that author list + venue + volume + page found
+% no matching publication. The author surnames (Riste, Egger, Ganzhorn,
+% Fuhrer, Muller, Filipp, Eichler) resemble a real IBM Zurich / ETH group,
+% so a real paper by some subset of these authors likely exists -- but not
+% under this title, venue, or page. DO NOT CITE until the author supplies
+% the actual intended reference; this placeholder must not survive into a
+% resubmission.
+@article{ristE2024scalable,
+  author  = {Riste, T. and Egger, D. and Ganzhorn, M. and Fuhrer, A. and Mueller, P. and Filipp, S. and Eichler, C.},
+  title   = {UNRESOLVED -- placeholder title copied from liyanage2023scalable in the original submission, confirmed wrong. Real citation not yet located.},
+  journal = {npj Quantum Information},
+  volume  = {8},
+  pages   = {39},
+  year    = {2022},
+  note    = {NEEDS-VERIFY-EXTERNAL, see docs/CLAIMS_LEDGER.md C-072}
 }
 
-%% book, authored
-@book{bib4,
-  author		= "Geddes, K. O. and Czapor, S. R. and Labahn, G.",
-  title			= "Algorithms for {C}omputer {A}lgebra",
-  address		= "Boston",
-  publisher		= "Kluwer",
-  year			= "1992"
+% --- VERIFIED-FIXED (minor): ledger C-071. The entry itself describes a
+% real, correctly-cited paper (confirmed 2026-08-19): the defect was the
+% IN-TEXT citation at main.tex L92, which cites this as a real-time
+% decoding-latency analysis. It is not -- it is about leakage reduction.
+% Fix the citing sentence in paper/sections/, not this entry. Bibkey
+% renamed from battistel2023real (wrong year, and "real" implied real-time
+% decoding) to battistel2021leakage; update the one \cite{} site to match.
+% Author initial corrected: F. Battistel, not B.
+@article{battistel2021leakage,
+  author  = {Battistel, Francesco and Varbanov, Boris M. and Terhal, Barbara M.},
+  title   = {Hardware-Efficient Leakage-Reduction Scheme for Quantum Error Correction with Superconducting Transmon Qubits},
+  journal = {PRX Quantum},
+  volume  = {2},
+  pages   = {030314},
+  year    = {2021},
+  doi     = {10.1103/PRXQuantum.2.030314}
 }
 
-%% Item 8. Book, chapter
-@incollection{bib5,
-  author		= "Broy, M.",
-  title			= "Software engineering---from auxiliary to key technologies",
-  editor		= "Broy, M. and Denert, E.",
-  booktitle		= "Software Pioneers",
-  pages			= "10--13",
-  address		= "New {Y}ork",
-  publisher		= "Springer",
-  year			= "1992"
+% --- UNVERIFIED (C-078): well-established, not independently re-checked.
+@article{shor1995scheme,
+  author  = {Shor, Peter W.},
+  title   = {Scheme for reducing decoherence in quantum computer memory},
+  journal = {Physical Review A},
+  volume  = {52},
+  number  = {5},
+  pages   = {R2493--R2496},
+  year    = {1995}
 }
 
-%% Book, edited
-@book{bib6,
-  editor		= "Seymour, R. S.",
-  title			= "Conductive {P}olymers",
-  address		= "New {Y}ork",
-  publisher		= "Plenum",
-  year			= "1981"
+% --- UNVERIFIED (C-078): well-established, not independently re-checked.
+@article{steane1996error,
+  author  = {Steane, Andrew M.},
+  title   = {Error Correcting Codes in Quantum Theory},
+  journal = {Physical Review Letters},
+  volume  = {77},
+  number  = {5},
+  pages   = {793--797},
+  year    = {1996}
 }
 
-%% Chapter in a book in a series with volume titles
-@inproceedings{bib7,
-  author		= "Smith, S. E.",
-  title			= "Neuromuscular blocking drugs in man",
-  editor		= "Zaimis, E.",
-  volume		= "42",
-  booktitle		= "Neuromuscular junction. {H}andbook of experimental pharmacology",
-  pages			= "593--660",
-  address		= "Heidelberg",
-  publisher		= "Springer",
-  year			= "1976"
+% --- UNVERIFIED (C-078).
+@phdthesis{gottesman1997stabilizer,
+  author = {Gottesman, Daniel},
+  title  = {Stabilizer Codes and Quantum Error Correction},
+  school = {California Institute of Technology},
+  year   = {1997}
 }
 
-%% Paper presented at a conference
-@misc{bib8,
-  author		= "Chung, S. T. and Morris, R. L.",
-  title			= "Isolation and characterization of plasmid deoxyribonucleic acid from 
-					Streptomyces fradiae",
-  year			= "1978",
-  note			= "Paper presented at the 3rd international symposium on the genetics 
-					of industrial microorganisms, University of {W}isconsin, {M}adison, 
-					4--9 June 1978"
+% --- UNVERIFIED (C-078).
+@article{terhal2015qec,
+  author  = {Terhal, Barbara M.},
+  title   = {Quantum error correction for quantum memories},
+  journal = {Reviews of Modern Physics},
+  volume  = {87},
+  number  = {2},
+  pages   = {307--346},
+  year    = {2015}
 }
 
-%% Data citation example
-@misc{bib9,
-  author		= "Hao, Z. and AghaKouchak, A. and Nakhjiri, N. and Farahmand, A.",
-  title			= "Global integrated drought monitoring and prediction system (GIDMaPS) data sets", 
-  year			= "2014",
-  note			= "figshare \url{https://doi.org/10.6084/m9.figshare.853801}"
+% --- UNVERIFIED (C-078).
+@article{preskill2018quantum,
+  author  = {Preskill, John},
+  title   = {Quantum Computing in the {NISQ} era and beyond},
+  journal = {Quantum},
+  volume  = {2},
+  pages   = {79},
+  year    = {2018}
 }
 
-%% Preprint citation example
-@misc{bib10, 
-  author		= "Babichev, S. A. and Ries, J. and Lvovsky, A. I.",
-  title			= "Quantum scissors: teleportation of single-mode optical states by means 
-					of a nonlocal single photon", 
-  year			= "2002",
-  note			= "Preprint at \url{https://arxiv.org/abs/quant-ph/0208066v1}"
+% --- VERIFIED-OK (C-076): matches the public record.
+@inproceedings{das2022afs,
+  author    = {Das, Poulami and Pattison, Christopher A. and Manne, Srilatha and Carmean, Doug M. and Svore, Krysta M. and Qureshi, Moinuddin and Delfosse, Nicolas},
+  title     = {{AFS}: Accurate, Fast, and Scalable Error-Decoding for Fault-Tolerant Quantum Computers},
+  booktitle = {2022 IEEE International Symposium on High-Performance Computer Architecture (HPCA)},
+  pages     = {692--705},
+  year      = {2022}
 }
 
-@article{bib11,
-  author		= "Beneke, M. and Buchalla, G. and Dunietz, I.",
-  title			= "Mixing induced {CP} asymmetries in inclusive {B} decays",
-  journal		= "Phys. {L}ett.",
-  volume		= "B393",
-  year			= "1997",
-  pages			= "132-142",
-  archivePrefix		= "arXiv",
-  eprint		= "0707.3168",
-  primaryClass		= "gr-gc"
+% --- VERIFIED-OK (C-077): matches the public record.
+@inproceedings{holmes2020nisq+,
+  author    = {Holmes, Adam and Johri, Sonika and Guerreschi, Gian Giacomo and Clarke, Jonathan S. and Matsuura, Anne Y.},
+  title     = {{NISQ+}: Boosting quantum computing power by approximating quantum error correction},
+  booktitle = {2020 ACM/IEEE 47th Annual International Symposium on Computer Architecture (ISCA)},
+  pages     = {556--569},
+  year      = {2020}
 }
 
-@softmisc{bib12,
-  author		= "Stahl, B.",
-  title			= "deep{SIP}: deep learning of {S}upernova {I}a {P}arameters",
-  version		= "0.42",
-  keywords		= "Software",
-  howpublished		= "Astrophysics {S}ource {C}ode {L}ibrary",
-  year			= "2020",
-  month			= "Jun",
-  eid			= "ascl:2006.023",
-  pages			= "ascl:2006.023",
-  archivePrefix		= "ascl",
-  eprint		= "2006.023",
-  adsurl		= "{https://ui.adsabs.harvard.edu/abs/2020ascl.soft06023S}",
-  adsnote		= "Provided by the SAO/NASA Astrophysics Data System"
+% --- UNVERIFIED (C-078).
+@inproceedings{riesebos2017pauli,
+  author    = {Riesebos, Lingling and Fu, Xiang and Varsamopoulos, Savvas and Almud{\'e}ver, Carmen G. and Bertels, Koen},
+  title     = {Pauli Frames for Quantum Computer Architectures},
+  booktitle = {Proceedings of the 54th ACM/IEEE Design Automation Conference (DAC)},
+  pages     = {76},
+  year      = {2017}
 }
 
-@article{bib13,
-  author = "Abbott, T. M. C. and others",
-  collaboration = "DES",
-  title = "{Dark Energy Survey Year 1 Results: Constraints on Extended Cosmological Models from Galaxy Clustering and Weak Lensing}",
-  eprint = "1810.02499",
-  archivePrefix = "arXiv",
-  primaryClass = "astro-ph.CO",
-  reportNumber = "FERMILAB-PUB-18-507-PPD",
-  doi = "10.1103/PhysRevD.99.123505",
-  journal = "Phys. Rev. D",
-  volume = "99",
-  number = "12",
-  pages = "123505",
-  year = "2019"
+% --- UNVERIFIED (C-078).
+@inproceedings{almudever2017engineering,
+  author    = {Almud{\'e}ver, Carmen G. and Lao, Lingling and Fu, Xiang and Khammassi, Nader and Ashraf, Imran and Iorga, Daniel and Varsamopoulos, Savvas and Eichler, Christopher and Wallraff, Andreas and Geck, Lukas and Kruth, Andreas and Knoch, Joachim and Bluhm, Hendrik and Bertels, Koen},
+  title     = {The engineering challenges in quantum computing},
+  booktitle = {Proceedings of the Design, Automation \& Test in Europe Conference (DATE)},
+  pages     = {836--845},
+  year      = {2017}
 }
 
-%%============================================================================%%
-%% while using chicago reference style, both abbreviated and expanded form of %%
-%% author name format is acceptable. Refer below example for expanded form    %%
-%%============================================================================%%
+% --- UNVERIFIED (C-078).
+@article{ryan2021realization,
+  author  = {Ryan-Anderson, C. and Bohnet, J. G. and Lee, K. and Gresh, D. and Hankin, A. and Gaebler, J. P. and Francois, D. and Chernoguzov, A. and Lucchetti, D. and Brown, N. C. and Gatterman, T. M. and Halit, S. K. and Gilmore, K. and Gerber, J. and Neyenhuis, B. and Hayes, D. and Stutz, R.},
+  title   = {Realization of Real-Time Fault-Tolerant Quantum Error Correction},
+  journal = {Physical Review X},
+  volume  = {11},
+  number  = {4},
+  pages   = {041058},
+  year    = {2021}
+}
 
-%%  author		= "{Cameron, Deborah}", - single author
-%%  author		= "{Saito, Yukio} and {Hyuga, Hiroyuki}", - double author 
+% --- UNVERIFIED (C-078).
+@inproceedings{mahmud2020scaling,
+  author    = {Mahmud, Nabila and El-Araby, Esam and Caliga, Dan},
+  title     = {Scaling Reconfigurable Emulation of Quantum Algorithms at High Precision and High Throughput},
+  booktitle = {2020 IEEE/ACM International Conference On Computer Aided Design (ICCAD)},
+  year      = {2020}
+}
 
-%%======================================%%
-%% Example for author names with suffix %%
-%%======================================%%
+% --- UNVERIFIED (C-078).
+@article{aaronson2004improved,
+  author  = {Aaronson, Scott and Gottesman, Daniel},
+  title   = {Improved simulation of stabilizer circuits},
+  journal = {Physical Review A},
+  volume  = {70},
+  number  = {5},
+  pages   = {052328},
+  year    = {2004}
+}
 
-%%  author		= "{Price, R. A. Jr} and {Curry, N. {III}} and McCann, K. E. and 
-%%					Fielding, J. L. and {Abercrombie, E. Jr}",
+% --- UNVERIFIED (C-078). Software citation, no fixed page range.
+@misc{qiskit2024,
+  author       = {{Qiskit contributors}},
+  title        = {Qiskit: An Open-Source Framework for Quantum Computing},
+  year         = {2024},
+  howpublished = {\url{https://github.com/Qiskit/qiskit}}
+}
+
+% --- UNVERIFIED (C-078). Vendor documentation, no DOI expected.
+@techreport{xilinx2023vitis,
+  author      = {{Xilinx, Inc.}},
+  title       = {Vitis High-Level Synthesis User Guide (UG1399)},
+  institution = {Xilinx, Inc.},
+  year        = {2023}
+}
+
+% --- UNVERIFIED (C-078). Vendor documentation, no DOI expected.
+@misc{xilinx2023xrt,
+  author       = {{Xilinx, Inc.}},
+  title        = {Xilinx Runtime ({XRT}) Documentation},
+  year         = {2023},
+  howpublished = {\url{https://xilinx.github.io/XRT/}}
+}

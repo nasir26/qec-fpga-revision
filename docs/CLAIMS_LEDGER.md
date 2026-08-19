@@ -79,6 +79,14 @@ exists, the verdict is `UNSUPPORTED` or `BLOCKED`, not a guess.
 Manuscript definition check (R1-Maj-6): the text never states $m = n-k$ explicitly; it should,
 once, at the top of the table caption, and every row below must be recomputed against it.
 
+**FIXED, 2026-08-19:** `paper/tables/gen_table5.py` regenerates this table from
+`paper/tables/table5_scalability_data.yaml` with $m=n-k$ applied to every row, the Steane
+$m_X\mid m_Z$ decomposition explicit, and the surface-code rows split into labelled rotated/
+unrotated variants. Output committed at `paper/tables/table5_lut_scaling.tex`. This is pure
+arithmetic on (n, k); it needed no hardware and no author decision to fix. See
+`paper/tables/README.md` for the cross-check against Table 2's Shor BRAM count. The individual
+row verdicts below are retained as the audit trail for that fix.
+
 | ID | Location | Claim | Value as printed | Correct value ($m=n-k$) | Verdict | Note |
 |---|---|---|---|---|---|---|
 | C-040 | Table 5 row 1 | Rep-3 [[3,1,2]] syndrome width | m=2 | 2 | SUPPORTED | $n-k = 3-1 = 2$. Correct as printed. |
