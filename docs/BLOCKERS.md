@@ -51,10 +51,18 @@ is materially better:
 is also present. This significantly de-risks resynthesis of the Steane and Rep-3 kernels (Table
 2/3 rows currently `UNSUPPORTED`/`CONTRADICTED` for lack of any build artifact) and regeneration
 of the missing Shor `*_csynth.rpt`.
-**Needed now:** wall-clock time on a build machine (multi-CU builds in E04 are hours each) and
-confirmation this install is licensed for the builds this campaign needs (a license file was not
-independently checked in this pass).
-**From:** author, to confirm licensing and approve using this install for the campaign.
+**UPDATE 2 (2026-08-19):** ran `vitis_hls -f <script> csynth_design` for real, four times (Shor
+original, Shor with the m_axi fix, reconstructed Steane with and without the m_axi fix). All four
+completed in 15-20 seconds each with no license error and produced real `*_csynth.rpt`/`.xml`
+reports, now in `evidence/synthesis/`. **HLS-level licensing/tooling is confirmed working, not
+just installed.** What's not yet attempted: `v++` linking to a real `.xo`/`.xclbin` (Vitis Kernel
+Flow, a separate license feature from bare HLS), and Vivado implementation (place-and-route) for
+post-route reports — both still needed for Tables 2/3 and for anything to run on the card.
+**Needed now:** wall-clock time for `v++ -c`/`v++ -l` builds and Vivado implementation runs
+(these are the multi-minute-to-multi-hour steps `vitis_hls csynth_design` alone is not), and
+confirmation that a `v++`/Vivado license (as opposed to the HLS-only license just exercised) is
+available for this campaign's use.
+**From:** author, to confirm the v++/Vivado license and approve spending build time on it.
 
 ## B-003: Missing Steane three-mode kernel source (PARTIALLY ADDRESSED — reconstruction written, unverified against hardware)
 **Blocks:** verification of ledger rows C-061 and C-062; any Steane hardware result.
