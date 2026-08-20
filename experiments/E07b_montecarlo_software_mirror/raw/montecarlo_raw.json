@@ -1,0 +1,812 @@
+[
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 28,
+    "p_L": 2.8e-06,
+    "wilson_lo": 1.9373092739257123e-06,
+    "wilson_hi": 4.046848427200265e-06
+  },
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 746,
+    "p_L": 7.46e-05,
+    "wilson_lo": 6.943545992925708e-05,
+    "wilson_hi": 8.014864260651411e-05
+  },
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 2959,
+    "p_L": 0.0002959,
+    "wilson_lo": 0.0002854300660679483,
+    "wilson_hi": 0.00030675386643867216
+  },
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 11902,
+    "p_L": 0.0011902,
+    "wilson_lo": 0.0011690206240334855,
+    "wilson_hi": 0.001211762621364823
+  },
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 72415,
+    "p_L": 0.0072415,
+    "wilson_lo": 0.007189136616628582,
+    "wilson_hi": 0.007294241979436695
+  },
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 280062,
+    "p_L": 0.0280062,
+    "wilson_lo": 0.027904119031749164,
+    "wilson_hi": 0.02810864361038793
+  },
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 607332,
+    "p_L": 0.0607332,
+    "wilson_lo": 0.060585333942902,
+    "wilson_hi": 0.06088140355443612
+  },
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 856424,
+    "p_L": 0.0856424,
+    "wilson_lo": 0.08546911544145479,
+    "wilson_hi": 0.08581600291765414
+  },
+  {
+    "code": "rep3",
+    "model": "iid_bitflip",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 1040995,
+    "p_L": 0.1040995,
+    "wilson_lo": 0.10391036964311703,
+    "wilson_hi": 0.10428893453503826
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "single_pauli",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_LUT",
+    "model": "single_pauli",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "single_pauli",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "steane_UF",
+    "model": "single_pauli",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 0,
+    "p_L": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 3.8415985242115104e-07
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 227,
+    "p_L": 2.27e-05,
+    "wilson_lo": 1.9932827713887364e-05,
+    "wilson_hi": 2.585131469767648e-05
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 5738,
+    "p_L": 0.0005738,
+    "wilson_lo": 0.0005591479634392852,
+    "wilson_hi": 0.0005888357555512891
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 22531,
+    "p_L": 0.0022531,
+    "wilson_lo": 0.002223903513641276,
+    "wilson_hi": 0.0022826789151100184
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 87034,
+    "p_L": 0.0087034,
+    "wilson_lo": 0.008646017626570024,
+    "wilson_hi": 0.008761159846288676
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 473204,
+    "p_L": 0.0473204,
+    "wilson_lo": 0.047188974472761804,
+    "wilson_hi": 0.047452173329894855
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 1513376,
+    "p_L": 0.1513376,
+    "wilson_lo": 0.15111560918357406,
+    "wilson_hi": 0.15155985870061814
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 2726959,
+    "p_L": 0.2726959,
+    "wilson_lo": 0.27241995919840833,
+    "wilson_hi": 0.27297201544381067
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 3439872,
+    "p_L": 0.3439872,
+    "wilson_lo": 0.3436928290959905,
+    "wilson_hi": 0.3442816907717179
+  },
+  {
+    "code": "shor",
+    "model": "iid_depolarising",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 3890639,
+    "p_L": 0.3890639,
+    "wilson_lo": 0.3887617635652646,
+    "wilson_hi": 0.3893661216691271
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 163,
+    "p_L": 1.63e-05,
+    "wilson_lo": 1.3982373319823674e-05,
+    "wilson_hi": 1.9001774008986288e-05
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 4077,
+    "p_L": 0.0004077,
+    "wilson_lo": 0.00039537813284695126,
+    "wilson_hi": 0.0004204057137615261
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 15690,
+    "p_L": 0.001569,
+    "wilson_lo": 0.0015446590952686184,
+    "wilson_hi": 0.0015937238590901862
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 60794,
+    "p_L": 0.0060794,
+    "wilson_lo": 0.006031409881392204,
+    "wilson_hi": 0.006127769607537404
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 344575,
+    "p_L": 0.0344575,
+    "wilson_lo": 0.03434462531696353,
+    "wilson_hi": 0.03457073236851267
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 1155096,
+    "p_L": 0.1155096,
+    "wilson_lo": 0.11531163528242265,
+    "wilson_hi": 0.115707860129128
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 2178983,
+    "p_L": 0.2178983,
+    "wilson_lo": 0.2176425412038268,
+    "wilson_hi": 0.218154275540468
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 2820594,
+    "p_L": 0.2820594,
+    "wilson_lo": 0.28178056957046427,
+    "wilson_hi": 0.2823383978775933
+  },
+  {
+    "code": "steane_LUT",
+    "model": "iid_depolarising",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 3240796,
+    "p_L": 0.3240796,
+    "wilson_lo": 0.32378957967504796,
+    "wilson_hi": 0.3243697554880619
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 162,
+    "p_L": 1.62e-05,
+    "wilson_lo": 1.3890038311858974e-05,
+    "wilson_hi": 1.889410909378296e-05
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 4090,
+    "p_L": 0.000409,
+    "wilson_lo": 0.0003966582102120278,
+    "wilson_hi": 0.00042172563539763405
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 15619,
+    "p_L": 0.0015619,
+    "wilson_lo": 0.0015376145771627565,
+    "wilson_hi": 0.0015865683826511178
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 61019,
+    "p_L": 0.0061019,
+    "wilson_lo": 0.00605382134545184,
+    "wilson_hi": 0.006150358126190575
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 342960,
+    "p_L": 0.034296,
+    "wilson_lo": 0.034183381194306264,
+    "wilson_hi": 0.034408976615253564
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 1155417,
+    "p_L": 0.1155417,
+    "wilson_lo": 0.11534371133989413,
+    "wilson_hi": 0.11573998404699345
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 2177515,
+    "p_L": 0.2177515,
+    "wilson_lo": 0.21749580346085104,
+    "wilson_hi": 0.2180074133962331
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 2820441,
+    "p_L": 0.2820441,
+    "wilson_lo": 0.28176527416927005,
+    "wilson_hi": 0.2823230932905428
+  },
+  {
+    "code": "steane_MWPM",
+    "model": "iid_depolarising",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 3241666,
+    "p_L": 0.3241666,
+    "wilson_lo": 0.32387655937903065,
+    "wilson_hi": 0.32445677571723536
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.001,
+    "n_shots": 10000000,
+    "n_fail": 169,
+    "p_L": 1.69e-05,
+    "wilson_lo": 1.4536866203558541e-05,
+    "wilson_hi": 1.96472806642596e-05
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.005,
+    "n_shots": 10000000,
+    "n_fail": 4043,
+    "p_L": 0.0004043,
+    "wilson_lo": 0.0003920303890228013,
+    "wilson_hi": 0.00041695346019796314
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.01,
+    "n_shots": 10000000,
+    "n_fail": 15951,
+    "p_L": 0.0015951,
+    "wilson_lo": 0.0015705562168923575,
+    "wilson_hi": 0.0016200267174133023
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.02,
+    "n_shots": 10000000,
+    "n_fail": 61209,
+    "p_L": 0.0061209,
+    "wilson_lo": 0.006072746711150432,
+    "wilson_hi": 0.006169432745893908
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.05,
+    "n_shots": 10000000,
+    "n_fail": 343609,
+    "p_L": 0.0343609,
+    "wilson_lo": 0.03424817828772582,
+    "wilson_hi": 0.03447397947197006
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.1,
+    "n_shots": 10000000,
+    "n_fail": 1154396,
+    "p_L": 0.1154396,
+    "wilson_lo": 0.11524168751050244,
+    "wilson_hi": 0.1156378079548306
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.15,
+    "n_shots": 10000000,
+    "n_fail": 2178877,
+    "p_L": 0.2178877,
+    "wilson_lo": 0.2176319456976347,
+    "wilson_hi": 0.21814367105480434
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.18,
+    "n_shots": 10000000,
+    "n_fail": 2819524,
+    "p_L": 0.2819524,
+    "wilson_lo": 0.2816736017403902,
+    "wilson_hi": 0.28223136578987745
+  },
+  {
+    "code": "steane_UF",
+    "model": "iid_depolarising",
+    "p": 0.2,
+    "n_shots": 10000000,
+    "n_fail": 3240781,
+    "p_L": 0.3240781,
+    "wilson_lo": 0.3237880800250796,
+    "wilson_hi": 0.3243682551391827
+  }
+]

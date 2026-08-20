@@ -1,0 +1,19 @@
+# E07b_montecarlo_software_mirror configuration.
+experiment: E07b_montecarlo_software_mirror
+status: run_2026-08-19
+seed: 0xC0DE7
+n_shots: 10000000
+p_grid: [0.001, 0.005, 0.01, 0.02, 0.05, 0.10, 0.15, 0.18, 0.20]
+codes:
+  rep3:
+    model: iid_bitflip
+  shor:
+    model: [single_pauli, iid_depolarising]
+  steane:
+    modes: [LUT, MWPM, UF]
+    model: iid_depolarising
+host_path: software_mirror   # NOT cpp_xrt/cpp_opencl/python_pyxrt -- this is not a hardware run
+device_bdf: null              # no device involved
+outputs:
+  raw: raw/
+  processed: processed/
