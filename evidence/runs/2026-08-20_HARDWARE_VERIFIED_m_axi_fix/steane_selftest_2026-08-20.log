@@ -1,0 +1,72 @@
+[1] xrt.device(0)
+    OK: <pyxrt.device object at 0x7efd80ebaab0>
+[2] load_xclbin(/home/cdac/Documents/qec_fpga/qec-fpga-revision/rtl/steane713/build_hw/steane_qec_kernel_m_axi_fix.xclbin)
+    OK in 7.28s, uuid=<pyxrt.uuid object at 0x7efd80e44f30>
+[3] xrt.kernel(dev, uuid, 'steane_qec_kernel')
+    OK: <pyxrt.kernel object at 0x7efd80e44e70>
+[4] allocated result_out bo, group_id=0
+    mode=LUT   X q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=1 s_x=0 x_corr=0000001 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Y q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=1 s_x=1 x_corr=0000001 z_corr=0000001 Xlog=0 Zlog=0  PASS
+    mode=LUT   Z q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=1 x_corr=0000000 z_corr=0000001 Xlog=0 Zlog=0  PASS
+    mode=LUT   X q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=2 s_x=0 x_corr=0000010 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Y q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=2 s_x=2 x_corr=0000010 z_corr=0000010 Xlog=0 Zlog=0  PASS
+    mode=LUT   Z q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=2 x_corr=0000000 z_corr=0000010 Xlog=0 Zlog=0  PASS
+    mode=LUT   X q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=3 s_x=0 x_corr=0000100 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Y q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=3 s_x=3 x_corr=0000100 z_corr=0000100 Xlog=0 Zlog=0  PASS
+    mode=LUT   Z q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=3 x_corr=0000000 z_corr=0000100 Xlog=0 Zlog=0  PASS
+    mode=LUT   X q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=4 s_x=0 x_corr=0001000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Y q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=4 s_x=4 x_corr=0001000 z_corr=0001000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Z q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=4 x_corr=0000000 z_corr=0001000 Xlog=0 Zlog=0  PASS
+    mode=LUT   X q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=5 s_x=0 x_corr=0010000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Y q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=5 s_x=5 x_corr=0010000 z_corr=0010000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Z q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=5 x_corr=0000000 z_corr=0010000 Xlog=0 Zlog=0  PASS
+    mode=LUT   X q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=6 s_x=0 x_corr=0100000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Y q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=6 s_x=6 x_corr=0100000 z_corr=0100000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Z q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=6 x_corr=0000000 z_corr=0100000 Xlog=0 Zlog=0  PASS
+    mode=LUT   X q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=7 s_x=0 x_corr=1000000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Y q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=7 s_x=7 x_corr=1000000 z_corr=1000000 Xlog=0 Zlog=0  PASS
+    mode=LUT   Z q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=7 x_corr=0000000 z_corr=1000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  X q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=1 s_x=0 x_corr=0000001 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Y q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=1 s_x=1 x_corr=0000001 z_corr=0000001 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Z q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=1 x_corr=0000000 z_corr=0000001 Xlog=0 Zlog=0  PASS
+    mode=MWPM  X q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=2 s_x=0 x_corr=0000010 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Y q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=2 s_x=2 x_corr=0000010 z_corr=0000010 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Z q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=2 x_corr=0000000 z_corr=0000010 Xlog=0 Zlog=0  PASS
+    mode=MWPM  X q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=3 s_x=0 x_corr=0000100 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Y q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=3 s_x=3 x_corr=0000100 z_corr=0000100 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Z q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=3 x_corr=0000000 z_corr=0000100 Xlog=0 Zlog=0  PASS
+    mode=MWPM  X q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=4 s_x=0 x_corr=0001000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Y q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=4 s_x=4 x_corr=0001000 z_corr=0001000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Z q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=4 x_corr=0000000 z_corr=0001000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  X q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=5 s_x=0 x_corr=0010000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Y q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=5 s_x=5 x_corr=0010000 z_corr=0010000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Z q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=5 x_corr=0000000 z_corr=0010000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  X q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=6 s_x=0 x_corr=0100000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Y q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=6 s_x=6 x_corr=0100000 z_corr=0100000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Z q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=6 x_corr=0000000 z_corr=0100000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  X q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=7 s_x=0 x_corr=1000000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Y q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=7 s_x=7 x_corr=1000000 z_corr=1000000 Xlog=0 Zlog=0  PASS
+    mode=MWPM  Z q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=7 x_corr=0000000 z_corr=1000000 Xlog=0 Zlog=0  PASS
+    mode=UF    X q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=1 s_x=0 x_corr=0000001 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=UF    Y q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=1 s_x=1 x_corr=0000001 z_corr=0000001 Xlog=0 Zlog=0  PASS
+    mode=UF    Z q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=1 x_corr=0000000 z_corr=0000001 Xlog=0 Zlog=0  PASS
+    mode=UF    X q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=2 s_x=0 x_corr=0000010 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=UF    Y q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=2 s_x=2 x_corr=0000010 z_corr=0000010 Xlog=0 Zlog=0  PASS
+    mode=UF    Z q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=2 x_corr=0000000 z_corr=0000010 Xlog=0 Zlog=0  PASS
+    mode=UF    X q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=3 s_x=0 x_corr=0000100 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=UF    Y q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=3 s_x=3 x_corr=0000100 z_corr=0000100 Xlog=0 Zlog=0  PASS
+    mode=UF    Z q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=3 x_corr=0000000 z_corr=0000100 Xlog=0 Zlog=0  PASS
+    mode=UF    X q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=4 s_x=0 x_corr=0001000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=UF    Y q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=4 s_x=4 x_corr=0001000 z_corr=0001000 Xlog=0 Zlog=0  PASS
+    mode=UF    Z q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=4 x_corr=0000000 z_corr=0001000 Xlog=0 Zlog=0  PASS
+    mode=UF    X q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=5 s_x=0 x_corr=0010000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=UF    Y q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=5 s_x=5 x_corr=0010000 z_corr=0010000 Xlog=0 Zlog=0  PASS
+    mode=UF    Z q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=5 x_corr=0000000 z_corr=0010000 Xlog=0 Zlog=0  PASS
+    mode=UF    X q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=6 s_x=0 x_corr=0100000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=UF    Y q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=6 s_x=6 x_corr=0100000 z_corr=0100000 Xlog=0 Zlog=0  PASS
+    mode=UF    Z q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=6 x_corr=0000000 z_corr=0100000 Xlog=0 Zlog=0  PASS
+    mode=UF    X q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=7 s_x=0 x_corr=1000000 z_corr=0000000 Xlog=0 Zlog=0  PASS
+    mode=UF    Y q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=7 s_x=7 x_corr=1000000 z_corr=1000000 Xlog=0 Zlog=0  PASS
+    mode=UF    Z q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED s_z=0 s_x=7 x_corr=0000000 z_corr=1000000 Xlog=0 Zlog=0  PASS
+
+[5] self-test: 63/63 PASS via REAL HARDWARE READ-BACK (xrt::bo, first hardware test this reconstructed kernel has had)

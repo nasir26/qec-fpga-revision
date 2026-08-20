@@ -1,0 +1,20 @@
+kernel ready, result_out group_id=0
+  cw=000 mask=000: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x00000400 OK
+  cw=000 mask=001: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x00000648 OK
+  cw=000 mask=010: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x000006D0 OK
+  cw=000 mask=011: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x000003A7 OK
+  cw=000 mask=100: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x000006A0 OK
+  cw=000 mask=101: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x000003D7 OK
+  cw=000 mask=110: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x0000034F OK
+  cw=000 mask=111: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x00000107 OK
+  cw=111 mask=000: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x00000507 OK
+  cw=111 mask=001: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x0000074F OK
+  cw=111 mask=010: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x000007D7 OK
+  cw=111 mask=011: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x000002A0 OK
+  cw=111 mask=100: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x000007A7 OK
+  cw=111 mask=101: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x000002D0 OK
+  cw=111 mask=110: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x00000248 OK
+  cw=111 mask=111: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED hw=0x00000000 OK
+
+DONE: 16 combinations, 16/16 hardware-vs-software AGREE, 0 mismatches
+weight<=1 recovery (distance-3 guarantee): 8/8

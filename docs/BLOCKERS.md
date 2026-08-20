@@ -116,7 +116,20 @@ confirmation that a `v++`/Vivado license (as opposed to the HLS-only license jus
 available for this campaign's use.
 **From:** author, to confirm the v++/Vivado license and approve spending build time on it.
 
-## B-003: Missing Steane three-mode kernel source (PARTIALLY ADDRESSED — reconstruction written, unverified against hardware)
+## B-003: Missing Steane three-mode kernel source (RESOLVED for hardware purposes, 2026-08-20)
+
+**RESOLVED (2026-08-20): the reconstruction is now hardware-verified.** Built end to end (`v++
+-c`, `v++ -l`, full Vivado implementation, ~2h13m) and tested against the live Alveo U55C: 63/63
+self-test PASS (21 cases × 3 modes, real `xrt::bo` read-back) and a full exhaustive sweep, all
+3^7=2,187 patterns × 3 modes = 6,561 combinations, **6,561/6,561 agreeing with the software
+mirror, zero mismatches** (ledger C-156). Real post-route data also obtained: 0 BRAM18K, 1286 FF,
+1067+283 LUT, WNS +0.003 ns, 300 MHz achieved (C-157/C-158). This is the first time any Steane
+decoder logic, reconstructed or original, has run on real hardware in this line of work's
+history. If the author locates the *original* `steane_qec_kernel.cpp`, it should still be
+preferred and diffed against this reconstruction — the blocker is resolved pragmatically, not by
+recovering the original source.
+
+### History (kept for the record)
 **Blocks:** verification of ledger rows C-061 and C-062; any Steane hardware result.
 **Evidence:** the only Steane kernel in the archive, `steane_decoder_kernel.cpp` (50 lines, read
 in full), implements a single batched LUT-only decoder over three `m_axi` HBM ports with no mode
@@ -138,7 +151,20 @@ should still be preferred over this reconstruction and diffed against it.
 reconstruction through HLS co-simulation and synthesis (B-002/B-005 territory next).
 **From:** author, to confirm which path to take.
 
-## B-005: No Steane or Rep-3 kernel was ever taken through v++ synthesis, as far as the archive shows (OPEN, priority zero)
+## B-005: No Steane or Rep-3 kernel was ever taken through v++ synthesis, as far as the archive shows (RESOLVED for this revision's kernels, 2026-08-20)
+
+**RESOLVED (2026-08-20): both kernels now built, placed, routed, and hardware-verified.**
+This revision's `rtl/rep3/src/rep3_qec_kernel.cpp` and `rtl/steane713/src/steane_qec_kernel.cpp`
+(both with the `m_axi` fix) were taken through `v++ -c`, `v++ -l`, and full Vivado
+implementation (~2h13-17m each) and tested against the live Alveo U55C: Rep-3 16/16 exhaustive
+(C-159), Steane 63/63 self-test + 6,561/6,561 exhaustive (C-156). Real post-route reports exist
+for both for the first time (C-157/C-158/C-160). **This does not answer the original question**
+of whether the *original* submission's Table 2/3 Steane numbers were ever backed by a real
+Vivado run on the author's original kernel — that kernel's source was never recovered (B-003)
+and this revision's numbers are for a reconstruction. If the author locates the original build
+outputs, they should still be sought and compared against this revision's real data.
+
+### History (kept for the record)
 **Blocks:** Tables 2 and 3 (Steane and Rep-3 rows), C-030 through C-035, and every latency figure
 for those two kernels (C-011, C-013, C-018, C-019).
 **Evidence:** no `.xo`, `.xclbin`, `.compile_summary`, or `.link_summary` exists for Steane or

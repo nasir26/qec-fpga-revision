@@ -1,0 +1,2 @@
+
+DONE: 6561 (mode,pattern) combinations tested (3 modes x 3^7), 6561/6561 hardware-vs-software AGREE, 0 mismatches, 0.8s elapsed (7852.7 shots/s)

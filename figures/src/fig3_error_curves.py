@@ -51,9 +51,18 @@ def series(points, code, model):
 # measured ~0.53 scale factor at this new figsize (344pt / (9in*72pt/in)).
 FIGSIZE = (9.5, 5.2)
 TITLE_FONTSIZE = 18
-LABEL_FONTSIZE = 17
 LEGEND_FONTSIZE = 17
+XLABEL_FONTSIZE = 17
 TICK_LABELSIZE = 17
+# matplotlib auto-shrinks mathtext subscripts (the "L" in "$p_L$") and
+# log-axis exponents ("10^-7") to ~70% of the base size, so those two specific
+# elements need a larger base to clear 8pt after the ~0.503 print-inclusion
+# scale -- measured directly (17pt left them at 5.98-6.45pt even though plain
+# digit/letter text at 17pt was fine, ~9.2pt). Applied only where the
+# subscript/exponent actually occurs (the y-label with $p_L$, and panel 2's
+# log-scale y-ticks), not to x-labels/legends, which don't have one and were
+# overflowing their panels at this larger size.
+SUBSCRIPT_FONTSIZE = 23
 # The "software-mirror, not hardware-measured" caveat is already the bolded
 # first sentence of the LaTeX caption (paper/sections/results.tex) -- no need
 # to also cram it into the image as a suptitle, which is what was colliding
@@ -73,8 +82,8 @@ def main():
     ax.plot(p_analytic, 3 * p_analytic**2 - 2 * p_analytic**3, "--", color="k",
              label="analytic")
     ax.set_title("Rep-3 [[3,1,2]]", fontsize=TITLE_FONTSIZE)
-    ax.set_xlabel("physical error rate $p$", fontsize=LABEL_FONTSIZE)
-    ax.set_ylabel("logical error rate $p_L$", fontsize=LABEL_FONTSIZE)
+    ax.set_xlabel("physical error rate $p$", fontsize=XLABEL_FONTSIZE)
+    ax.set_ylabel("logical error rate $p_L$", fontsize=SUBSCRIPT_FONTSIZE)
     ax.legend(fontsize=LEGEND_FONTSIZE, loc="upper left")
     ax.tick_params(axis="both", labelsize=TICK_LABELSIZE)
     ax.grid(alpha=0.3)
@@ -91,9 +100,13 @@ def main():
     ax.axhline(0.015, ls=":", color="gray", lw=1, label="prior claim")
     ax.set_yscale("log")
     ax.set_title("Shor [[9,1,3]]", fontsize=TITLE_FONTSIZE)
-    ax.set_xlabel("physical error rate $p$", fontsize=LABEL_FONTSIZE)
+    ax.set_xlabel("physical error rate $p$", fontsize=XLABEL_FONTSIZE)
     ax.legend(fontsize=LEGEND_FONTSIZE, loc="upper left")
-    ax.tick_params(axis="both", labelsize=TICK_LABELSIZE)
+    ax.tick_params(axis="x", labelsize=TICK_LABELSIZE)
+    # y-axis is log-scale: its "10^-N" tick labels have an auto-shrunk
+    # exponent, so this axis needs the larger SUBSCRIPT_FONTSIZE base too
+    # (see the comment on that constant above).
+    ax.tick_params(axis="y", labelsize=SUBSCRIPT_FONTSIZE)
     ax.grid(alpha=0.3)
 
     # --- Panel 3: Steane, 3 modes ---
@@ -104,7 +117,7 @@ def main():
         ax.plot(p, p_l, "o-", label=f"{mode}", color=colors[mode], markersize=5)
         ax.fill_between(p, lo, hi, alpha=0.15, color=colors[mode])
     ax.set_title("Steane [[7,1,3]]", fontsize=TITLE_FONTSIZE)
-    ax.set_xlabel("physical error rate $p$", fontsize=LABEL_FONTSIZE)
+    ax.set_xlabel("physical error rate $p$", fontsize=XLABEL_FONTSIZE)
     ax.legend(fontsize=LEGEND_FONTSIZE, loc="upper left")
     ax.tick_params(axis="both", labelsize=TICK_LABELSIZE)
     ax.grid(alpha=0.3)
