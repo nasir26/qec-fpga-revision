@@ -2,7 +2,38 @@
 
 Append-only. Each entry: what is blocked, why, what is needed, from whom, and the workaround in use.
 
-## B-001: Hardware decode path inaccessible on the ORIGINAL capture machine (OPEN, priority zero, status UPDATED)
+## B-001: Hardware decode path inaccessible on the ORIGINAL capture machine (PARTIALLY RESOLVED, 2026-08-20 -- see update below)
+
+**UPDATE (2026-08-20): kernel execution on real hardware, confirmed.** With the author running
+`xbutil reset -d 0000:8c:00.1 -t user --force` to clear a stuck hardware context left over from
+unrelated work on this shared machine, the original unmodified `shor_qec_kernel.xclbin` loads
+successfully on this host and the kernel runs to `ERT_CMD_STATE_COMPLETED`, confirmed on two
+independent runs (`evidence/runs/2026-08-20_original_host_this_hardware/`). This is the first
+genuine `MEASURED-HW` result in this entire campaign (ledger C-149).
+
+**What is still blocked:** reading the kernel's *output*. Running the original author's own
+`shor_qec_host.py` unmodified against this now-working device gives a more precise diagnosis than
+the original `PermissionError` story: path X (ctypes) successfully loads
+`libxrt_coreutil.so` and enumerates its real exported symbols, and **`xrtRunGetReturnValue` is
+simply not among them; `xrtRunReadRegister` is an undefined symbol.** On XRT 2.15.225, the direct
+register-read C API this host driver's Path X depends on is not exported by the shared library at
+all, independent of permissions. Path B (BAR4) was not properly exercised in this run because the
+script's `PCI_RESOURCE4_PATHS` is hardcoded to the *original* capture host's four BDFs, none of
+which match this host's `0000:8c:00.1`; combined with the already-confirmed finding that this
+host's `resource4` is root-owned regardless (C-131), Path B would fail here too. Self-test again
+falls back to the software decoder (27/27, matching `selftest.log`'s pattern, now for a
+newly-diagnosed reason). See ledger C-150 for the full finding, and note this is a strong,
+hardware-confirmed argument for the manuscript's own recommended fix: reading a result via a
+standard `xrt::bo` buffer object (this revision's `m_axi` output-buffer addition, C-142-HLS) does
+not depend on these fragile, XRT-build-specific raw symbols at all.
+
+**Next step:** build (`v++ -c` / `v++ -l`, real wall-clock time, likely 15 minutes to a few hours
+for Vivado implementation on kernels this small) and test the `m_axi`-fixed kernel
+(`rtl/shor913/src/shor_qec_kernel.cpp`) against this same live device, reading its result via a
+standard `xrt::bo`. If that closes the loop, this campaign gets its first hardware-measured,
+hardware-verified correctness and latency result. Not yet started as of this update.
+
+### Original entry (superseded in severity, kept for the record)
 **Blocks:** E01, E02, E03, E04, E05, and every `MEASURED-HW` row in the ledger.
 **Evidence:** `evidence/runs/selftest.log` shows XRT buffer path A failing with a range error on
 arg index 1, BAR4 mmap failing with `PermissionError` on all four device BDFs
@@ -28,19 +59,19 @@ is materially better:
 - No kernel has been run and no register has been read on this host yet. This update is a
   correction to the blocker's *severity*, not a claim that E01/E02 are unblocked.
 
-**Needed, in order of preference:**
-1. Authorisation to attempt a self-test run against this host's live device using the existing
-   `shor_qec_kernel.xclbin`, to see whether it loads at all under the shell/XRT version mismatch
-   noted above. Read-only risk beyond normal device use; needs a go/no-go from the author before
-   any run against shared hardware.
-2. Authorisation to add a one-element `m_axi` output-buffer argument to the kernel (small HLS
-   change) and rebuild, which removes the BAR4/path-A dependency entirely regardless of host.
-   This is the manuscript's own recommendation (Section 11) and remains the structurally correct
-   fix even though B-001's acute symptom may not reproduce here.
+**Needed, in order of preference (updated 2026-08-20):**
+1. ~~Authorisation to attempt a self-test run against this host's live device~~ **DONE** — kernel
+   execution confirmed real (C-149), read-back failure precisely diagnosed (C-150).
+2. Authorisation to spend real build time (`v++ -c`/`v++ -l`, Vivado implementation, likely
+   15 minutes to a few hours) building the `m_axi`-fixed kernel and testing its `xrt::bo`
+   read-back against this live device. This is the next concrete step toward a real MEASURED-HW
+   correctness and latency result, and does not depend on anything further from the author beyond
+   this authorisation and continued access to the device (which is shared with other work on this
+   machine — the same reset-and-check dance may be needed again before each run).
 3. If this host's device turns out to be shared/production and unsuitable for repeated
    measurement runs (10^6-shot E02 sweeps, multi-CU E04 builds), confirmation of which machine is
    the intended measurement host, and access to it.
-**From:** author, to confirm (1) is authorised and (3) is answered before any experiment runs.
+**From:** author, to authorise (2).
 **Workaround:** none. Software-mirror numbers cannot substitute.
 
 ## B-002: Vitis and Vivado availability (STATUS UPDATED — largely satisfied on this host)

@@ -1,0 +1,51 @@
+11:17:31  INFO   =================================================================
+11:17:31  INFO     Shor 9-qubit QEC   |   Alveo U55C   |   C-DAC NQM Qniverse
+11:17:31  INFO   =================================================================
+11:17:31  INFO   opening XRT device 0
+11:17:31  INFO   loading xclbin : /home/cdac/Documents/qec_fpga/qec-fpga-revision/docs/legacy/implementation/shor_qec_kernel.xclbin
+11:17:31  INFO   kernel ready  : shor_qec_kernel
+11:17:31  INFO   ── self-test: all 27 single-qubit Pauli errors ──
+11:17:31  INFO   detecting hardware read-back path …
+11:17:31  INFO     path X: ctypes XRT C-API …
+11:17:31  INFO       ctypes: loaded /opt/xilinx/xrt/lib/libxrt_coreutil.so
+11:17:31  INFO       available xrtRun* symbols: ['xrtRunClose', 'xrtRunOpen', 'xrtRunSetArg', 'xrtRunSetCallback', 'xrtRunStart', 'xrtRunState', 'xrtRunUpdateArg', 'xrtRunWait', 'xrtRunWaitFor', '_Z13xrtRunGetArgVPviS_m', '_Z13xrtRunSetArgVPviPKvm', '_Z15xrtRunGetArgVPPN3xrt3runEiPvm', '_Z16xrtRunUpdateArgVPviPKvm']
+11:17:31  INFO       xrtRunReadRegister: /opt/xilinx/xrt/lib/libxrt_coreutil.so.2: undefined symbol: xrtRunReadRegister
+11:17:31  INFO       path X: no working ctypes symbol found
+11:17:31  INFO     path B: mmap BAR4 @ file_offset=0x18 …
+11:17:31  WARNING  No hardware read-back available — using software decoder.
+11:17:31  WARNING  Run 'python3 bar_probe.py' (as root) to diagnose.
+11:17:31  INFO   active path: software decoder
+11:17:31  INFO     X      q0  synd=0x01  x_corr=000000001  z_corr=000000000  PASS
+11:17:31  INFO     Y      q0  synd=0x41  x_corr=000000001  z_corr=000000001  PASS
+11:17:31  INFO     Z      q0  synd=0x40  x_corr=000000000  z_corr=000000001  PASS
+11:17:31  INFO     X      q1  synd=0x03  x_corr=000000010  z_corr=000000000  PASS
+11:17:31  INFO     Y      q1  synd=0x43  x_corr=000000010  z_corr=000000010  PASS
+11:17:31  INFO     Z      q1  synd=0x40  x_corr=000000000  z_corr=000000001  PASS
+11:17:31  INFO     X      q2  synd=0x02  x_corr=000000100  z_corr=000000000  PASS
+11:17:31  INFO     Y      q2  synd=0x42  x_corr=000000100  z_corr=000000100  PASS
+11:17:31  INFO     Z      q2  synd=0x40  x_corr=000000000  z_corr=000000001  PASS
+11:17:31  INFO     X      q3  synd=0x04  x_corr=000001000  z_corr=000000000  PASS
+11:17:31  INFO     Y      q3  synd=0xC4  x_corr=000001000  z_corr=000001000  PASS
+11:17:31  INFO     Z      q3  synd=0xC0  x_corr=000000000  z_corr=000001000  PASS
+11:17:31  INFO     X      q4  synd=0x0C  x_corr=000010000  z_corr=000000000  PASS
+11:17:31  INFO     Y      q4  synd=0xCC  x_corr=000010000  z_corr=000010000  PASS
+11:17:31  INFO     Z      q4  synd=0xC0  x_corr=000000000  z_corr=000001000  PASS
+11:17:31  INFO     X      q5  synd=0x08  x_corr=000100000  z_corr=000000000  PASS
+11:17:31  INFO     Y      q5  synd=0xC8  x_corr=000100000  z_corr=000100000  PASS
+11:17:31  INFO     Z      q5  synd=0xC0  x_corr=000000000  z_corr=000001000  PASS
+11:17:31  INFO     X      q6  synd=0x10  x_corr=001000000  z_corr=000000000  PASS
+11:17:31  INFO     Y      q6  synd=0x90  x_corr=001000000  z_corr=001000000  PASS
+11:17:31  INFO     Z      q6  synd=0x80  x_corr=000000000  z_corr=001000000  PASS
+11:17:31  INFO     X      q7  synd=0x30  x_corr=010000000  z_corr=000000000  PASS
+11:17:31  INFO     Y      q7  synd=0xB0  x_corr=010000000  z_corr=010000000  PASS
+11:17:31  INFO     Z      q7  synd=0x80  x_corr=000000000  z_corr=001000000  PASS
+11:17:31  INFO     X      q8  synd=0x20  x_corr=100000000  z_corr=000000000  PASS
+11:17:31  INFO     Y      q8  synd=0xA0  x_corr=100000000  z_corr=100000000  PASS
+11:17:31  INFO     Z      q8  synd=0x80  x_corr=000000000  z_corr=001000000  PASS
+11:17:31  INFO   self-test: 27/27  [software]
+11:17:31  WARNING  Self-test used SOFTWARE decoder — xclbin not verified.
+11:17:31  WARNING  Run bar_probe.py as root to diagnose hardware read-back.
+11:17:31  INFO   ── Monte Carlo sweep: single_pauli, 1000 shots/point ──
+11:17:31  INFO   p=0.0100  p_L=0.00000  (0/1000)  8.9 ms  112083 shots/s
+11:17:32  INFO   plot saved: shor_qec_fpga_curve.png
+11:17:32  INFO   done

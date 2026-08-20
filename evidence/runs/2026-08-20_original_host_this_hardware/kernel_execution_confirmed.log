@@ -1,0 +1,12 @@
+[1] xrt.device(0)
+    OK: <pyxrt.device object at 0x7fd5e6ee0b30>
+[2] load_xclbin(/home/cdac/Documents/qec_fpga/qec-fpga-revision/docs/legacy/implementation/shor_qec_kernel.xclbin)
+    OK in 0.04s, uuid=<pyxrt.uuid object at 0x7fd5e6ee0bb0>
+[3] xrt.kernel(dev, uuid, 'shor_qec_kernel')
+    OK: <pyxrt.kernel object at 0x7fd5e6ee0bf0>
+[4] run kernel with err_in=1 (X error on qubit 0)
+    kernel finished, state=ert_cmd_state.ERT_CMD_STATE_COMPLETED
+[5] attempt to read return value via r.get_arg / xrt.bo path
+    read_register FAILED: AttributeError: 'pyxrt.run' object has no attribute 'read_register'
+    r.return_value FAILED: AttributeError: 'pyxrt.run' object has no attribute 'return_value'
+[6] done -- this establishes whether the ORIGINAL xclbin even loads and runs on this host's shell/XRT version, independent of the readback question above.
