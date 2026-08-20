@@ -1,0 +1,64 @@
+# Source data for a rebuilt Table 2 (post-synthesis resource utilisation),
+# addressing docs/CLAIMS_LEDGER.md section D (C-030 through C-033).
+#
+# Every row below is transcribed from a real evidence/synthesis/*/*.rpt file
+# produced by vitis_hls csynth_design on 2026-08-19, not estimated or
+# hand-written. See that report for the authoritative numbers; this file
+# exists only to drive the table-generation script.
+
+kernels:
+  - name: "Rep-3 [[3,1,2]]"
+    variant: "original, AXI-Lite only"
+    source: "evidence/synthesis/rep3_original_hls_2026-08-19/rep3_qec_kernel_csynth.rpt"
+    bram18k: 0
+    dsp: 0
+    ff: 198
+    lut: 367
+    timing_ns: 2.053
+    latency_cycles: 0
+
+  - name: "Shor [[9,1,3]]"
+    variant: "original, AXI-Lite only"
+    source: "evidence/synthesis/shor_original_hls_2026-08-19/shor_qec_kernel_csynth.rpt"
+    bram18k: 1
+    dsp: 0
+    ff: 190
+    lut: 228
+    timing_ns: 2.318
+    latency_cycles: 1
+
+  - name: "Shor [[9,1,3]]"
+    variant: "with m_axi output-buffer fix (B-001)"
+    source: "evidence/synthesis/shor_m_axi_fix_hls_2026-08-19/shor_qec_kernel_csynth.rpt"
+    bram18k: 3
+    dsp: 0
+    ff: 1209
+    lut: 1137
+    timing_ns: 2.431
+    latency_cycles: 70
+
+  - name: "Steane [[7,1,3]] (x3 modes, reconstructed)"
+    variant: "AXI-Lite only"
+    source: "evidence/synthesis/steane_reconstructed_axilite_only_hls_2026-08-19/steane_qec_kernel_csynth.rpt"
+    bram18k: 0
+    dsp: 0
+    ff: 242
+    lut: 699
+    timing_ns: 2.420
+    latency_cycles: 2
+
+  - name: "Steane [[7,1,3]] (x3 modes, reconstructed)"
+    variant: "with m_axi output-buffer fix (B-001)"
+    source: "evidence/synthesis/steane_reconstructed_m_axi_hls_2026-08-19/steane_qec_kernel_csynth.rpt"
+    bram18k: 2
+    dsp: 0
+    ff: 1685
+    lut: 1832
+    timing_ns: 2.431
+    latency_cycles: 71
+
+device:
+  bram18k: 4032
+  dsp: 9024
+  ff: 2607360
+  lut: 1303680

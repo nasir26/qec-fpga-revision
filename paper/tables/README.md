@@ -24,8 +24,24 @@ The Shor row's BRAM18K estimate (1 block) computed here independently matches Ta
 claim of 1 BRAM18K for the Shor kernel, which is a small but real cross-check that the underlying
 LUT-size arithmetic is sound.
 
-## Tables 2 and 3 (resource utilisation), R1-Min-5
+## Table 2 (post-synthesis resource utilisation), R1-Min-5
 
-Not yet regeneratable: no real synthesis or place-and-route report exists for the Steane or
-Rep-3 kernels (docs/BLOCKERS.md B-005), and the Shor kernel's own `*_csynth.rpt` is missing from
-the archive (ledger C-010). These tables can only be honestly rebuilt after B-002/B-005 close.
+**Regenerated, 2026-08-19,** from real `evidence/synthesis/*/*.rpt` data (`vitis_hls
+csynth_design`, not estimated or hand-written):
+- `table2_resources_data.yaml` — transcribed from five real HLS runs (Rep-3 original; Shor
+  original and with the m_axi fix; reconstructed Steane with and without the m_axi fix).
+- `gen_table2.py` — emits the table, including an honest total row (AXI-Lite-only configuration
+  only, matching what the manuscript claims all three kernels use) and utilisation percentages
+  computed against the real U55C device totals.
+- `table2_resources.tex` — generated output.
+
+This table now shows the m_axi fix's cost directly (Shor and Steane each roughly 5-8x their
+AXI-Lite-only FF/LUT count once the output-buffer argument is added), which is the same finding
+as ledger C-142-HLS, just presented as a table instead of prose. The AXI-Lite-only total across
+all three kernels is 1 BRAM18K, 630 FF, 1294 LUT — 0.025%/0.024%/0.099% of the device respectively.
+Still smaller than 0.1% of the fabric either way, so the manuscript's qualitative "negligible"
+conclusion survives; the specific "<0.02%" figure does not (0.099% LUT utilisation is roughly 5x
+that).
+
+**Not yet regeneratable:** post-route (Table 3) numbers — Vivado implementation has not been run
+for any kernel yet (docs/BLOCKERS.md B-002/B-005).

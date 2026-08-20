@@ -60,3 +60,8 @@ circuit-level noise model, with confidence intervals.
   Both mirrors together (Shor and Steane) give this campaign, for the first time, software
   correctness evidence that traces to the actual kernel sources rather than to an assertion in
   the manuscript.
+- `mirrors/rep3_mirror.py`: bit-exact mirror of `rtl/rep3/src/rep3_qec_kernel.cpp`.
+  `tests/test_rep3_mirror.py` exhaustively checks both valid codewords against all 8 possible
+  error masks (16 combinations total, small enough to be a complete enumeration rather than a
+  sample): all weight-0/1 errors recover correctly, confirming the distance-3 guarantee holds in
+  this mirror. All three kernels (Rep-3, Shor, Steane) now have a software mirror.
