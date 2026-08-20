@@ -20,6 +20,10 @@ except ImportError:
     raise SystemExit("PyYAML required: pip install pyyaml")
 
 
+def tex_escape(s: str) -> str:
+    return s.replace("_", r"\_")
+
+
 def main():
     data_path = Path(__file__).parent / "table2_resources_data.yaml"
     with open(data_path) as f:
@@ -33,24 +37,22 @@ def main():
     print(r"% Regenerate: python3 gen_table2.py > table2_resources.tex")
     print(r"\begin{table}")
     print(r"\centering")
-    print(r"\caption{Post-synthesis (HLS-ESTIMATE, not post-route) resource utilisation, "
-          r"Vitis HLS 2023.2, part xcu55c-fsvh2892-2L-e, 300\,MHz target. Every row is a real "
-          r"\texttt{csynth\_design} run (\texttt{evidence/synthesis/}), not an estimate. Two "
-          r"variants are shown for Shor and Steane: AXI-Lite only (the architecture the "
-          r"manuscript describes) and with the one-element \texttt{m\_axi} output-buffer "
-          r"argument that unblocks hardware read-back (Section~\ref{sec:limitations}). Rep-3 "
-          r"has not yet had the same fix applied. Steane's kernel is a from-source "
-          r"reconstruction (no original source was recoverable; see "
-          r"Appendix~\ref{app:reconstruction}), not the original submission's kernel.}"
+    print(r"\caption{Post-synthesis resource utilisation (HLS-ESTIMATE, not post-route), "
+          r"real \texttt{csynth\_design} runs, Vitis HLS 2023.2, 300\,MHz target. AXI-Lite-only "
+          r"and \texttt{m\_axi}-augmented variants isolate the read-back fix's cost "
+          r"(Section~\ref{sec:limitations}). Steane's kernel is a reconstruction "
+          r"(Appendix~\ref{app:reconstruction}).}"
           r"\label{tab:resources}")
-    print(r"\begin{tabular}{llrrrrr}")
+    print(r"\small")
+    print(r"\setlength{\tabcolsep}{3pt}")
+    print(r"\begin{tabular}{p{2.2cm}p{2.3cm}rrrrr}")
     print(r"\toprule")
     print(r"\textbf{Kernel} & \textbf{Variant} & \textbf{BRAM\textsubscript{18K}} & \textbf{DSP} "
-          r"& \textbf{FF} & \textbf{LUT6} & \textbf{Latency (cyc.)} \\")
+          r"& \textbf{FF} & \textbf{LUT6} & \textbf{Lat.\ (cyc.)} \\")
     print(r"\midrule")
     for k in kernels:
-        print(f"{k['name']} & {k['variant']} & {k['bram18k']} & {k['dsp']} & {k['ff']} & "
-              f"{k['lut']} & {k['latency_cycles']} \\\\")
+        print(f"{tex_escape(k['name'])} & {tex_escape(k['variant'])} & {k['bram18k']} & "
+              f"{k['dsp']} & {k['ff']} & {k['lut']} & {k['latency_cycles']} \\\\")
     print(r"\midrule")
 
     # Totals: the "as submitted" configuration (AXI-Lite only, matching what the
@@ -61,7 +63,7 @@ def main():
     total_dsp = sum(k["dsp"] for k in axilite_rows)
     total_ff = sum(k["ff"] for k in axilite_rows)
     total_lut = sum(k["lut"] for k in axilite_rows)
-    print(f"\\textbf{{Total (AXI-Lite only, all three)}} & & \\textbf{{{total_bram}}} & "
+    print(f"\\textbf{{Total (AXI-Lite only)}} & & \\textbf{{{total_bram}}} & "
           f"\\textbf{{{total_dsp}}} & \\textbf{{{total_ff}}} & \\textbf{{{total_lut}}} & --- \\\\")
     print(f"U55C capacity & & {device['bram18k']:,} & {device['dsp']:,} & "
           f"{device['ff']:,} & {device['lut']:,} & --- \\\\")

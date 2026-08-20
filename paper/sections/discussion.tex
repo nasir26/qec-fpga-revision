@@ -1,0 +1,17 @@
+\section{Discussion}\label{sec:discussion}
+
+\subsection{The decoder is free; the interface is the problem}\label{subsec:disc-thesis}
+
+Section~\ref{subsec:res-real}'s comparison of AXI-Lite-only and \texttt{m\_axi}-augmented kernel variants is, in our view, the paper's most useful result, and it reframes what a distance-3 FPGA QEC decoder project should claim. The combinational decode logic for all three kernels together occupies roughly 0.1\% of the device and, on the one kernel independently re-verified against a prior claim, a genuinely small critical path. The specific architectural change needed to get a result off the card without elevated host privileges costs 35 to 70 times that logic's own pipeline depth. A paper that reports only the decoder's cost, without also reporting the interface's cost, describes a system that cannot actually be read from. This is not a criticism specific to this project: it is a structural point about where the real cost of a small-code FPGA decoder sits, and it is the reason we recommend describing this class of system by its measured interface cost rather than by an unqualified real-time claim.
+
+\subsection{Why the three Steane decoder modes agree}\label{subsec:disc-decoders}
+
+The statistical equivalence confirmed in Section~\ref{subsec:res-mc} follows directly from the Hamming property of the Steane code's parity-check matrix: every non-zero 3-bit syndrome corresponds to exactly one qubit, so any decoding mechanism that correctly exploits this bijection necessarily makes the same decision as any other. This is a property of the code at this distance, not a property of the decoding algorithms in general, and Section~\ref{subsec:steane} states this explicitly rather than implying scalable MWPM or union-find support. The practical value of retaining three modes at distance 3 is a verified reference point for comparing implementation mechanisms on identical hardware, not a performance claim.
+
+\subsection{What the Shor discrepancy means for the rest of the manuscript}\label{subsec:disc-discrepancy}
+
+An order-of-magnitude discrepancy in a paper's central logical-error-rate figure is not a minor correction. It means every downstream claim that depended on the original figure (a specific below-threshold physical error rate, an implied margin against the break-even diagonal) needs to be re-derived from the corrected curve, not patched individually, and we have done so directly in Section~\ref{sec:results} rather than attempting to reconcile the two. We do not know how the original figure was produced, since no Monte Carlo run at any shot count under the IID-depolarising model for the Shor code exists anywhere in the archive this revision was built from; this is worth stating plainly rather than speculating.
+
+\subsection{Generalisation beyond distance 3}\label{subsec:disc-scaling}
+
+Table~\ref{tab:lut-scaling}'s corrected syndrome widths do not change the qualitative scalability picture: LUT-based decoding is viable to roughly \(m\approx16\) syndrome bits and becomes impractical beyond it, which places a rotated distance-5 surface code (\(m=24\)) and any realistic quantum LDPC code (BB\([[72,12,6]]\), \(m=60\)) outside the regime this paper's architecture can address without a fundamentally different decoder. This is precisely the regime a reviewer of an earlier version of this work identified as the only one with practical value, and it is future work, not a gap papered over here (Section~\ref{sec:limitations}).

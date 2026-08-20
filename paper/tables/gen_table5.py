@@ -91,15 +91,11 @@ def main():
     print(r"% m = n - k throughout (R1-Maj-6). Regenerate: python3 gen_table5.py")
     print(r"\begin{table}")
     print(r"\centering")
-    print(r"\caption{LUT scalability, $m = n-k$ (number of independent stabilizer "
-          r"generators) applied consistently. The Steane row uses two independent "
-          r"$m_X$- and $m_Z$-bit CSS half-syndrome LUTs, shown explicitly; all other "
-          r"rows use one LUT indexed by the full $m$-bit syndrome. Surface-code rows "
-          r"are disambiguated as rotated or unrotated. Beyond $m\approx16$ the LUT "
-          r"becomes impractical and iterative decoding is required. BRAM18K counts "
-          r"are a capacity-only estimate (entries $\times$ width $/$ 18\,Kbit), not a "
-          r"synthesis result.}\label{tab:lut-scaling}")
-    print(r"\begin{tabular}{lllrl}")
+    print(r"\caption{LUT scalability, $m=n-k$ applied consistently. Steane shows its "
+          r"$m_X\mid m_Z$ CSS half-syndrome split; surface-code rows disambiguate "
+          r"rotated/unrotated. BRAM18K is a capacity-only estimate, not a synthesis "
+          r"result.}\label{tab:lut-scaling}")
+    print(r"\begin{tabular}{p{2.6cm}p{2.1cm}rrp{2.4cm}}")
     print(r"\toprule")
     print(r"\textbf{Code} & $m$ & \textbf{LUT entries} & \textbf{Width (bits)} & \textbf{BRAM18K / Decoder} \\")
     print(r"\midrule")

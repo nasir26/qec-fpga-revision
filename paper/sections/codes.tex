@@ -1,0 +1,22 @@
+\section{The Three Codes}\label{sec:codes}
+
+\subsection{3-bit repetition code, \([[3,1,2]]\)}\label{subsec:rep3}
+
+The simplest distance-3 code encodes one bit as three copies, protects against a single \(X\) (bit-flip) error, and has no protection against \(Z\) errors. Its 2-bit syndrome maps to a 4-entry correction table. It is the conceptual building block of the Shor code, which is a repetition code applied twice in orthogonal bases.
+
+\subsection{Shor code, \([[9,1,3]]\)}\label{subsec:shor}
+
+The Shor code~\cite{shor1995scheme} concatenates an outer 3-qubit phase-flip repetition code with an inner 3-qubit bit-flip repetition code, giving three three-qubit blocks. Eight stabilizer generators produce an 8-bit syndrome that decouples cleanly: six bits detect \(X\)/\(Y\) errors within each block, two detect \(Z\)/\(Y\) errors across block boundaries. Of the 256 possible syndrome values, 22 are non-zero and correctable (nine \(X\), three degenerate \(Z\), nine \(Y\)); the remaining 234 correspond to uncorrectable weight-\(\ge\)2 events.
+
+\subsection{Steane code, \([[7,1,3]]\)}\label{subsec:steane}
+
+The Steane code~\cite{steane1996error} is a CSS code built from the classical \([7,4,3]\) Hamming code, using the same parity-check matrix \(H\) for both \(X\)-type and \(Z\)-type stabilizers. The Hamming property makes the syndrome a direct qubit index: a single-qubit error on qubit \(q\) produces syndrome \(q+1\) in binary, so \(H\)'s seven non-zero columns are exactly the seven non-zero 3-bit vectors.
+
+\subsubsection*{On the Steane kernel's three decoder ``modes''}
+The Steane kernel in this revision supports a LUT mode and two additional modes described, following convention, as minimum-weight perfect matching (MWPM) and union-find (UF)-inspired. \textbf{These are not general graph decoders and should not be read as evidence of scalable MWPM or union-find support}: at this code and this distance, the Hamming property collapses every one of the three mechanisms to the same underlying operation, exact equality between the syndrome and a column of \(H\). The MWPM-inspired mode is a 7-way priority encoder over exactly that equality test, falling through to a 21-pair enumeration for weight-\(\ge\)2 syndromes; the union-find-inspired mode's ``one growth round'' provably reduces to the identical single-column equality test for this graph (a literal reading of the usual ``count active adjacent checks, correct on odd parity'' description does \emph{not} reduce to the same test and was found, during this revision, to misdecode roughly half of the single-qubit error space -- see Appendix~\ref{app:reconstruction} for the derivation). All three modes therefore make identical decisions on any correctable syndrome by construction, not by coincidence, and this is confirmed statistically in Section~\ref{sec:results}. The value of retaining three modes at this distance is a verified, hardware-relevant comparison point for future higher-distance kernels where the three mechanisms genuinely diverge, not a claim of generality at \(d=3\).
+
+\subsection{Scalability convention}\label{subsec:scaling-convention}
+
+Table~\ref{tab:lut-scaling} reports LUT-based decoder scalability using \(m=n-k\), the number of independent stabilizer generators, applied identically to every code in the table. For CSS codes with two independent half-syndromes (such as Steane, where the kernel implements two 3-bit LUTs rather than one 6-bit LUT), both the combined \(m\) and the \(m_X\mid m_Z\) split are given explicitly, since prior versions of this table reported only one CSS half and left the convention unstated.
+
+\input{tables/table5_lut_scaling.tex}

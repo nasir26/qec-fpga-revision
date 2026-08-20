@@ -7,16 +7,23 @@ Author: Nasir Ali, Embedded Systems Division, C-DAC Noida (NQM / MeitY).
 
 ## Current state
 
-**Phase 1 (forensic audit) complete, 2026-08-19.** Repository scaffolded, original submission
-archived read-only and checksummed under `docs/legacy/`, `docs/CLAIMS_LEDGER.md` populated to
-86 rows against every table cell and figure caption in `main.tex`, `docs/SCOPE.md` and
-`docs/BLOCKERS.md` finalised, `docs/DECISIONS.md` carries a Phase 4 recommendation (ADR-004).
-See `docs/PROVABLE_FACTS.md` for the one-page summary. **Awaiting author go-ahead before Phase 2.**
+**A full draft manuscript exists and compiles, 2026-08-20** (`paper/main.tex` -> `paper/main.pdf`,
+18 pages, built with `paper/build.sh`; see `docs/CLAIMS_LEDGER.md`, now past 100 rows). This is a
+real, evidence-backed draft, not a finished submission: the title is provisional (ADR-001 not yet
+signed off by the author), the bibliography style is a substitute for a missing proprietary
+Springer Nature `.bst` file, `figures/out/fig3_error_curves.pdf`'s in-figure title text is below
+the 8pt-at-final-size rule and needs a font-size fix, and **no result anywhere in the draft is a
+hardware measurement** -- every latency/resource number is an HLS synthesis estimate and every
+logical-error-rate curve is a software simulation, both stated explicitly in the abstract and
+Section 6.4. Phase 1 (forensic audit) is complete; the bulk of Phase 3's software-reachable work
+(real HLS synthesis for all three kernels, software-mirror correctness verification, phenomenological
+and circuit-level Monte Carlo data, a literature comparison table, bibliography and Table 2/5
+corrections) is done. What remains is fundamentally hardware-gated: see `docs/BLOCKERS.md` B-001.
 
-**Nothing in this repository is submission-ready.** The prior submission's central hardware
-claims are not currently backed by hardware logs in the archive (see `docs/SCOPE.md`). Of the
-three kernels the manuscript describes, only one (Shor) has any synthesis evidence at all in the
-delivered archive, and none has a confirmed hardware read-back.
+**Not submission-ready yet.** Beyond the hardware gap: the GitHub repository this manuscript's
+"Data availability" statement points to is currently private and needs to be made public (or
+reviewer access arranged) before submission; the title needs the author's actual sign-off, not
+just a provisional pick; and a full proofreading/formatting pass has not been done.
 
 ## The one rule
 

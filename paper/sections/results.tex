@@ -1,0 +1,41 @@
+\section{Results}\label{sec:results}
+
+\subsection{Resource and timing, real synthesis data}\label{subsec:res-real}
+
+\input{tables/table2_resources.tex}
+
+Table~\ref{tab:resources} is built entirely from real \texttt{csynth\_design} runs (Section~\ref{subsec:meth-synthesis}); no cell is estimated or transcribed from a prior claim. Two findings stand out. First, resynthesising the original, unmodified Shor kernel reproduces its previously reported critical path (2.318\,ns) and resource footprint (1~BRAM\textsubscript{18K}, 190~FF, 228~LUT) exactly, under the same tool, part, and clock target -- but reports a \textbf{one-cycle} pipeline latency, not the five cycles (17\,ns) previously claimed for the same source. The same pattern holds for the repetition-code kernel: exact match on BRAM/DSP, roughly 5--6\(\times\) higher FF/LUT and more than double the critical path relative to a prior claim, and zero cycles of latency (fully combinational) rather than three. We do not have an explanation for the latency discrepancy beyond noting that it is reproducible and specific to the latency figure; the resource and critical-path numbers, computed by the same tool run, are not in question.
+
+Second, and more consequentially for how this system should be described: comparing each kernel with and without the one-element \texttt{m\_axi} output-buffer argument (Section~\ref{subsec:axilite}) isolates what that interface fix costs. For Shor, pipeline depth goes from 1 to 70 cycles (3.33\,ns to 233\,ns) and resource use from 1~BRAM/190~FF/228~LUT to 3~BRAM/1209~FF/1137~LUT. For the reconstructed Steane kernel, 2 to 71 cycles (6.66\,ns to 236\,ns) and 0~BRAM/242~FF/699~LUT to 2~BRAM/1685~FF/1832~LUT. In both cases the interface costs roughly 35 to 70 times the decode logic's own pipeline depth. The AXI-Lite-only total footprint across all three kernels is 1~BRAM\textsubscript{18K}, 630~FF, 1294~LUT: 0.025\%, 0.024\%, and 0.099\% of the device respectively. The qualitative claim that this footprint is negligible survives; the specific figure previously reported (under 0.02\%) does not -- real LUT utilisation is roughly five times that.
+
+\subsection{Software correctness}\label{subsec:res-correctness}
+
+The Shor kernel's decode logic, mirrored directly from its synthesised source, passes its 27-case single-qubit self-test and agrees bit-for-bit with an independently written reference decoder over the complete 262,144-entry input space. An exhaustive weight-stratified enumeration over all \(4^9\) error patterns shows exactly the expected structure: 100\% of weight-0/1 patterns correctable, falling to 23--34\% for weight \(\ge\)2, consistent with a code operating past its guaranteed distance rather than any defect in the decoder. \textbf{This is software-only verification.} No result in this subsection involved the FPGA fabric; it establishes that the software model matches the kernel's own source logic, which any hardware comparison would still need to confirm independently.
+
+Reconstructing the Steane kernel's union-find-inspired mode from its textual description surfaced a genuine inconsistency worth recording: a literal reading of ``count active adjacent checks, correct on odd parity'' does not correctly decode single-qubit errors on this code's Tanner graph (roughly four of seven qubits are spuriously flagged for a weight-1 syndrome). The corrected implementation, described in Appendix~\ref{app:reconstruction}, instead uses the algebraically equivalent column-versus-syndrome test, which does pass the same exhaustive checks as the other two modes.
+
+\subsection{Monte Carlo logical error rates}\label{subsec:res-mc}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{fig3_error_curves.pdf}
+\caption{Monte Carlo logical error rates, \(10^7\) shots/point, Wilson 95\% confidence bands. \textbf{Software-mirror data, not hardware-measured.} Left: repetition code under IID bit-flip noise, closely matching the analytic curve \(p_L=3p^2-2p^3\). Centre: Shor code; single-Pauli noise gives zero measured failures at every grid point (plotted at the shot-noise floor); IID-depolarising noise gives a measured curve roughly an order of magnitude above a previously reported value at \(p=0.10\) (dotted line). Right: Steane code, all three decoder modes, curves visually indistinguishable; see Table~\ref{tab:ztest} for the corresponding hypothesis test.}\label{fig:pl_curves}
+\end{figure}
+
+Figure~\ref{fig:pl_curves} and Table~\ref{tab:ztest} report \(10^7\)-shot Monte Carlo data (Section~\ref{subsec:meth-mc}). The repetition-code curve matches its analytic prediction closely (measured \(p_L(0.10)=0.02801\), 95\% CI \([0.02790,0.02811]\), against an analytic value of 0.028): this is a real cross-validation of one of the few numbers in the original submission that holds up under independent re-measurement. The Shor code's single-Pauli sweep gives exactly zero failures across \(9\times10^7\) total shots, consistent with every single-qubit Pauli being correctable by construction.
+
+The Shor code's IID-depolarising sweep is the paper's most significant correction. Measured \(p_L(0.10) = 0.1513\), 95\% CI \([0.1511, 0.1516]\) -- roughly ten times a previously reported value of approximately 0.015 at the same physical error rate, with a confidence interval four orders of magnitude tighter than the gap between the two figures. This is not sampling noise. It is also the expected consequence of the code's own weight-stratified correctability (Section~\ref{subsec:res-correctness}): under IID-depolarising noise at \(p=0.10\), a non-trivial fraction of nine-qubit shots carry weight-\(\ge\)2 errors, and those are correctable only 23--34\% of the time. We are not able to identify how the previously reported figure was produced; no Monte Carlo run at any shot count under this noise model exists in the archive this revision was built from.
+
+Table~\ref{tab:ztest} reports two-proportion \(z\)-tests for every pairwise comparison among the Steane kernel's three decoder modes, at every grid point: 26 of 27 comparisons are non-significant at \(\alpha=0.05\); the one exception (\(p=0.05\), LUT versus MWPM, \(p=0.0475\)) is consistent with the expected false-positive rate across 27 simultaneous comparisons, and the underlying rates differ only in the fourth decimal place. The claim that the three modes are statistically indistinguishable at this code distance is therefore supported, now by an actual test rather than a visual impression, and is exactly what Section~\ref{subsec:steane} predicts from the Hamming-bijection argument: the three modes are different computational paths to the same decision, not different decision rules.
+
+\input{tables/table_ztest.tex}
+
+\subsection{Circuit-level, multi-round data}\label{subsec:res-circuit}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth]{fig_rep3_circuit_level.pdf}
+\caption{Repetition code, circuit-level noise (Stim), multi-round MWPM decoding (PyMatching), \(10^6\) shots per (rounds, \(p\)) point. \textbf{Software-only, not this project's own decoder.} Logical error rate grows with both physical error rate and round count, saturating near 0.5 once thoroughly overwhelmed.}\label{fig:circuit_level}
+\end{figure}
+
+Every result above uses a phenomenological noise model: an error vector is drawn once, decoded once. Figure~\ref{fig:circuit_level} instead uses Stim's built-in repetition-code circuit generator, with real per-gate depolarising noise, measurement error, and reset error, decoded with PyMatching's minimum-weight perfect matching against the circuit's own detector error model, over 1 to 50 syndrome-extraction rounds. Logical error rate grows with both physical error rate and round count, as physically expected for a protocol accumulating measurement error across rounds (e.g.\ at \(p=0.01\): \(p_L=3.1\times10^{-3}\) at one round, rising to \(9.95\times10^{-2}\) at fifty rounds), saturating near 0.5 once the code is thoroughly overwhelmed. This uses PyMatching's general decoder, not this paper's own kernel logic, and covers only the repetition code; extending it to the Shor and Steane codes requires a custom circuit construction not attempted here. It is, to our knowledge, the first circuit-level, multi-round result associated with this line of work.

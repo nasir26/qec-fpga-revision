@@ -5,7 +5,12 @@ supersede it with a later one.
 
 ---
 
-## ADR-001: Manuscript title (OPEN, awaiting author)
+## ADR-001: Manuscript title (OPEN, awaiting author -- Option 3 in provisional use)
+
+**Update, 2026-08-20.** `paper/main.tex` uses Option 3 below as a provisional title so the draft
+manuscript could be written and compiled at all. This is not a decision, just an unblock -- the
+draft is clearly marked provisional and the title must still be confirmed (or replaced) by the
+author before anything is submitted anywhere.
 
 **Context.** Three reviewers and the author independently concluded that
 "FPGA-Based Real-Time Quantum Error Correction for Shor and Steane Codes" overstates the work.

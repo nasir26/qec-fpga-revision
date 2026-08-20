@@ -33,6 +33,9 @@ build/
 *.synctex.gz
 *.fdb_latexmk
 *.fls
+*.xdv
+paper/main.pdf
+paper/main.log
 
 # Never ignore evidence or processed data
 !evidence/**

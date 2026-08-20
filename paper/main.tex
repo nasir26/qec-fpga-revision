@@ -1,0 +1,101 @@
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathalpha}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{manyfoot}
+\usepackage{booktabs}
+\usepackage{textgreek}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{url}
+\usepackage{hyperref}
+
+\theoremstyle{thmstyleone}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{thmstyletwo}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\theoremstyle{thmstylethree}
+\newtheorem{definition}{Definition}
+
+\raggedbottom
+
+\begin{document}
+
+% ============================================================================
+% TITLE: PROVISIONAL. This is ADR-001 Option 3 (docs/DECISIONS.md), chosen
+% because it does not depend on the Phase 4 (d=5) decision. Requires the
+% author's sign-off before this draft is anywhere near submittable -- see
+% docs/DECISIONS.md ADR-001 for the other three options and the reasoning.
+% ============================================================================
+\title{From Kernel Latency to Loop Latency: What an FPGA Distance-3 Quantum Error Correction Decoder Actually Costs on a Commodity Accelerator Card}
+
+\author*[1]{\fnm{Nasir} \sur{Ali}}\email{nasirali2607@gmail.com}
+
+\affil*[1]{\orgdiv{Embedded Systems Division}, \orgname{Centre for Development of Advanced Computing}, \orgaddress{\city{Noida}, \postcode{201307}, \state{Uttar Pradesh}, \country{India}}}
+
+\abstract{\input{sections/abstract_text.tex}}
+
+% Keywords narrowed from twelve generic terms to six specific ones (R2-4).
+\keywords{FPGA syndrome decoding, HLS resource-latency tradeoff, host-interface latency, distance-3 stabilizer codes, decoder batching threshold, AXI-Lite readback}
+
+\maketitle
+
+\input{sections/introduction.tex}
+\input{sections/background.tex}
+\input{sections/codes.tex}
+\input{sections/architecture.tex}
+\input{sections/implementation.tex}
+\input{sections/methodology.tex}
+\input{sections/results.tex}
+\input{sections/discussion.tex}
+\input{sections/limitations.tex}
+\input{sections/conclusions.tex}
+
+%==========================================================================
+\backmatter
+
+\bmhead{Acknowledgments}
+This work was funded by the Ministry of Electronics and Information Technology (MeitY), Government of India. The research was conducted at the C-DAC Noida Centre under the supervision of Mr. Abhishek Tiwari, Scientist-F, Embedded Systems Division, C-DAC Noida.
+
+\section*{Declarations}
+
+\textbf{Funding.} This work was funded by the Ministry of Electronics and Information Technology (MeitY), Government of India.\\
+\textbf{Conflict of interest.} The authors declare no competing interests.\\
+\textbf{Data availability.} All experiment configurations, raw and processed data, and generating scripts are available in the accompanying repository (\url{https://github.com/nasir26/qec-fpga-revision}), organised as one self-contained directory per experiment under \texttt{experiments/}.\\
+\textbf{Code availability.} All kernel sources, host drivers, software mirrors, and figure/table generation scripts are available in the accompanying repository.\\
+\textbf{Author contribution.} N.~Ali designed and implemented the HLS kernels, the host backend, and the benchmark suite, and wrote the manuscript.
+
+% PLACEHOLDER STYLE FILE: sn-jnl.cls sets \bibliographystyle{sn-mathphys-num}
+% internally at class-load time (its own line ~1664), and that .bst is a
+% Springer Nature proprietary file present in neither archive nor anywhere
+% on this build machine -- the original author must have had it installed
+% separately. Overriding \bibliographystyle here does not work: LaTeX
+% writes \bibstyle to the .aux immediately on each call, the class's call
+% fires first, and BibTeX only honours the first \bibstyle command in the
+% .aux (it flags a second one as illegal and ignores it). The actual fix,
+% used here, is paper/sn-mathphys-num.bst: a plain copy of the standard
+% BibTeX `plain' style saved under the name the class expects, numeric and
+% natbib-compatible. Replace that file with the real Springer Nature
+% sn-mathphys-num.bst (if resubmitting to a Springer Nature journal) or
+% regenerate paper/tables appropriately for the target venue's required
+% style (once docs/DECISIONS.md ADR-002 is decided) before actual submission.
+\bibliography{bib/references}
+
+\appendix
+\input{sections/appendix_reconstruction.tex}
+
+\end{document}

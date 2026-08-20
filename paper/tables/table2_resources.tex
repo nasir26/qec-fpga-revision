@@ -3,18 +3,20 @@
 % Regenerate: python3 gen_table2.py > table2_resources.tex
 \begin{table}
 \centering
-\caption{Post-synthesis (HLS-ESTIMATE, not post-route) resource utilisation, Vitis HLS 2023.2, part xcu55c-fsvh2892-2L-e, 300\,MHz target. Every row is a real \texttt{csynth\_design} run (\texttt{evidence/synthesis/}), not an estimate. Two variants are shown for Shor and Steane: AXI-Lite only (the architecture the manuscript describes) and with the one-element \texttt{m\_axi} output-buffer argument that unblocks hardware read-back (Section~\ref{sec:limitations}). Rep-3 has not yet had the same fix applied. Steane's kernel is a from-source reconstruction (no original source was recoverable; see Appendix~\ref{app:reconstruction}), not the original submission's kernel.}\label{tab:resources}
-\begin{tabular}{llrrrrr}
+\caption{Post-synthesis resource utilisation (HLS-ESTIMATE, not post-route), real \texttt{csynth\_design} runs, Vitis HLS 2023.2, 300\,MHz target. AXI-Lite-only and \texttt{m\_axi}-augmented variants isolate the read-back fix's cost (Section~\ref{sec:limitations}). Steane's kernel is a reconstruction (Appendix~\ref{app:reconstruction}).}\label{tab:resources}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{2.2cm}p{2.3cm}rrrrr}
 \toprule
-\textbf{Kernel} & \textbf{Variant} & \textbf{BRAM\textsubscript{18K}} & \textbf{DSP} & \textbf{FF} & \textbf{LUT6} & \textbf{Latency (cyc.)} \\
+\textbf{Kernel} & \textbf{Variant} & \textbf{BRAM\textsubscript{18K}} & \textbf{DSP} & \textbf{FF} & \textbf{LUT6} & \textbf{Lat.\ (cyc.)} \\
 \midrule
 Rep-3 [[3,1,2]] & original, AXI-Lite only & 0 & 0 & 198 & 367 & 0 \\
 Shor [[9,1,3]] & original, AXI-Lite only & 1 & 0 & 190 & 228 & 1 \\
-Shor [[9,1,3]] & with m_axi output-buffer fix (B-001) & 3 & 0 & 1209 & 1137 & 70 \\
+Shor [[9,1,3]] & with m\_axi output-buffer fix (B-001) & 3 & 0 & 1209 & 1137 & 70 \\
 Steane [[7,1,3]] (x3 modes, reconstructed) & AXI-Lite only & 0 & 0 & 242 & 699 & 2 \\
-Steane [[7,1,3]] (x3 modes, reconstructed) & with m_axi output-buffer fix (B-001) & 2 & 0 & 1685 & 1832 & 71 \\
+Steane [[7,1,3]] (x3 modes, reconstructed) & with m\_axi output-buffer fix (B-001) & 2 & 0 & 1685 & 1832 & 71 \\
 \midrule
-\textbf{Total (AXI-Lite only, all three)} & & \textbf{1} & \textbf{0} & \textbf{630} & \textbf{1294} & --- \\
+\textbf{Total (AXI-Lite only)} & & \textbf{1} & \textbf{0} & \textbf{630} & \textbf{1294} & --- \\
 U55C capacity & & 4,032 & 9,024 & 2,607,360 & 1,303,680 & --- \\
 \textbf{Utilisation (\%)} & & 0.025 & 0 & 0.024 & 0.099 & --- \\
 \bottomrule

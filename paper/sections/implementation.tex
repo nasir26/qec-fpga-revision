@@ -1,0 +1,12 @@
+\section{HLS Implementation}\label{sec:implementation}
+
+All three kernels are implemented in Vitis HLS 2023.2, pipelined with \texttt{\#pragma HLS PIPELINE II=1}, targeting the part \texttt{xcu55c-fsvh2892-2L-e} at a 300\,MHz (3.33\,ns) clock. Source for all three is in the accompanying repository under \texttt{rtl/}, with the exact synthesis invocation recorded alongside each kernel.
+
+\subsection{Rep-3 kernel}\label{subsec:impl-rep3}
+A five-stage description (unpack, inject error, compute a 2-bit syndrome via two XORs, look up a 4-entry LUTRAM correction, apply correction and majority-vote the logical readout) that Vitis HLS schedules, on resynthesis, as a fully combinational II=1 pipeline (Section~\ref{sec:results}).
+
+\subsection{Shor kernel}\label{subsec:impl-shor}
+The decoder table is a file-scope \texttt{const ap\_uint<18>} array of 256 entries, bound to a BRAM18K ROM. Syndrome extraction is six pairwise XORs (inner blocks) and two 6-input XOR-reductions (outer, phase-flip), fully parallel with no cross-coupling between the \(X\)-type and \(Z\)-type halves. This revision adds a one-element \texttt{m\_axi} output argument (Section~\ref{subsec:axilite}); the syndrome, correction, and logical-readout logic is otherwise unchanged from the version whose critical path and resource footprint this revision independently reproduces (Section~\ref{sec:results}).
+
+\subsection{Steane kernel}\label{subsec:impl-steane}
+\textbf{The kernel described in this section is a from-source reconstruction, not the kernel used to produce the original submission's Table~2/Table~3 Steane rows or self-test claim.} No \texttt{steane\_qec\_kernel.cpp} implementing three runtime-selectable decoder modes could be located; the only Steane-related kernel recovered from the original implementation archive is an unrelated, batched, HBM-backed, single-mode LUT decoder with no mode field and no MWPM or UF logic at all. The kernel described here was written from the algorithmic description in Section~\ref{sec:codes} and verified, before synthesis, against a from-scratch Python model exercising all single- and double-qubit error patterns (Appendix~\ref{app:reconstruction}). A 2-bit mode field selects among the LUT, MWPM-inspired, and UF-inspired paths described in Section~\ref{subsec:steane}; all three share the same syndrome-extraction logic (two parallel applications of the same \(H\)-matrix XOR-reduction, once for each CSS half) and differ only in how the syndrome maps to a correction.
