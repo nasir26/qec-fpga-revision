@@ -7,11 +7,14 @@
 _x/
 _vimage/
 build_dir*/
+build_hw/
+.ipcache/
 package.*/
 *.ltx
 vitis_analyzer*/
 *.wdb
 *.wcfg
+*.dcp
 
 # Python
 __pycache__/

@@ -1,0 +1,8 @@
+N=10000 shots, Python/pyxrt round trip (set_arg x2 + start + wait + sync + read)
+  min    = 47.2 us
+  p50    = 49.5 us
+  p90    = 57.6 us
+  p99    = 61.0 us
+  p99.9  = 101.3 us
+  max    = 92175.4 us
+  mean   = 60.1 us

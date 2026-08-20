@@ -1,0 +1,37 @@
+[1] xrt.device(0)
+    OK: <pyxrt.device object at 0x7f36273c4670>
+[2] load_xclbin(/home/cdac/Documents/qec_fpga/qec-fpga-revision/rtl/shor913/build_hw/shor_qec_kernel_m_axi_fix.xclbin)
+    OK in 0.05s, uuid=<pyxrt.uuid object at 0x7f36273bfdb0>
+[3] xrt.kernel(dev, uuid, 'shor_qec_kernel')
+    OK: <pyxrt.kernel object at 0x7f36273c46b0>
+[4] allocate a 4-byte xrt::bo for result_out, bank-matched to the kernel arg
+    OK, group_id=0
+    X q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x00040001 synd=0x01 x_corr=000000001 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x01040201 synd=0x41 x_corr=000000001 z_corr=000000001 Xlog=0 Zlog=0  PASS
+    Z q0: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x01000200 synd=0x40 x_corr=000000000 z_corr=000000001 Xlog=0 Zlog=0  PASS
+    X q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x000C0002 synd=0x03 x_corr=000000010 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x010C0402 synd=0x43 x_corr=000000010 z_corr=000000010 Xlog=0 Zlog=0  PASS
+    Z q1: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x01000200 synd=0x40 x_corr=000000000 z_corr=000000001 Xlog=0 Zlog=0  PASS
+    X q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x00080004 synd=0x02 x_corr=000000100 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x01080804 synd=0x42 x_corr=000000100 z_corr=000000100 Xlog=0 Zlog=0  PASS
+    Z q2: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x01000200 synd=0x40 x_corr=000000000 z_corr=000000001 Xlog=0 Zlog=0  PASS
+    X q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x00100008 synd=0x04 x_corr=000001000 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x03101008 synd=0xC4 x_corr=000001000 z_corr=000001000 Xlog=0 Zlog=0  PASS
+    Z q3: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x03001000 synd=0xC0 x_corr=000000000 z_corr=000001000 Xlog=0 Zlog=0  PASS
+    X q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x00300010 synd=0x0C x_corr=000010000 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x03302010 synd=0xCC x_corr=000010000 z_corr=000010000 Xlog=0 Zlog=0  PASS
+    Z q4: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x03001000 synd=0xC0 x_corr=000000000 z_corr=000001000 Xlog=0 Zlog=0  PASS
+    X q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x00200020 synd=0x08 x_corr=000100000 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x03204020 synd=0xC8 x_corr=000100000 z_corr=000100000 Xlog=0 Zlog=0  PASS
+    Z q5: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x03001000 synd=0xC0 x_corr=000000000 z_corr=000001000 Xlog=0 Zlog=0  PASS
+    X q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x00400040 synd=0x10 x_corr=001000000 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x02408040 synd=0x90 x_corr=001000000 z_corr=001000000 Xlog=0 Zlog=0  PASS
+    Z q6: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x02008000 synd=0x80 x_corr=000000000 z_corr=001000000 Xlog=0 Zlog=0  PASS
+    X q7: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x00C00080 synd=0x30 x_corr=010000000 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q7: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x02C10080 synd=0xB0 x_corr=010000000 z_corr=010000000 Xlog=0 Zlog=0  PASS
+    Z q7: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x02008000 synd=0x80 x_corr=000000000 z_corr=001000000 Xlog=0 Zlog=0  PASS
+    X q8: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x00800100 synd=0x20 x_corr=100000000 z_corr=000000000 Xlog=0 Zlog=0  PASS
+    Y q8: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x02820100 synd=0xA0 x_corr=100000000 z_corr=100000000 Xlog=0 Zlog=0  PASS
+    Z q8: state=ert_cmd_state.ERT_CMD_STATE_COMPLETED result=0x02008000 synd=0x80 x_corr=000000000 z_corr=001000000 Xlog=0 Zlog=0  PASS
+
+[5] self-test: 27/27 PASS via REAL HARDWARE READ-BACK (xrt::bo, not software fallback)

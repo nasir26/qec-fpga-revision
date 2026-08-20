@@ -2,9 +2,30 @@
 
 Append-only. Each entry: what is blocked, why, what is needed, from whom, and the workaround in use.
 
-## B-001: Hardware decode path inaccessible on the ORIGINAL capture machine (PARTIALLY RESOLVED, 2026-08-20 -- see update below)
+## B-001: Hardware decode path inaccessible on the ORIGINAL capture machine (RESOLVED for the Shor kernel, 2026-08-20)
 
-**UPDATE (2026-08-20): kernel execution on real hardware, confirmed.** With the author running
+**RESOLVED (2026-08-20, later same day): full hardware read-back confirmed.** The `m_axi`-fixed
+Shor kernel (`rtl/shor913/src/shor_qec_kernel.cpp`) was built end-to-end (`v++ -c`, `v++ -l`,
+full Vivado implementation, ~2h7m wall time), loaded onto this host's live Alveo U55C, and run
+through all 27 single-qubit Pauli self-test cases with the result read back via a genuine
+`xrt::bo` buffer object. **27/27 PASS, no software fallback, reproduced twice**
+(`evidence/runs/2026-08-20_HARDWARE_VERIFIED_m_axi_fix/`, ledger C-001/C-153). Post-route
+resources (0 BRAM18K, 0 DSP, 1245 FF, 1018+295 LUT) and timing (WNS +0.003 ns, 300 MHz achieved,
+0 failing endpoints) are both real Vivado reports for the first time in this campaign (ledger
+C-151/C-152). An opportunistic Python-loop latency measurement (not the rigorous E02) gives
+p50=49.5 μs, p99=61.0 μs round trip (ledger C-154).
+
+**What remains open:** this closes B-001 for the Shor kernel only. Rep-3 and the reconstructed
+Steane kernel have not been through `v++`/Vivado at all (still `UNSUPPORTED`/`BLOCKED`, see D
+below and B-005). The latency measurement above is a crude stand-in for the real E02 (needs a
+C++ host, `clock_gettime`, ≥10^6 shots, tail statistics). E01's full exhaustive 3^9 hardware sweep
+has not been run (only the 27-case self-test). Multi-CU (E04) and batched-throughput (E03) work
+has not started. The device remains shared with other work on this machine and required a
+`render`-group-independent, root-only `xbutil reset` from the author to reclaim before this run.
+
+### History (kept for the record)
+
+**UPDATE (2026-08-20 morning): kernel execution on real hardware, confirmed.** With the author running
 `xbutil reset -d 0000:8c:00.1 -t user --force` to clear a stuck hardware context left over from
 unrelated work on this shared machine, the original unmodified `shor_qec_kernel.xclbin` loads
 successfully on this host and the kernel runs to `ERT_CMD_STATE_COMPLETED`, confirmed on two
