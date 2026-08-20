@@ -6,7 +6,12 @@
 //               Classical 3-bit repetition code with XOR error injection,
 //               2-bit syndrome, 4-entry LUT decoder, single-cycle correct.
 //
-//  Interface  : AXI-Lite only. No HBM. No gate buffer. Tiny.
+//  Interface  : AXI-Lite control plus one m_axi output port (result_out),
+//               matching the fix applied to rtl/shor913 and rtl/steane713
+//               (docs/BLOCKERS.md B-001, hardware-verified for Shor on
+//               2026-08-20: see evidence/runs/2026-08-20_HARDWARE_VERIFIED_m_axi_fix/).
+//               ap_return is kept for compatibility but result_out is the
+//               path a host should actually read.
 //
 //  Author     : Nasir Ali — C-DAC / NQM Qniverse
 //
@@ -76,16 +81,20 @@ static const ap_uint<3> REP3_DECODER_LUT[4] = {0b000, 0b001, 0b100, 0b010};
 extern "C" unsigned int rep3_qec_kernel(
         unsigned int codeword_in,   // only low 3 bits used
         unsigned int error_mask,    // only low 3 bits used
-        unsigned int logical_in)    // only low 1 bit used
+        unsigned int logical_in,    // only low 1 bit used
+        unsigned int* result_out)   // m_axi: real hardware read-back path
 {
     // === Interface pragmas =================================================
     // Every scalar sits on the single AXI-Lite slave; `return` is what XRT
     // uses as the control+status register (ap_done, ap_start, return value).
-    // Same pattern your v05 kernel uses for control; we just have fewer ports.
+    // result_out is the one-element m_axi buffer a host actually reads
+    // (see header note above) -- same convention as rtl/shor913/rtl/steane713.
 #pragma HLS INTERFACE s_axilite port=codeword_in bundle=control
 #pragma HLS INTERFACE s_axilite port=error_mask  bundle=control
 #pragma HLS INTERFACE s_axilite port=logical_in  bundle=control
 #pragma HLS INTERFACE s_axilite port=return      bundle=control
+#pragma HLS INTERFACE m_axi     port=result_out  offset=slave bundle=gmem depth=1
+#pragma HLS INTERFACE s_axilite port=result_out  bundle=control
 
     // === Pipeline pragma ===================================================
     // II=1 means "accept a new (codeword, mask, logical) every clock". For
@@ -154,5 +163,6 @@ extern "C" unsigned int rep3_qec_kernel(
     result.range( 9,  9) = error_detected;
     result.range(10, 10) = recovery_success;
 
+    result_out[0] = (unsigned int) result;
     return (unsigned int) result;
 }
