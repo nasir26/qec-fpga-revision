@@ -151,9 +151,17 @@
   year      = {2022}
 }
 
-% --- VERIFIED-OK (C-077): matches the public record.
+% --- VERIFIED-FIXED (C-146, found 2026-08-20): the original entry's author
+% list (Holmes, Johri, Guerreschi, Clarke, Matsuura) does NOT match the real
+% paper. Confirmed via web search: the actual authors are Holmes, Jokar,
+% Pasandi, Ding, Pedram, Chong. The real paper also proposes an SFQ
+% (superconducting) hardware decoder for Approximate QEC, not an FPGA
+% union-find decoder -- main.tex L94's description ("implemented a
+% union-find decoder on FPGA") mischaracterises the paper's actual content,
+% not just its author list. Needs a text fix at L94 in addition to this
+% bibliography fix.
 @inproceedings{holmes2020nisq+,
-  author    = {Holmes, Adam and Johri, Sonika and Guerreschi, Gian Giacomo and Clarke, Jonathan S. and Matsuura, Anne Y.},
+  author    = {Holmes, Adam and Jokar, Mohammad Reza and Pasandi, Ghasem and Ding, Yongshan and Pedram, Massoud and Chong, Frederic T.},
   title     = {{NISQ+}: Boosting quantum computing power by approximating quantum error correction},
   booktitle = {2020 ACM/IEEE 47th Annual International Symposium on Computer Architecture (ISCA)},
   pages     = {556--569},
