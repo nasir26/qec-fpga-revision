@@ -1,3 +1,5 @@
+> **Note (2026-11-09):** the code, data and reproduction scripts of this work are now maintained in [nasir26/qec-decoder-loop-latency](https://github.com/nasir26/qec-decoder-loop-latency) (currently private, to be published after review). This repository stays as it is for reference.
+
 # qec-fpga-revision
 
 Revision campaign for "FPGA-Based Real-Time Quantum Error Correction for Shor and Steane Codes"
